@@ -1,45 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HBakers | A Fresh Start with Chai</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papNM3sN2z5YxC8D9UBu7dQ3l9aS9K8aTmdPpp3D4rj4HqAq0zq8hXeg8R2IC0d4W1YZ8U2F5T7Mdr+T5K2Jow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBaker's Cafe - Free Home Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: #8B4513; /* Brown */
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #FFD700; /* Gold */
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-top: 60px; /* Offset fixed header */
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #e6c200;
+        }
+        
+        /* Menu Section */
+        .menu {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #FFD700;
+        }
+        
+        .menu-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: #FFD700;
+            color: #333;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #8B4513;
+        }
+        
+        .menu-item p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #8B4513;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 1rem;
+            color: #FFD700;
+        }
+        
+        .map {
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #FFD700;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <img src="image/logo.png" alt="HBakers Logo">
-    </div>
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#products">Products</a>
-      <a href="#review">Review</a>
-      <a href="#blogs">Blogs</a>
-    </nav>
-    <div class="icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-shopping-cart"></i>
-    </div>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">HBaker's <span>Cafe</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="home" id="home">
-    <div class="content">
-      <h1>A Fresh Start with Chai</h1>
-      <p>Discover the rich flavors and aroma of freshly brewed chai. 
-      Experience a cup that truly awakens your senses.</p>
-      <a href="#menu" class="btn">Get Yours Now</a>
-    </div>
-    <div class="image">
-      <img src="image/home1.jpg" alt="HBakers Tea Cup">
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to HBaker's Cafe</h1>
+            <p>FREE HOME DELIVERY | 042733762 | +971585733762</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
 
-  <script src="app.js"></script>
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+            </div>
+            
+            <div class="menu-items">
+                <!-- Tea Category -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>Tea</h3>
+                        <ul>
+                            <li>Sada Tea <span>1.00 Dns.</span></li>
+                            <li>Karak Tea <span>1.00 Dns.</span></li>
+                            <li>Fresh Milk <span>2/4.00 Dns.</span></li>
+                            <li>Black Tea <span>1.00 Dns.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Coffee Category -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>Coffee</h3>
+                        <ul>
+                            <li>Black Coffee <span>4.00 Dns.</span></li>
+                            <li>Black Coffee Lemon <span>4.00 Dns.</span></li>
+                            <li>Milk Coffee <span>5.00 Dns.</span></li>
+                            <li>Cold Coffee <span>3.00 Dns.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Juice Category -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>Juice</h3>
+                        <ul>
+                            <li>Avocado <span>5/8/10 Dns.</span></li>
+                            <li>Watermelon <span>3/6/8 Dns.</span></li>
+                            <li>Fresh Lime <span>4.00 Dns.</span></li>
+                            <li>Mint Lime <span>5.00 Dns.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Mojitos Category -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>Mojitos</h3>
+                        <ul>
+                            <li>Blueberry <span>6/9.00 Dns.</span></li>
+                            <li>Blockberry <span>6/9.00 Dns.</span></li>
+                            <li>Green Apple <span>6/9.00 Dns.</span></li>
+                            <li>Strawberry <span>6/9.00 Dns.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Faluda Category -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>Faluda</h3>
+                        <ul>
+                            <li>Vanilla Faluda <span>6/8/10.00 Dns.</span></li>
+                            <li>Strawberry Faluda <span>8/11/14.00 Dns.</span></li>
+                            <li>Pista Faluda <span>8/11/14.00 Dns.</span></li>
+                            <li>Butterscotch Faluda <span>8/11/14.00 Dns.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Snacks Category -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3>Snacks</h3>
+                        <ul>
+                            <li>Samosa (Veg) <span>5.00 Dns.</span></li>
+                            <li>Samosa (Chicken) <span>6.00 Dns.</span></li>
+                            <li>Spring Roll <span>6/9.00 Dns.</span></li>
+                            <li>Pakkada <span>6/9.00 Dns.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Shop No.17 Afra & Faraj Al Marri Building, Firj Murar, Deira Dubai</p>
+                    
+                    <h3>Call Us</h3>
+                    <p><i class="fas fa-phone"></i> 042733762</p>
+                    <p><i class="fas fa-mobile-alt"></i> +971585733762</p>
+                    
+                    <h3>Email Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@hbakers.com</p>
+                    
+                    <h3>Delivery Hours</h3>
+                    <p><i class="fas fa-clock"></i> Daily: 8:00 AM - 11:00 PM</p>
+                    
+                    <a href="https://wa.me/971585733762" class="btn" style="margin-top: 1rem;">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                </div>
+                
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.715502256684!2d55.32722331501166!3d25.26891898386838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzA4LjEiTiA1NcKwMTknNDIuMCJF!5e0!3m2!1sen!2sae!4v1623456789012!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 Baker's Cafe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
