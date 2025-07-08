@@ -1,325 +1,155 @@
-Here's a refined version of the HBaker's Cafe website with improved styling, better mobile responsiveness, and enhanced visual elements:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBaker's Cafe - Artisanal Chai & Bakery</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Baker's Cafe - Free Home Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Modern Color Scheme */
-        :root {
-            --primary: #7B3F00;  /* Rich coffee brown */
-            --secondary: #D4AF37; /* Metallic gold */
-            --accent: #A67C52;   /* Warm beige */
-            --light: #FFF9F0;     /* Cream background */
-            --dark: #3A2A1F;     /* Dark brown */
-            --text: #333333;
-        }
-
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
-
+        
         body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
+            color: #333;
         }
-
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-
-        section {
-            padding: 100px 0;
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
-        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--dark);
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            background: #C9A227;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-        }
-
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: var(--dark);
-        }
-
-        /* Header */
+        
+        /* Header Styles */
         header {
+            background: #8B4513; /* Brown */
+            color: white;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.4s ease;
-            padding: 20px 0;
-            background: rgba(123, 63, 0, 0.95);
-            backdrop-filter: blur(10px);
         }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
-        }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            transition: all 0.3s ease;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 1px;
+            font-weight: bold;
         }
-
-        .logo-text span {
-            color: var(--secondary);
+        
+        .logo span {
+            color: #FFD700; /* Gold */
         }
-
-        /* Navigation */
+        
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
         }
-
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            position: relative;
-            padding: 5px 0;
             transition: color 0.3s;
         }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover::after,
-        nav ul li a.active::after {
-            width: 100%;
-        }
-
+        
         nav ul li a:hover {
-            color: var(--secondary);
+            color: #FFD700;
         }
-
+        
         .mobile-menu {
             display: none;
-            font-size: 1.8rem;
-            color: white;
+            font-size: 1.5rem;
             cursor: pointer;
-            z-index: 1001;
         }
-
+        
         /* Hero Section */
         .hero {
             height: 100vh;
-            min-height: 700px;
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            position: relative;
-            margin-top: 80px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('home.jpg') no-repeat center center/cover;
-        }
-
-        .hero-content {
-            max-width: 700px;
+            text-align: center;
             color: white;
             position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease;
+            margin-top: 60px; /* Offset fixed header */
         }
-
-        .hero h1 {
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            opacity: 0.9;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
-
-        /* About Section */
-        .about {
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about::before {
+        
+        .hero::before {
             content: '';
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: var(--secondary);
-            border-radius: 50%;
-            opacity: 0.1;
-            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
         }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        
+        .hero-content {
             position: relative;
             z-index: 1;
-        }
-
-        .about-img {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 20px 20px 0 var(--secondary);
-            transform: rotate(-2deg);
-            transition: all 0.5s ease;
-        }
-
-        .about-img:hover {
-            transform: rotate(0deg);
-            box-shadow: 15px 15px 0 var(--secondary);
-        }
-
-        .about-img img {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
         }
-
-        .about-img:hover img {
-            transform: scale(1.05);
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
         }
-
-        .about-content {
-            padding-left: 30px;
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
         }
-
-        .about-content h3 {
-            color: var(--primary);
-            margin-bottom: 25px;
-            position: relative;
+        
+        .btn {
             display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
         }
-
-        .about-content h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary);
+        
+        .btn:hover {
+            background: #e6c200;
         }
-
-        .about-content p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-top: 20px;
-        }
-
+        
         /* Menu Section */
         .menu {
-            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-            position: relative;
+            padding: 5rem 0;
+            background: #f9f9f9;
         }
-
+        
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 3rem;
         }
-
+        
         .section-title h2 {
-            color: var(--primary);
+            font-size: 2.5rem;
+            color: #8B4513;
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 1rem;
         }
-
+        
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -328,577 +158,209 @@ Here's a refined version of the HBaker's Cafe website with improved styling, bet
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: var(--secondary);
+            background: #FFD700;
         }
-
-        .section-title p {
-            max-width: 700px;
-            margin: 15px auto 0;
-            color: #666;
-        }
-
+        
         .menu-categories {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 50px;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-
+        
         .category-btn {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 10px 25px;
-            border-radius: 50px;
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
-
-        .category-btn:hover,
-        .category-btn.active {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
+        
+        .category-btn:hover, .category-btn.active {
+            background: #FFD700;
+            color: #333;
         }
-
+        
         .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
-
+        
         .menu-item {
             background: white;
-            border-radius: 15px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
-
+        
         .menu-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
-
-        .menu-item-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--secondary);
-            color: var(--dark);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            z-index: 2;
-        }
-
-        .menu-item-img {
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .menu-item-img img {
+        
+        .menu-item img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-
-        .menu-item:hover .menu-item-img img {
-            transform: scale(1.1);
-        }
-
+        
         .menu-item-content {
-            padding: 25px;
+            padding: 1.5rem;
         }
-
-        .menu-item-title {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            align-items: center;
-        }
-
-        .menu-item-title h3 {
-            color: var(--primary);
+        
+        .menu-item h3 {
             font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #8B4513;
         }
-
-        .menu-item-title span {
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
+        
         .menu-item p {
             color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
-
-        .menu-item-rating {
-            color: var(--secondary);
-            margin-bottom: 15px;
+        
+        .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #8B4513;
         }
-
-        .menu-item-btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .menu-item-btn:hover {
-            background: var(--secondary);
-            color: var(--dark);
-        }
-
+        
         /* Contact Section */
         .contact {
+            padding: 5rem 0;
             background: white;
-            position: relative;
         }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: var(--light);
-            z-index: 0;
-        }
-
+        
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            position: relative;
-            z-index: 1;
+            gap: 3rem;
         }
-
+        
         .contact-info {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
         }
-
+        
         .contact-info h3 {
-            color: var(--primary);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
+            font-size: 1.5rem;
+            color: #8B4513;
+            margin-bottom: 1.5rem;
         }
-
-        .contact-info h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-details p {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .contact-details i {
-            margin-right: 15px;
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
+        
+        .contact-info p {
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s;
         }
-
-        .social-links a:hover {
-            background: var(--secondary);
-            color: var(--dark);
-            transform: translateY(-5px);
+        
+        .contact-info i {
+            margin-right: 1rem;
+            color: #FFD700;
         }
-
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .contact-form h3 {
-            color: var(--primary);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .contact-form h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
+        
+        .map {
+            height: 300px;
             border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background: #f9f9f9;
+            overflow: hidden;
         }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(123, 63, 0, 0.1);
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-
-        textarea.form-control {
-            height: 150px;
-            resize: none;
-        }
-
+        
         /* Footer */
         footer {
-            background: var(--dark);
+            background: #333;
             color: white;
-            padding: 80px 0 30px;
-            position: relative;
-        }
-
-        .footer-wave {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary);
-        }
-
-        .footer-about p {
-            margin-bottom: 20px;
-            opacity: 0.8;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo img {
-            height: 40px;
-        }
-
-        .footer-logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .footer-logo-text span {
-            color: var(--secondary);
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: white;
-            opacity: 0.8;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-
-        .footer-contact p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            opacity: 0.8;
-        }
-
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-
-        .footer-newsletter p {
-            margin-bottom: 20px;
-            opacity: 0.8;
-        }
-
-        .newsletter-form {
-            display: flex;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 50px 0 0 50px;
-            font-size: 0.9rem;
-        }
-
-        .newsletter-form button {
-            background: var(--secondary);
-            color: var(--dark);
-            border: none;
-            padding: 0 20px;
-            border-radius: 0 50px 50px 0;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background: #C9A227;
-        }
-
-        .copyright {
+            padding: 3rem 0;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .social-links {
+            margin-bottom: 1.5rem;
         }
-
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #FFD700;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: #aaa;
+        }
+        
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            section {
-                padding: 80px 0;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .about-img {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-
-            .about-content {
-                padding-left: 0;
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
                 text-align: center;
             }
-
-            .about-content h3::after {
-                left: 50%;
-                transform: translateX(-50%);
+            
+            .logo {
+                margin-bottom: 1rem;
             }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-
-            .header-container {
-                padding: 0 15px;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background: var(--primary);
-                transition: all 0.5s ease;
-                padding: 100px 30px 30px;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-            }
-
-            nav.active {
-                right: 0;
-            }
-
+            
             nav ul {
                 flex-direction: column;
-                gap: 20px;
+                align-items: center;
             }
-
-            .mobile-menu {
-                display: block;
+            
+            nav ul li {
+                margin: 0.5rem 0;
             }
-
-            .hero {
-                min-height: 600px;
-                text-align: center;
+            
+            .hero h1 {
+                font-size: 2.5rem;
             }
-
-            .hero-btns {
-                justify-content: center;
+            
+            .hero p {
+                font-size: 1.2rem;
             }
-
+            
             .menu-items {
                 grid-template-columns: 1fr;
             }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
         }
-
-        @media (max-width: 576px) {
-            .hero {
-                min-height: 500px;
-            }
-
+        
+        @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .about-img {
-                box-shadow: 10px 10px 0 var(--secondary);
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-wave {
-                top: -50px;
-                height: 50px;
+            
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header id="header">
+    <header>
         <div class="container header-container">
-            <div class="logo">
-                <img src="logo.png" alt="HBaker's Cafe Logo">
-                <div class="logo-text">HBaker's <span>Cafe</span></div>
-            </div>
-            <nav id="nav">
+            <div class="logo">Baker's <span>Cafe</span></div>
+            <nav>
                 <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -906,33 +368,10 @@ Here's a refined version of the HBaker's Cafe website with improved styling, bet
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>A Fresh Start with Chai</h1>
-                <p>Discover the rich flavors and aroma of freshly brewed chai. Experience a cup that truly awakens your senses at HBaker's Cafe.</p>
-                <div class="hero-btns">
-                    <a href="#menu" class="btn">View Menu</a>
-                    <a href="tel:+971585733762" class="btn btn-outline">Call Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="HBaker's Cafe Interior">
-                </div>
-                <div class="about-content">
-                    <h3>Our Story</h3>
-                    <p>Founded in the heart of Dubai, HBaker's Cafe has been a sanctuary for tea lovers since 2010. Our journey began with a simple mission: to serve the most authentic chai experience outside of India.</p>
-                    <p>Every cup at HBaker's is brewed with premium tea leaves, fresh spices, and prepared using traditional methods that have been perfected over generations. We take pride in our artisanal approach to tea-making.</p>
-                    <p>What started as a small family business has grown into a beloved local institution, known for our warm hospitality and unforgettable flavors.</p>
-                    <div class="signature">- The HBaker Family</div>
-                </div>
-            </div>
+        <div class="hero-content">
+            <h1>Welcome to Baker's Cafe</h1>
+            <p>FREE HOME DELIVERY | 042733762 | +971585733762</p>
+            <a href="#menu" class="btn">View Our Menu</a>
         </div>
     </section>
 
@@ -940,149 +379,85 @@ Here's a refined version of the HBaker's Cafe website with improved styling, bet
     <section class="menu" id="menu">
         <div class="container">
             <div class="section-title">
-                <h2>Our Signature Menu</h2>
-                <p>Discover our carefully crafted selection of beverages and snacks, made with the finest ingredients</p>
-            </div>
-            
-            <div class="menu-categories">
-                <button class="category-btn active" data-category="all">All Items</button>
-                <button class="category-btn" data-category="tea">Tea</button>
-                <button class="category-btn" data-category="coffee">Coffee</button>
-                <button class="category-btn" data-category="juice">Juice</button>
-                <button class="category-btn" data-category="snacks">Snacks</button>
+                <h2>Our Menu</h2>
             </div>
             
             <div class="menu-items">
-                <!-- Tea Items -->
-                <div class="menu-item" data-category="tea">
-                    <div class="menu-item-badge">Bestseller</div>
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1567393528677-d6adaa7a9cc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sada Tea">
-                    </div>
+                <!-- Tea Category -->
+                <div class="menu-item">
                     <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Sada Tea</h3>
-                            <span>1.00 Dns.</span>
-                        </div>
-                        <div class="menu-item-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>Traditional milk tea with perfect blend of cardamom, cinnamon and ginger</p>
-                        <a href="#" class="menu-item-btn">Add to Order</a>
+                        <h3>Tea</h3>
+                        <ul>
+                            <li>Sada Tea <span>1.00 Dns.</span></li>
+                            <li>Karak Tea <span>1.00 Dns.</span></li>
+                            <li>Fresh Milk <span>2/4.00 Dns.</span></li>
+                            <li>Black Tea <span>1.00 Dns.</span></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="menu-item" data-category="tea">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Karak Tea">
-                    </div>
+                <!-- Coffee Category -->
+                <div class="menu-item">
                     <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Karak Tea</h3>
-                            <span>1.00 Dns.</span>
-                        </div>
-                        <div class="menu-item-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p>Strong and flavorful tea with cardamom and saffron - Dubai's favorite</p>
-                        <a href="#" class="menu-item-btn">Add to Order</a>
+                        <h3>Coffee</h3>
+                        <ul>
+                            <li>Black Coffee <span>4.00 Dns.</span></li>
+                            <li>Black Coffee Lemon <span>4.00 Dns.</span></li>
+                            <li>Milk Coffee <span>5.00 Dns.</span></li>
+                            <li>Cold Coffee <span>3.00 Dns.</span></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- Coffee Items -->
-                <div class="menu-item" data-category="coffee">
-                    <div class="menu-item-badge">New</div>
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Black Coffee">
-                    </div>
+                <!-- Juice Category -->
+                <div class="menu-item">
                     <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Black Coffee</h3>
-                            <span>4.00 Dns.</span>
-                        </div>
-                        <div class="menu-item-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <p>Strong arabica coffee with rich aroma and bold flavor</p>
-                        <a href="#" class="menu-item-btn">Add to Order</a>
+                        <h3>Juice</h3>
+                        <ul>
+                            <li>Avocado <span>5/8/10 Dns.</span></li>
+                            <li>Watermelon <span>3/6/8 Dns.</span></li>
+                            <li>Fresh Lime <span>4.00 Dns.</span></li>
+                            <li>Mint Lime <span>5.00 Dns.</span></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="menu-item" data-category="coffee">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cold Coffee">
-                    </div>
+                <!-- Mojitos Category -->
+                <div class="menu-item">
                     <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Cold Coffee</h3>
-                            <span>3.00 Dns.</span>
-                        </div>
-                        <div class="menu-item-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>Iced coffee with milk, chocolate and a hint of vanilla</p>
-                        <a href="#" class="menu-item-btn">Add to Order</a>
+                        <h3>Mojitos</h3>
+                        <ul>
+                            <li>Blueberry <span>6/9.00 Dns.</span></li>
+                            <li>Blockberry <span>6/9.00 Dns.</span></li>
+                            <li>Green Apple <span>6/9.00 Dns.</span></li>
+                            <li>Strawberry <span>6/9.00 Dns.</span></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- Juice Items -->
-                <div class="menu-item" data-category="juice">
-                    <div class="menu-item-badge">Popular</div>
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Avocado Juice">
-                    </div>
+                <!-- Faluda Category -->
+                <div class="menu-item">
                     <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Avocado Juice</h3>
-                            <span>5/8/10 Dns.</span>
-                        </div>
-                        <div class="menu-item-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p>Creamy avocado blended with fresh milk and honey</p>
-                        <a href="#" class="menu-item-btn">Add to Order</a>
+                        <h3>Faluda</h3>
+                        <ul>
+                            <li>Vanilla Faluda <span>6/8/10.00 Dns.</span></li>
+                            <li>Strawberry Faluda <span>8/11/14.00 Dns.</span></li>
+                            <li>Pista Faluda <span>8/11/14.00 Dns.</span></li>
+                            <li>Butterscotch Faluda <span>8/11/14.00 Dns.</span></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- Snack Items -->
-                <div class="menu-item" data-category="snacks">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Samosa">
-                    </div>
+                <!-- Snacks Category -->
+                <div class="menu-item">
                     <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Samosa (Veg)</h3>
-                            <span>5.00 Dns.</span>
-                        </div>
-                        <div class="menu-item-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>Crispy pastry filled with spiced potatoes, peas and herbs</p>
-                        <a href="#" class="menu-item-btn">Add to Order</a>
+                        <h3>Snacks</h3>
+                        <ul>
+                            <li>Samosa (Veg) <span>5.00 Dns.</span></li>
+                            <li>Samosa (Chicken) <span>6.00 Dns.</span></li>
+                            <li>Spring Roll <span>6/9.00 Dns.</span></li>
+                            <li>Pakkada <span>6/9.00 Dns.</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1093,4 +468,64 @@ Here's a refined version of the HBaker's Cafe website with improved styling, bet
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Visit
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Shop No.17 Afra & Faraj Al Marri Building, Firj Murar, Deira Dubai</p>
+                    
+                    <h3>Call Us</h3>
+                    <p><i class="fas fa-phone"></i> 042733762</p>
+                    <p><i class="fas fa-mobile-alt"></i> +971585733762</p>
+                    
+                    <h3>Email Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@hbakers.com</p>
+                    
+                    <h3>Delivery Hours</h3>
+                    <p><i class="fas fa-clock"></i> Daily: 8:00 AM - 11:00 PM</p>
+                    
+                    <a href="https://wa.me/971585733762" class="btn" style="margin-top: 1rem;">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                </div>
+                
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.715502256684!2d55.32722331501166!3d25.26891898386838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzA4LjEiTiA1NcKwMTknNDIuMCJF!5e0!3m2!1sen!2sae!4v1623456789012!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 Baker's Cafe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
