@@ -10,23 +10,9 @@
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('image/bg-pattern.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #000;
       color: #fff;
-      position: relative;
-      z-index: 1;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .navbar {
@@ -75,34 +61,21 @@
     .hero-banner {
       width: 100%;
       height: 50vh;
-      background: url('image/about.png') center center/cover no-repeat;
+      background-color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-    }
-
-    .hero-banner::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      top: 0;
-      left: 0;
     }
 
     .hero-banner h2 {
-      position: relative;
       color: #fff;
       font-size: 3rem;
       font-family: 'Playfair Display', serif;
-      z-index: 1;
       text-shadow: 0 0 10px #000;
     }
 
     .about-container {
-      background-color: #000; /* changed from grey to black */
+      background-color: #000;
       padding: 60px 50px;
       max-width: 900px;
       margin: auto;
@@ -118,7 +91,7 @@
     .about-container p {
       font-size: 1.1rem;
       line-height: 1.8;
-      color: #fff; /* improved for black background */
+      color: #fff;
       margin-bottom: 20px;
     }
 
