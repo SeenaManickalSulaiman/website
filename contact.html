@@ -2,25 +2,24 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - HBaker's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
-
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d1117;
+      background-color: #0b0c10;
       color: #fff;
     }
 
     .navbar {
+      background-color: #000;
+      padding: 20px 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 50px;
-      background-color: #000;
     }
 
     .logo-section {
@@ -51,58 +50,70 @@
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-      transition: color 0.3s;
     }
 
     .nav-links a:hover {
       color: #e63946;
     }
 
-    .contact-section {
-      padding: 60px 20px;
-      max-width: 1200px;
+    .contact-container {
+      padding: 60px 50px;
+      max-width: 1100px;
       margin: auto;
+    }
+
+    .contact-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .contact-info {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
-    .contact-box {
-      flex: 1 1 300px;
-      margin: 20px;
+    .contact-column {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px 20px;
     }
 
-    .contact-box h3 {
+    .contact-column h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: #ffa726;
+      color: orange;
       margin-bottom: 15px;
-      border-bottom: 2px solid #ffa726;
+      border-bottom: 2px solid orange;
       display: inline-block;
     }
 
-    .contact-box p,
-    .contact-box a {
+    .contact-column a, .contact-column p {
       color: #ccc;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      display: block;
       text-decoration: none;
+      display: block;
+      margin: 10px 0;
+      font-size: 1rem;
     }
 
-    .contact-box a:hover {
+    .contact-column a:hover {
       color: #e63946;
     }
 
     .social-icons a {
       margin-right: 15px;
       color: #ccc;
-      font-size: 1.4rem;
       text-decoration: none;
+      font-size: 1.5rem;
     }
 
-    .social-icons a:hover {
-      color: #ffa726;
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -124,37 +135,42 @@
     </nav>
   </header>
 
-  <section class="contact-section">
-    <div class="contact-box">
-      <h3>Company</h3>
-      <p><a href="about.html">About Us</a></p>
-      <p><a href="contact.html">Contact Us</a></p>
-      <p><a href="#">Reservation</a></p>
-      <p><a href="#">Privacy Policy</a></p>
-      <p><a href="#">Terms & Condition</a></p>
-    </div>
-
-    <div class="contact-box">
-      <h3>Contact</h3>
-      <p>📍 Shop No.17 Afra & Faraj Al Marri Building, Firj Murar, Deira, Dubai</p>
-      <p>☎️ 04 273 3762</p>
-      <p>💌 058 573 3762</p>
-      <p>📧 <a href="mailto:info@habkers.com">info@habkers.com</a></p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  <section class="contact-container">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-column">
+        <h3>Company</h3>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Reservation</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="contact-column">
+        <h3>Contact</h3>
+        <p>📍 Shop No.17 Afra & Faraj Al Marri Building, Firj Murar, Deira, Dubai</p>
+        <a href="tel:+97142733762">📞 04 273 3762</a>
+        <a href="https://wa.me/971585733762" target="_blank">💬 058 573 3762</a>
+        <a href="mailto:info@hbakers.com">📧 info@hbakers.com</a>
+        <div class="social-icons">
+          <a href="#"><span>🐦</span></a>
+          <a href="#"><span>📘</span></a>
+          <a href="#"><span>▶️</span></a>
+          <a href="#"><span>💼</span></a>
+        </div>
+      </div>
+      <div class="contact-column">
+        <h3>Opening</h3>
+        <p>Monday - Saturday<br>09AM - 09PM</p>
+        <p>Sunday<br>10AM - 08PM</p>
       </div>
     </div>
 
-    <div class="contact-box">
-      <h3>Opening</h3>
-      <p>Monday - Saturday</p>
-      <p>09AM - 09PM</p>
-      <p>Sunday</p>
-      <p>10AM - 08PM</p>
-    </div>
+    <h2 style="text-align:center; margin-top:60px;">Find Us Here</h2>
+    <iframe 
+      src="https://www.google.com/maps?q=Afra%20%26%20Faraj%20Al%20Marri%20Building%2C%20Firj%20Murar%2C%20Deira%2C%20Dubai&output=embed"
+      allowfullscreen="" loading="lazy">
+    </iframe>
   </section>
 </body>
 
