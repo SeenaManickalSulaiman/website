@@ -2,151 +2,175 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - HBaker's</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - HBaker's</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('image/bg-pattern.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #000;
-        }
+    /* Dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #000;
+    }
 
-        .logo-section img {
-            height: 60px;
-            margin-right: 15px;
-        }
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
 
-        .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 0;
-        }
+    .logo-section img {
+      height: 60px;
+      margin-right: 15px;
+    }
 
-        .logo-text p {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.2rem;
-            color: #ccc;
-            margin: 0;
-        }
+    .logo-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0;
+    }
 
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    .logo-text p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      color: #ccc;
+      margin: 0;
+    }
 
-        .nav-links a:hover {
-            color: #e63946;
-        }
+    .nav-links a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        /* Hero Background Section */
-        .hero-banner {
-            width: 100%;
-            height: 50vh;
-            background: url('image/about.png') center center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+    .nav-links a:hover {
+      color: #e63946;
+    }
 
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-            top: 0;
-            left: 0;
-        }
+    /* Hero Banner */
+    .hero-banner {
+      width: 100%;
+      height: 50vh;
+      background: url('image/about.png') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
 
-        .hero-banner h2 {
-            position: relative;
-            color: #fff;
-            font-size: 3rem;
-            font-family: 'Playfair Display', serif;
-            z-index: 1;
-            text-shadow: 0 0 10px #000;
-        }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+    }
 
-        .about-container {
-            padding: 60px 50px;
-            max-width: 900px;
-            margin: auto;
-        }
+    .hero-banner h2 {
+      position: relative;
+      color: #fff;
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      z-index: 1;
+      text-shadow: 0 0 10px #000;
+    }
 
-        .about-container h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    .about-container {
+      padding: 60px 50px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-        .about-container p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
+    .about-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-        .about-container .signature {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.6rem;
-            color: #e63946;
-            text-align: center;
-            margin-top: 40px;
-        }
-    </style>
+    .about-container p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .about-container .signature {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      color: #e63946;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="logo-section">
-            <img src="image/Logo.png" alt="HBaker's Logo">
-            <div class="logo-text">
-                <h1>HBaker's</h1>
-                <p>Your Daily Treat</p>
-            </div>
-        </div>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero banner as background image -->
-    <div class="hero-banner">
-        <h2>About HBaker's</h2>
+  <header class="navbar">
+    <div class="logo-section">
+      <img src="image/Logo.png" alt="HBaker's Logo" />
+      <div class="logo-text">
+        <h1>HBaker's</h1>
+        <p>Your Daily Treat</p>
+      </div>
     </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <section class="about-container">
-        <p>At <strong>HBaker’s</strong>, food isn’t just what we serve — it’s how we connect, how we care, and how we remember.</p>
-        <p>Our story began back in <strong>2009</strong> as <em>Lucky Cafeteria</em>, tucked away in the heart of Naif, Deira. We offered comforting meals made with love — the kind of food that reminded people of home. Over time, what started as a small eatery grew into a warm, welcoming hub for neighbors, friends, and families.</p>
-        <p>Today, we proudly reintroduce ourselves as <strong>HBaker’s – Your Daily Treat</strong>. Still in the same place. Still the same love. But now with a fresh new look, better service, and even more of your favorite dishes — all while keeping the spirit of our roots alive.</p>
-        <p>From spicy Kerala breakfasts and sizzling burgers to fresh juices and nostalgic pazhampori beef, we continue to serve memories on every plate.</p>
-        <p class="signature">Welcome to HBaker’s. Let every bite feel like home.</p>
-    </section>
+  <!-- Hero Banner Section -->
+  <section class="hero-banner">
+    <h2>About HBaker's</h2>
+  </section>
+
+  <!-- About Text Content -->
+  <section class="about-container">
+    <p>
+      At <strong>HBaker’s</strong>, food isn’t just what we serve — it’s how we connect, how we care, and how we remember.
+    </p>
+    <p>
+      Our story began back in <strong>2009</strong> as <em>Lucky Cafeteria</em>, tucked away in the heart of Naif, Deira. We offered comforting meals made with love — the kind of food that reminded people of home. Over time, what started as a small eatery grew into a warm, welcoming hub for neighbors, friends, and families.
+    </p>
+    <p>
+      Today, we proudly reintroduce ourselves as <strong>HBaker’s – Your Daily Treat</strong>. Still in the same place. Still the same love. But now with a fresh new look, better service, and even more of your favorite dishes — all while keeping the spirit of our roots alive.
+    </p>
+    <p>
+      From spicy Kerala breakfasts and sizzling burgers to fresh juices and nostalgic pazhampori beef, we continue to serve memories on every plate.
+    </p>
+    <p class="signature">Welcome to HBaker’s. Let every bite feel like home.</p>
+  </section>
 </body>
 
 </html>
