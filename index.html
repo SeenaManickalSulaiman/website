@@ -1,187 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBaker's</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>HBaker's - Home</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
         body {
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            background: #8B4513;
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .logo span {
-            color: #FFD700;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
         }
 
         .hero {
-            height: 100vh;
-            background: url('image/home.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
+            position: relative;
             text-align: center;
             color: white;
-            position: relative;
-            margin-top: 60px;
         }
 
-        .hero::before {
-            content: '';
+        .hero img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            filter: brightness(50%);
+        }
+
+        .hero-text {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            width: 100%;
+        .hero-text h1 {
+            font-size: 4rem;
+            margin: 0;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
+        .hero-text p {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-top: 10px;
         }
 
-        .btn {
-            display: inline-block;
-            background: #FFD700;
-            color: #333;
-            padding: 0.8rem 1.8rem;
-            text-decoration: none;
+        .cta-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #e63946;
+            border: none;
             border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #e6c200;
-        }
-
-        .contact-extra {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .contact-extra p {
-            margin: 0.5rem;
+            color: white;
             font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .contact-extra i {
-            color: #FFD700;
-            margin-right: 0.5rem;
+        .cta-button:hover {
+            background-color: #d62828;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <img src="image/logo.png" alt="HBaker's Logo">
-                HBaker's <span>The Heartbeat of Naif</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>HBaker's - Your Daily Treat</h1>
-            <p>Free Home Delivery</p>
-            <a href="#menu" class="btn">View Our Menu</a>
-            <div class="contact-extra">
-                <p><i class="fas fa-map-marker-alt"></i> Shop No.17, Afra & Faraj Al Marri Building, Firj Murar, Deira Dubai</p>
-                <p><i class="fas fa-phone"></i> 042733762</p>
-                <p><i class="fab fa-whatsapp"></i> +971585733762</p>
-            </div>
+<body>
+    <div class="hero">
+        <img src="f6988258-9a77-481e-9084-b5902bc14e44.png" alt="Signature Burger">
+        <div class="hero-text">
+            <h1>Welcome to HBaker's</h1>
+            <p>Crafted with passion. Served with love.</p>
+            <button class="cta-button">Explore Our Menu</button>
         </div>
-    </section>
+    </div>
 </body>
+
 </html>
