@@ -13,17 +13,63 @@
             color: #fff;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            line-height: 1.2;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin: 0;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e63946;
+        }
+
         .hero {
             position: relative;
-            text-align: center;
-            color: white;
+            width: 100%;
+            height: 90vh;
+            overflow: hidden;
         }
 
         .hero img {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             object-fit: cover;
-            filter: brightness(50%);
+            filter: brightness(60%);
         }
 
         .hero-text {
@@ -31,46 +77,41 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-text h1 {
-            font-size: 4rem;
-            margin: 0;
-        }
-
-        .hero-text p {
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
-
-        .cta-button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #e63946;
-            border: none;
-            border-radius: 5px;
+            text-align: center;
             color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
 
-        .cta-button:hover {
-            background-color: #d62828;
+        .hero-text h2 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
 
 <body>
-    <div class="hero">
-        <img src="f6988258-9a77-481e-9084-b5902bc14e44.png" alt="Signature Burger">
-        <div class="hero-text">
-            <h1>Welcome to HBaker's</h1>
-            <p>Crafted with passion. Served with love.</p>
-            <button class="cta-button">Explore Our Menu</button>
+    <header class="navbar">
+        <div class="logo-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Food Logo">
+            <div class="logo-text">
+                <h1>HBaker's</h1>
+                <p>Your Daily Treat</p>
+            </div>
         </div>
-    </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="f6988258-9a77-481e-9084-b5902bc14e44.png" alt="Home Picture">
+        <div class="hero-text">
+            <h2>Flavours Inspired by the Seasons</h2>
+        </div>
+    </section>
 </body>
 
 </html>
