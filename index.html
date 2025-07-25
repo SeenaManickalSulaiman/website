@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HBaker's - Home</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap');
-
-        :root {
-            --primary: #e63946;
-            --secondary: #333;
-            --text: #ddd;
-            --light: #f8f9fa;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
 
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #000;
-            color: var(--text);
+            color: #fff;
         }
 
         .navbar {
@@ -61,7 +55,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: #e63946;
         }
 
         .hero {
@@ -93,102 +87,9 @@
             text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
             font-family: 'Playfair Display', serif;
         }
-
-        .hero-text p {
-            font-size: 2rem;
-            margin-top: 10px;
-            font-style: italic;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .about-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--light);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background: var(--primary);
-            bottom: -10px;
-            left: 25%;
-        }
-
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .highlight {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .signature {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            margin-top: 30px;
-            font-size: 1.2rem;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.03);
-        }
-
-        @media (max-width: 768px) {
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            .about-content {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
+
 <body>
     <header class="navbar">
         <div class="logo-section">
@@ -206,32 +107,13 @@
         </nav>
     </header>
 
-    <section class="hero">
+<section class="hero">
         <img src="image/hb-home1.png" alt="Home Picture">
         <div class="hero-text">
             <h2>Fresh Flavors, Every Time You Dine</h2>
-            <p>Come with your Favorite People and Taste the Happiness in Every Bite</p>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="section-header">
-            <h2>About HBaker's</h2>
-            <p>From Lucky Cafeteria to Your Beloved Neighborhood Eatery</p>
-        </div>
-
-        <div class="about-content">
-            <div class="about-text">
-                <p>At <span class="highlight">HBaker's</span>, food is more than just a meal — it's a memory, a moment, and a connection.</p>
-                <p>We began our journey in <span class="highlight">2009 as Lucky Cafeteria</span>, quietly serving the heart of Naif, Deira with simple, homestyle dishes that made people feel at home. Over the years, we've built more than a business — we've built a bond with a community that grew with us, laughed with us, and returned not just for the taste, but for the warmth behind every plate.</p>
-                <p>Now, with a fresh look and renewed energy, we're proud to step forward as <span class="highlight">HBaker's – Your Daily Treat</span>. Still in the same place, still guided by the same love — but with new ideas, improved service, and a commitment to celebrating both tradition and innovation.</p>
-                <p>From crispy snacks and flavorful burgers to Kerala breakfasts, pazhampori beef, fresh juices, and falooda — we serve with heart, because we know that <span class="highlight">food made with love</span> is food that stays with you.</p>
-                <p class="signature">Welcome to HBaker's. Where every bite feels like coming home.</p>
-            </div>
-            <div class="about-image">
-                <img src="images/about-image.jpg" alt="HBaker's interior showing cozy dining area">
-            </div>
+            <p style="font-family: 'Great Vibes', cursive; font-style: italic; font-size: 1.8rem;"><em>Come with your Favorite People and Taste the Happiness in Every Bite</em></p>
         </div>
     </section>
 </body>
+
 </html>
