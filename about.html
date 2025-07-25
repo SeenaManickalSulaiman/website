@@ -1,15 +1,93 @@
-<!-- Home Page (index.html) -->
-<!-- Keep this file as-is for the homepage -->
-
-<!-- Create a new file: about.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - HBaker's</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Extract all styles to styles.css for reusability -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section img {
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.2rem;
+            color: #ccc;
+            margin: 0;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e63946;
+        }
+
+        .about-container {
+            padding: 60px 50px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .about-container .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.6rem;
+            color: #e63946;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
     <header class="navbar">
         <div class="logo-section">
@@ -27,47 +105,14 @@
         </nav>
     </header>
 
-    <section class="about-section">
-        <div class="section-header">
-            <h2>About HBaker's</h2>
-            <p>From Lucky Cafeteria to Your Beloved Neighborhood Eatery</p>
-        </div>
-
-        <div class="about-content">
-            <div class="about-text">
-                <p>At <span class="highlight">HBaker's</span>, food is more than just a meal — it's a memory, a moment, and a connection.</p>
-                <p>We began our journey in <span class="highlight">2009 as Lucky Cafeteria</span>, quietly serving the heart of Naif, Deira with simple, homestyle dishes that made people feel at home. Over the years, we've built more than a business — we've built a bond with a community that grew with us, laughed with us, and returned not just for the taste, but for the warmth behind every plate.</p>
-                <p>Now, with a fresh look and renewed energy, we're proud to step forward as <span class="highlight">HBaker's – Your Daily Treat</span>. Still in the same place, still guided by the same love — but with new ideas, improved service, and a commitment to celebrating both tradition and innovation.</p>
-                <p class="signature">Welcome to HBaker's. Where every bite feels like coming home.</p>
-            </div>
-
-            <div class="about-image">
-                <img src="images/about-image.jpg" alt="HBaker's interior showing cozy dining area">
-            </div>
-        </div>
-
-        <div class="values-section">
-            <h3>Our Foundation</h3>
-            <div class="values-grid">
-                <div class="value-card">
-                    <img src="images/heritage.jpg" alt="Traditional cooking methods" class="value-image">
-                    <h4 class="value-title">Heritage</h4>
-                    <p class="value-description">Time-honored recipes passed down through generations, preserving authentic flavors that tell our story.</p>
-                </div>
-
-                <div class="value-card">
-                    <img src="images/community.jpg" alt="Customers enjoying meals together" class="value-image">
-                    <h4 class="value-title">Community</h4>
-                    <p class="value-description">A gathering place where friendships are forged over shared meals and warm conversations.</p>
-                </div>
-
-                <div class="value-card">
-                    <img src="images/craft.jpg" alt="Chef preparing food with care" class="value-image">
-                    <h4 class="value-title">Craft</h4>
-                    <p class="value-description">Meticulous attention to detail in every dish, using quality ingredients prepared with skill.</p>
-                </div>
-            </div>
-        </div>
+    <section class="about-container">
+        <h2>About HBaker's</h2>
+        <p>At <strong>HBaker’s</strong>, food isn’t just what we serve — it’s how we connect, how we care, and how we remember.</p>
+        <p>Our story began back in <strong>2009</strong> as <em>Lucky Cafeteria</em>, tucked away in the heart of Naif, Deira. We offered comforting meals made with love — the kind of food that reminded people of home. Over time, what started as a small eatery grew into a warm, welcoming hub for neighbors, friends, and families.</p>
+        <p>Today, we proudly reintroduce ourselves as <strong>HBaker’s – Your Daily Treat</strong>. Still in the same place. Still the same love. But now with a fresh new look, better service, and even more of your favorite dishes — all while keeping the spirit of our roots alive.</p>
+        <p>From spicy Kerala breakfasts and sizzling burgers to fresh juices and nostalgic pazhampori beef, we continue to serve memories on every plate.</p>
+        <p class="signature">Welcome to HBaker’s. Let every bite feel like home.</p>
     </section>
 </body>
+
 </html>
