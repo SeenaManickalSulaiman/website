@@ -67,33 +67,12 @@
       margin-bottom: 30px;
     }
 
-    .filter-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .filter-buttons div {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      color: #555;
-      font-weight: 600;
-    }
-
-    .filter-buttons .active {
-      color: #ffa500;
-    }
-
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 30px;
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
     }
 
     .menu-item {
@@ -102,14 +81,6 @@
       justify-content: space-between;
       border-bottom: 1px solid #ddd;
       padding-bottom: 15px;
-    }
-
-    .menu-item img {
-      width: 60px;
-      height: 60px;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-right: 15px;
     }
 
     .menu-info {
@@ -145,7 +116,6 @@
 </head>
 
 <body>
-
   <header>
     <div class="logo">🍴 HBaker's</div>
     <nav>
@@ -163,125 +133,48 @@
     <p>Food Menu</p>
     <h2>Most Popular Items</h2>
 
-    <div class="filter-buttons">
-      <div class="active">🔥 Hot Corner</div>
-      <div>🥪 Stuffed Sandwiches</div>
-      <div>🍛 Meals & Mains</div>
-      <div>🧊 Icy Cool Drinks</div>
-      <div>🥤 Fizzy Refreshments</div>
-    </div>
-
-    <!-- 🔥 Hot Corner -->
+    <!-- Hot Corner -->
     <h3 class="section-title">🔥 Hot Corner</h3>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="image/item1.jpg" alt="Samosa">
-        <div class="menu-info">
-          <h4>Samosa</h4>
-          <p>Spicy potato-filled pastry</p>
-        </div>
-        <div class="menu-price">𓂀5</div>
-      </div>
 
-      <div class="menu-item">
-        <img src="image/item2.jpg" alt="Spring Roll">
-        <div class="menu-info">
-          <h4>Spring Roll</h4>
-          <p>Vegetable-filled crispy rolls</p>
-        </div>
-        <div class="menu-price">𓂀6</div>
-      </div>
+    <h4 style="text-align:left; margin-left: 10%; font-size: 1.5rem;">☕ Tea</h4>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="menu-info"><h4>Sada Tea</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Karak Tea</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Fresh Milk</h4></div><div class="menu-price">𓂀2/4</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Black Tea</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Black Tea (Full Option)</h4></div><div class="menu-price">𓂀1.5</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Green Tea</h4></div><div class="menu-price">𓂀1 / 1.5</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Lemon Tea</h4></div><div class="menu-price">𓂀1.5</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Masala Tea</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Ginger Tea</h4></div><div class="menu-price">𓂀1.5</div></div>
     </div>
 
-    <!-- 🥪 Stuffed Sandwiches -->
-    <h3 class="section-title">🥪 Stuffed Sandwiches</h3>
+    <h4 style="text-align:left; margin-left: 10%; font-size: 1.5rem;">☕ Coffee</h4>
     <div class="menu-grid">
-      <div class="menu-item">
-        <img src="image/item3.jpg" alt="Chicken Sandwich">
-        <div class="menu-info">
-          <h4>Chicken Sandwich</h4>
-          <p>Grilled chicken with sauces</p>
-        </div>
-        <div class="menu-price">𓂀12</div>
-      </div>
-
-      <div class="menu-item">
-        <img src="image/item4.jpg" alt="Club Sandwich">
-        <div class="menu-info">
-          <h4>Club Sandwich</h4>
-          <p>Triple-layer chicken & egg</p>
-        </div>
-        <div class="menu-price">𓂀15</div>
-      </div>
+      <div class="menu-item"><div class="menu-info"><h4>Black Coffee</h4></div><div class="menu-price">𓂀2/4</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Black Coffee Lemon</h4></div><div class="menu-price">𓂀2.5</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Milk Coffee</h4></div><div class="menu-price">𓂀3/6</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Cold Coffee</h4></div><div class="menu-price">𓂀5</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Chukku Kaappi</h4></div><div class="menu-price">𓂀2/4</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Nescafe Instant Coffee</h4></div><div class="menu-price">𓂀4</div></div>
     </div>
 
-    <!-- 🍛 Meals & Mains -->
-    <h3 class="section-title">🍛 Meals & Mains</h3>
+    <h4 style="text-align:left; margin-left: 10%; font-size: 1.5rem;">🍽️ Snacks</h4>
     <div class="menu-grid">
-      <div class="menu-item">
-        <img src="image/item5.jpg" alt="Chicken Fried Rice">
-        <div class="menu-info">
-          <h4>Chicken Fried Rice</h4>
-          <p>Spicy fried rice with chicken</p>
-        </div>
-        <div class="menu-price">𓂀18</div>
-      </div>
-
-      <div class="menu-item">
-        <img src="image/item6.jpg" alt="Beef Noodles">
-        <div class="menu-info">
-          <h4>Beef Noodles</h4>
-          <p>Stir-fried noodles with beef</p>
-        </div>
-        <div class="menu-price">𓂀20</div>
-      </div>
+      <div class="menu-item"><div class="menu-info"><h4>Samosa (Veg)</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Samosa (Chicken)</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Spring Roll</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Chicken Roll</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Cutlet</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Pazham Pori</h4></div><div class="menu-price">𓂀1.5</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Ney Pathiri</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Pakoda</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Poo Cake</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Madakku</h4></div><div class="menu-price">𓂀2</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Mutta Bajji</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Mulaku Bajji</h4></div><div class="menu-price">𓂀1</div></div>
+      <div class="menu-item"><div class="menu-info"><h4>Potato Bajji (2 pcs)</h4></div><div class="menu-price">𓂀1</div></div>
     </div>
-
-    <!-- 🧊 Icy Cool Drinks -->
-    <h3 class="section-title">🧊 Icy Cool Drinks</h3>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="image/item7.jpg" alt="Lime Juice">
-        <div class="menu-info">
-          <h4>Fresh Lime Juice</h4>
-          <p>Refreshing with mint</p>
-        </div>
-        <div class="menu-price">𓂀5</div>
-      </div>
-
-      <div class="menu-item">
-        <img src="image/item8.jpg" alt="Avil Milk">
-        <div class="menu-info">
-          <h4>Avil Milk</h4>
-          <p>Chilled milk with flattened rice</p>
-        </div>
-        <div class="menu-price">𓂀8</div>
-      </div>
-    </div>
-
-    <!-- 🥤 Fizzy Refreshments -->
-    <h3 class="section-title">🥤 Fizzy Refreshments</h3>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="image/item9.jpg" alt="Pepsi">
-        <div class="menu-info">
-          <h4>Pepsi</h4>
-          <p>Chilled soft drink</p>
-        </div>
-        <div class="menu-price">𓂀4</div>
-      </div>
-
-      <div class="menu-item">
-        <img src="image/item10.jpg" alt="Mountain Dew">
-        <div class="menu-info">
-          <h4>Mountain Dew</h4>
-          <p>Carbonated citrus soda</p>
-        </div>
-        <div class="menu-price">𓂀4</div>
-      </div>
-    </div>
-
   </section>
-
 </body>
 </html>
