@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HBaker's - Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    header {
+      background-color: #0c0c0c;
+      color: #fff;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffa500;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a.active, nav a:hover {
+      color: #ffa500;
+    }
+
+    .btn-book {
+      background-color: #ffa500;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .menu-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .menu-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .menu-section p {
+      font-family: cursive;
+      font-size: 1.2rem;
+      color: #e69100;
+      margin-bottom: 30px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .filter-buttons div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: #555;
+      font-weight: 600;
+    }
+
+    .filter-buttons .active {
+      color: #ffa500;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+    }
+
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .menu-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .menu-info h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .menu-info p {
+      margin: 5px 0 0;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .menu-price {
+      color: #ffa500;
+      font-weight: bold;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🍴 HBaker's</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Service</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="#">Pages</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html#booking" class="btn-book">Book a Table</a>
+  </header>
+
+  <section class="menu-section">
+    <p>Food Menu</p>
+    <h2>Most Popular Items</h2>
+
+    <div class="filter-buttons">
+      <div class="active"><i class="fas fa-coffee"></i> Popular Breakfast</div>
+      <div><i class="fas fa-hamburger"></i> Special Lunch</div>
+      <div><i class="fas fa-utensils"></i> Lovely Dinner</div>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Left Column -->
+      <div class="menu-item">
+        <img src="image/item1.jpg" alt="Item">
+        <div class="menu-info">
+          <h4>Chicken Tikka</h4>
+          <p>Spicy grilled chicken with herbs</p>
+        </div>
+        <div class="menu-price">𓂀115</div>
+      </div>
+
+      <div class="menu-item">
+        <img src="image/item2.jpg" alt="Item">
+        <div class="menu-info">
+          <h4>Veg Pizza</h4>
+          <p>Loaded with garden-fresh toppings</p>
+        </div>
+        <div class="menu-price">𓂀115</div>
+      </div>
+
+      <div class="menu-item">
+        <img src="image/item3.jpg" alt="Item">
+        <div class="menu-info">
+          <h4>Grilled Wrap</h4>
+          <p>Soft wrap with grilled fillings</p>
+        </div>
+        <div class="menu-price">𓂀115</div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="menu-item">
+        <img src="image/item4.jpg" alt="Item">
+        <div class="menu-info">
+          <h4>Beef Noodles</h4>
+          <p>Stir-fried noodles with beef</p>
+        </div>
+        <div class="menu-price">𓂀115</div>
+      </div>
+
+      <div class="menu-item">
+        <img src="image/item5.jpg" alt="Item">
+        <div class="menu-info">
+          <h4>BBQ Platter</h4>
+          <p>Mixed grill meats and dips</p>
+        </div>
+        <div class="menu-price">𓂀115</div>
+      </div>
+
+      <div class="menu-item">
+        <img src="image/item6.jpg" alt="Item">
+        <div class="menu-info">
+          <h4>Fish & Chips</h4>
+          <p>Crispy battered fish and fries</p>
+        </div>
+        <div class="menu-price">𓂀115</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
