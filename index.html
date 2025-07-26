@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HBaker's - Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -16,39 +16,15 @@
       color: #fff;
     }
 
-    .top-contact-bar {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background-color: #111;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .top-contact-bar a {
-      background-color: #e63946;
-      padding: 8px 16px;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-      font-size: 0.9rem;
-    }
-
-    .top-contact-bar a:hover {
-      background-color: #ff4d5a;
-    }
-
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
       background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo-section {
@@ -74,8 +50,13 @@
       margin: 0;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
     .nav-links a {
-      margin-left: 30px;
+      margin-left: 20px;
       text-decoration: none;
       color: #fff;
       font-weight: 500;
@@ -84,6 +65,21 @@
 
     .nav-links a:hover {
       color: #e63946;
+    }
+
+    .btn-nav {
+      background-color: #e63946;
+      padding: 8px 14px;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-left: 15px;
+      transition: background 0.3s;
+    }
+
+    .btn-nav:hover {
+      background-color: #ff4d5a;
     }
 
     .hero {
@@ -119,16 +115,6 @@
 </head>
 
 <body>
-
-  <!-- Sticky Top Contact Bar -->
-  <div class="top-contact-bar">
-    <a href="tel:+97142733762"><i class="fas fa-phone-alt"></i> Call Us</a>
-    <a href="https://wa.me/97158733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
-  </div>
-
-  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="logo-section">
       <img src="image/Logo.png" alt="HBaker's Logo">
@@ -142,10 +128,11 @@
       <a href="menu.html">Menu</a>
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact</a>
+      <a href="tel:+97142733762" class="btn-nav"><i class="fas fa-phone-alt"></i> Call Us</a>
+      <a href="https://wa.me/97158733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." target="_blank" class="btn-nav"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <img src="image/hb-home1.png" alt="Home Picture">
     <div class="hero-text">
@@ -155,7 +142,6 @@
       </p>
     </div>
   </section>
-
 </body>
 
 </html>
