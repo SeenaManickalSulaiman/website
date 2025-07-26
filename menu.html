@@ -6,202 +6,199 @@
   <title>HBaker's Menu</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #f8f8f8;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
 
-    .section {
-      padding: 40px 20px;
+    .section-nav {
+      display: flex;
+      justify-content: space-around;
       background-color: #fff;
-      border-bottom: 1px solid #eee;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
     }
 
-    .section h2 {
+    .section-nav .section-item {
       text-align: center;
-      color: #e63946;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      position: relative;
+      cursor: pointer;
+    }
+
+    .section-nav img {
+      width: 60px;
+      height: 60px;
+      display: block;
+      margin: 0 auto 10px;
     }
 
     .sub-buttons {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    .sub-buttons.active {
+      display: flex;
     }
 
     .sub-buttons button {
-      padding: 10px 20px;
-      font-size: 1rem;
+      padding: 10px 18px;
+      border-radius: 20px;
       border: 2px solid #e63946;
       background-color: #fff;
       color: #e63946;
-      border-radius: 30px;
       cursor: pointer;
-      transition: 0.3s;
+      font-weight: bold;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .sub-buttons button:hover {
-      background-color: #e63946;
-      color: #fff;
-    }
-
     .sub-buttons img {
-      height: 20px;
       width: 20px;
+      height: 20px;
     }
 
     .items {
       display: none;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      margin-top: 20px;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .items.active {
+      display: flex;
     }
 
     .item {
-      display: flex;
-      align-items: center;
       background-color: #fff;
-      border: 1px solid #eee;
+      border: 1px solid #ddd;
       border-radius: 8px;
-      padding: 15px 20px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-      flex: 1 1 48%;
-      justify-content: space-between;
-      max-width: 48%;
+      padding: 15px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
 
     .item img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-right: 20px;
-    }
-
-    .item-content {
-      display: flex;
-      flex: 1;
-      align-items: center;
-    }
-
-    .item-text {
-      text-align: left;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      border-radius: 6px;
     }
 
     .item-name {
       font-weight: bold;
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    .item-desc {
-      font-size: 0.85rem;
-      color: #777;
-      margin: 5px 0 0 0;
+      margin-bottom: 5px;
     }
 
     .item-price {
-      font-weight: bold;
       color: #e63946;
-      font-size: 1.1rem;
-      white-space: nowrap;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-<!-- 🔥 Hot Corner -->
-<div class="section">
-  <h2>🔥 Hot Corner</h2>
-  <div class="sub-buttons">
-    <button onclick="toggleItems('tea')"><img src="images/icons/tea.png">Tea</button>
-    <button onclick="toggleItems('coffee')"><img src="images/icons/coffee.png">Coffee</button>
-    <button onclick="toggleItems('snacks')"><img src="images/icons/snacks.png">Snacks</button>
+<!-- 🔝 Section Navigation -->
+<div class="section-nav">
+  <div class="section-item" onclick="showSection('hot')">
+    <img src="images/sections/hot.png" alt="Hot Corner"/>
+    <div>Hot Corner</div>
   </div>
-
-  <div id="tea" class="items">
-    <div class="item">
-      <div class="item-content">
-        <img src="images/items/karak-tea.png" alt="Karak Tea">
-        <div class="item-text">
-          <p class="item-name">Karak Tea</p>
-          <p class="item-desc">Strong, creamy milk tea</p>
-        </div>
-      </div>
-      <div class="item-price">1</div>
-    </div>
-    <div class="item">
-      <div class="item-content">
-        <img src="images/items/black-tea.png" alt="Black Tea">
-        <div class="item-text">
-          <p class="item-name">Black Tea</p>
-          <p class="item-desc">Plain traditional tea</p>
-        </div>
-      </div>
-      <div class="item-price">1</div>
-    </div>
+  <div class="section-item" onclick="showSection('stuffed')">
+    <img src="images/sections/stuffed.png" alt="Stuffed Sandwiches"/>
+    <div>Stuffed Sandwiches</div>
+  </div>
+  <div class="section-item" onclick="showSection('meals')">
+    <img src="images/sections/meals.png" alt="Meals & Mains"/>
+    <div>Meals & Mains</div>
+  </div>
+  <div class="section-item" onclick="showSection('drinks')">
+    <img src="images/sections/drinks.png" alt="Icy Cool Drinks"/>
+    <div>Icy Cool Drinks</div>
+  </div>
+  <div class="section-item" onclick="showSection('refresh')">
+    <img src="images/sections/refresh.png" alt="Fizzy Refreshments"/>
+    <div>Fizzy Refreshments</div>
   </div>
 </div>
 
-<!-- 🥪 Stuffed Sandwiches -->
-<div class="section">
-  <h2>🥪 Stuffed Sandwiches</h2>
-  <div class="sub-buttons">
-    <button onclick="toggleItems('burgers')"><img src="images/icons/burger.png">Burgers</button>
-    <button onclick="toggleItems('sandwiches')"><img src="images/icons/sandwich.png">Sandwiches</button>
-  </div>
-
-  <div id="burgers" class="items">
-    <div class="item">
-      <div class="item-content">
-        <img src="images/items/chicken-burger.png" alt="Chicken Burger">
-        <div class="item-text">
-          <p class="item-name">Chicken Burger</p>
-          <p class="item-desc">Juicy grilled patty</p>
-        </div>
-      </div>
-      <div class="item-price">5</div>
-    </div>
-  </div>
+<!-- 🔘 Hot Corner Buttons -->
+<div id="hot-buttons" class="sub-buttons">
+  <button onclick="showItems('tea')"><img src="images/icons/tea.png"/>Tea</button>
+  <button onclick="showItems('coffee')"><img src="images/icons/coffee.png"/>Coffee</button>
 </div>
 
-<!-- 🧊 Icy Cool Drinks -->
-<div class="section">
-  <h2>🧊 Icy Cool Drinks</h2>
-  <div class="sub-buttons">
-    <button onclick="toggleItems('juice')"><img src="images/icons/juice.png">Juice</button>
-    <button onclick="toggleItems('shake')"><img src="images/icons/shake.png">Shake</button>
-    <button onclick="toggleItems('faluda')"><img src="images/icons/faluda.png">Faluda</button>
-  </div>
-
-  <div id="juice" class="items">
-    <div class="item">
-      <div class="item-content">
-        <img src="images/items/orange-juice.png" alt="Orange Juice">
-        <div class="item-text">
-          <p class="item-name">Orange Juice</p>
-          <p class="item-desc">Fresh squeezed</p>
-        </div>
-      </div>
-      <div class="item-price">6</div>
-    </div>
-  </div>
+<!-- 🍵 Hot Corner Items -->
+<div id="tea" class="items">
+  <div class="item"><img src="images/items/karak-tea.png"/><div class="item-name">Karak Tea</div><div class="item-price">1</div></div>
+  <div class="item"><img src="images/items/black-tea.png"/><div class="item-name">Black Tea</div><div class="item-price">1</div></div>
+</div>
+<div id="coffee" class="items">
+  <div class="item"><img src="images/items/black-coffee.png"/><div class="item-name">Black Coffee</div><div class="item-price">2</div></div>
 </div>
 
+<!-- 🥪 Stuffed Sandwiches Buttons -->
+<div id="stuffed-buttons" class="sub-buttons">
+  <button onclick="showItems('burger')"><img src="images/icons/burger.png"/>Burger</button>
+</div>
+
+<!-- 🍔 Burger Items -->
+<div id="burger" class="items">
+  <div class="item"><img src="images/items/chicken-burger.png"/><div class="item-name">Chicken Burger</div><div class="item-price">5</div></div>
+</div>
+
+<!-- 🍛 Meals & Mains Buttons -->
+<div id="meals-buttons" class="sub-buttons">
+  <button onclick="showItems('parotta')"><img src="images/icons/bread.png"/>Parotta</button>
+</div>
+
+<!-- 🫓 Parotta Items -->
+<div id="parotta" class="items">
+  <div class="item"><img src="images/items/parotta.png"/><div class="item-name">Parotta</div><div class="item-price">1</div></div>
+</div>
+
+<!-- 🧊 Icy Cool Drinks Buttons -->
+<div id="drinks-buttons" class="sub-buttons">
+  <button onclick="showItems('juice')"><img src="images/icons/juice.png"/>Juice</button>
+</div>
+
+<!-- 🍊 Juice Items -->
+<div id="juice" class="items">
+  <div class="item"><img src="images/items/orange-juice.png"/><div class="item-name">Orange Juice</div><div class="item-price">6</div></div>
+</div>
+
+<!-- 🥤 Fizzy Refreshments Buttons -->
+<div id="refresh-buttons" class="sub-buttons">
+  <button onclick="showItems('mojito')"><img src="images/icons/mojito.png"/>Mojito</button>
+</div>
+
+<!-- 🍃 Mojito Items -->
+<div id="mojito" class="items">
+  <div class="item"><img src="images/items/mint-mojito.png"/><div class="item-name">Mint Mojito</div><div class="item-price">4</div></div>
+</div>
+
+<!-- 📜 Scripts -->
 <script>
-  function toggleItems(id) {
-    const allItems = document.querySelectorAll('.items');
-    allItems.forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'flex';
+  function hideAll(className) {
+    document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
+  }
+
+  function showSection(sectionId) {
+    hideAll('sub-buttons');
+    hideAll('items');
+    document.getElementById(sectionId + '-buttons').classList.add('active');
+  }
+
+  function showItems(itemId) {
+    hideAll('items');
+    document.getElementById(itemId).classList.add('active');
   }
 </script>
 
