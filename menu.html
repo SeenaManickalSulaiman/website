@@ -1,218 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBaker's Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
-
-        header {
-            background-color: #343a40;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            background-color: #f8f9fa;
-            padding: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .menu-tabs button {
-            background: none;
-            border: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 1.5rem;
-            margin: 0.3rem;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .menu-tabs button img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .menu-tabs button.active {
-            border-color: #f90;
-            color: #f90;
-            font-weight: bold;
-        }
-
-        .menu-section {
-            display: none;
-            padding: 1rem 2rem;
-        }
-
-        .menu-section.active {
-            display: block;
-        }
-
-        .category-tabs {
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        .category-tabs button {
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: #f90;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .items {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .item {
-            display: flex;
-            align-items: center;
-            padding: 0.8rem;
-            border-bottom: 1px solid #ddd;
-            background-color: #fafafa;
-            border-radius: 5px;
-        }
-
-        .item img {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-
-        .item-content {
-            flex-grow: 1;
-        }
-
-        .item-name {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .item-desc {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .item-price {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #f90;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HBaker's Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    .section {
+      padding: 40px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    .section h2 {
+      text-align: center;
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+    .sub-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .sub-buttons button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: #e63946;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .items {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .item {
+      padding: 5px 0;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <h1>🍽️ HBaker's Menu</h1>
-    </header>
 
-    <div class="menu-tabs">
-        <button class="tab-button active" onclick="showMenu('hot')"><img src="images/hot.png" alt="Hot"> Hot Corner</button>
-        <button class="tab-button" onclick="showMenu('sandwiches')"><img src="images/sandwiches.png" alt="Sandwiches"> Stuffed Sandwiches</button>
-        <button class="tab-button" onclick="showMenu('meals')"><img src="images/meals.png" alt="Meals"> Meals & Mains</button>
-        <button class="tab-button" onclick="showMenu('icy')"><img src="images/icy.png" alt="Icy"> Icy Cool Drinks</button>
-        <button class="tab-button" onclick="showMenu('fizzy')"><img src="images/fizzy.png" alt="Fizzy"> Fizzy Refreshments</button>
+  <div class="section">
+    <h2>🔥 Hot Corner</h2>
+    <div class="sub-buttons">
+      <button onclick="toggleItems('tea')">Tea</button>
+      <button onclick="toggleItems('coffee')">Coffee</button>
+      <button onclick="toggleItems('snacks')">Snacks</button>
     </div>
-
-    <!-- Hot Section -->
-    <div id="hot" class="menu-section active">
-        <div class="category-tabs">
-            <button onclick="toggleItems('tea')"><img src="images/tea.png" alt="Tea"> Tea</button>
-            <button onclick="toggleItems('coffee')"><img src="images/coffee.png" alt="Coffee"> Coffee</button>
-            <button onclick="toggleItems('snacks')"><img src="images/snacks.png" alt="Snacks"> Snacks</button>
-        </div>
-        <div class="items" id="tea"></div>
-        <div class="items" id="coffee" style="display:none"></div>
-        <div class="items" id="snacks" style="display:none"></div>
+    <div id="tea" class="items">
+      <div class="item">Sada Tea - 1</div>
+      <div class="item">Karak Tea - 1</div>
+      <div class="item">Fresh Milk - 2/4</div>
+      <div class="item">Black Tea - 1</div>
+      <div class="item">Black Tea (Full Option) - 1.5</div>
+      <div class="item">Green Tea - 1/1.5</div>
+      <div class="item">Lemon Tea - 1.5</div>
+      <div class="item">Masala Tea - 2</div>
+      <div class="item">Ginger Tea - 1.5</div>
     </div>
-
-    <!-- Sandwiches Section -->
-    <div id="sandwiches" class="menu-section">
-        <div class="category-tabs">
-            <button onclick="toggleItems('burgers')"><img src="images/burger.png" alt="Burgers"> Burgers</button>
-            <button onclick="toggleItems('sandwichItems')"><img src="images/sandwich.png" alt="Sandwiches"> Sandwiches</button>
-        </div>
-        <div class="items" id="burgers"></div>
-        <div class="items" id="sandwichItems" style="display:none"></div>
+    <div id="coffee" class="items">
+      <div class="item">Black Coffee - 2/4</div>
+      <div class="item">Black Coffee Lemon - 2.5</div>
+      <div class="item">Milk Coffee - 3/6</div>
+      <div class="item">Cold Coffee - 5</div>
+      <div class="item">Chukku Kaappi - 2/4</div>
+      <div class="item">Nescafe Instant Coffee - 4</div>
     </div>
-
-    <!-- Meals Section -->
-    <div id="meals" class="menu-section">
-        <div class="category-tabs">
-            <button onclick="toggleItems('bread')"><img src="images/bread.png" alt="Bread"> Bread</button>
-            <button onclick="toggleItems('curry')"><img src="images/curry.png" alt="Curry"> Curry</button>
-            <button onclick="toggleItems('breakfast')"><img src="images/breakfast.png" alt="Breakfast"> Breakfast</button>
-        </div>
-        <div class="items" id="bread"></div>
-        <div class="items" id="curry" style="display:none"></div>
-        <div class="items" id="breakfast" style="display:none"></div>
+    <div id="snacks" class="items">
+      <div class="item">Samosa (Veg) - 1</div>
+      <div class="item">Samosa (Chicken) - 2</div>
+      <div class="item">Spring Roll - 2</div>
+      <div class="item">Chicken Roll - 2</div>
+      <div class="item">Cutlet - 2</div>
+      <div class="item">Pazham Pori - 1.5</div>
+      <div class="item">Ney Pathiri - 1</div>
+      <div class="item">Pakoda - 2</div>
+      <div class="item">Poo Cake - 2</div>
+      <div class="item">Madakku - 2</div>
+      <div class="item">Mutta Bajji - 1</div>
+      <div class="item">Mulaku Bajji - 1</div>
+      <div class="item">Potato Bajji (2pcs) - 1</div>
     </div>
+  </div>
 
-    <!-- Icy Cool Drinks -->
-    <div id="icy" class="menu-section">
-        <div class="category-tabs">
-            <button onclick="toggleItems('juice')"><img src="images/juice.png" alt="Juice"> Juice</button>
-            <button onclick="toggleItems('shake')"><img src="images/shake.png" alt="Shake"> Shake</button>
-            <button onclick="toggleItems('fruit')"><img src="images/fruit.png" alt="Fruit Salad"> Fruit Salad</button>
-            <button onclick="toggleItems('faluda')"><img src="images/faluda.png" alt="Faluda"> Faluda</button>
-        </div>
-        <div class="items" id="juice"></div>
-        <div class="items" id="shake" style="display:none"></div>
-        <div class="items" id="fruit" style="display:none"></div>
-        <div class="items" id="faluda" style="display:none"></div>
+  <div class="section">
+    <h2>🥪 Stuffed Sandwiches</h2>
+    <div class="sub-buttons">
+      <button onclick="toggleItems('burgers')">Burgers</button>
+      <button onclick="toggleItems('sandwiches')">Sandwiches</button>
     </div>
-
-    <!-- Fizzy Refreshments -->
-    <div id="fizzy" class="menu-section">
-        <div class="category-tabs">
-            <button onclick="toggleItems('mojito')"><img src="images/mojito.png" alt="Mojitos"> Mojitos</button>
-            <button onclick="toggleItems('lime')"><img src="images/lime.png" alt="Lime"> Lime</button>
-            <button onclick="toggleItems('lassi')"><img src="images/lassi.png" alt="Lassi"> Lassi</button>
-        </div>
-        <div class="items" id="mojito"></div>
-        <div class="items" id="lime" style="display:none"></div>
-        <div class="items" id="lassi" style="display:none"></div>
+    <div id="burgers" class="items">
+      <div class="item">Chicken Burger - 5</div>
     </div>
+    <div id="sandwiches" class="items">
+      <div class="item">Club Sandwich - 4</div>
+    </div>
+  </div>
 
-    <script>
-        function showMenu(menuId) {
-            document.querySelectorAll('.menu-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById(menuId)?.classList.add('active');
-            document.querySelector(`.tab-button[onclick*="${menuId}"]`)?.classList.add('active');
-        }
+  <div class="section">
+    <h2>🍛 Meals & Mains</h2>
+    <div class="sub-buttons">
+      <button onclick="toggleItems('bread')">Bread</button>
+      <button onclick="toggleItems('curry')">Curry</button>
+      <button onclick="toggleItems('breakfast')">Breakfast</button>
+    </div>
+    <div id="bread" class="items">
+      <div class="item">Parotta - 1</div>
+    </div>
+    <div id="curry" class="items">
+      <div class="item">Beef Curry - 4</div>
+    </div>
+    <div id="breakfast" class="items">
+      <div class="item">Idly & Sambar - 3</div>
+    </div>
+  </div>
 
-        function toggleItems(id) {
-            const parent = document.getElementById(id)?.parentElement;
-            if (!parent) return;
-            parent.querySelectorAll('.items').forEach(i => i.style.display = 'none');
-            document.getElementById(id).style.display = 'grid';
-        }
-    </script>
+  <div class="section">
+    <h2>🧊 Icy Cool Drinks</h2>
+    <div class="sub-buttons">
+      <button onclick="toggleItems('juice')">Juice</button>
+      <button onclick="toggleItems('shake')">Shake</button>
+      <button onclick="toggleItems('salad')">Fruit Salad</button>
+      <button onclick="toggleItems('faluda')">Faluda</button>
+    </div>
+    <div id="juice" class="items">
+      <div class="item">Orange Juice - 6</div>
+    </div>
+    <div id="shake" class="items">
+      <div class="item">Mango Shake - 5</div>
+    </div>
+    <div id="salad" class="items">
+      <div class="item">Fruit Salad - 4</div>
+    </div>
+    <div id="faluda" class="items">
+      <div class="item">Special Faluda - 6</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🥤 Fizzy Refreshments</h2>
+    <div class="sub-buttons">
+      <button onclick="toggleItems('mojitos')">Mojitos</button>
+      <button onclick="toggleItems('lime')">Lime</button>
+      <button onclick="toggleItems('lassi')">Lassi</button>
+    </div>
+    <div id="mojitos" class="items">
+      <div class="item">Mint Mojito - 4</div>
+    </div>
+    <div id="lime" class="items">
+      <div class="item">Sweet Lime - 2</div>
+    </div>
+    <div id="lassi" class="items">
+      <div class="item">Mango Lassi - 3</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleItems(id) {
+      const allItems = document.querySelectorAll('.items');
+      allItems.forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </body>
-
 </html>
