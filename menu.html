@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +36,8 @@
       font-weight: 500;
     }
 
-    nav a.active, nav a:hover {
+    nav a.active,
+    nav a:hover {
       color: #ffa500;
     }
 
@@ -67,6 +69,7 @@
 
     .filter-buttons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
       margin-bottom: 40px;
@@ -132,8 +135,15 @@
       font-size: 1.2rem;
       white-space: nowrap;
     }
+
+    .section-title {
+      font-size: 2rem;
+      margin: 60px 0 20px;
+      color: #333;
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -154,68 +164,123 @@
     <h2>Most Popular Items</h2>
 
     <div class="filter-buttons">
-      <div class="active"><i class="fas fa-coffee"></i> Popular Breakfast</div>
-      <div><i class="fas fa-hamburger"></i> Special Lunch</div>
-      <div><i class="fas fa-utensils"></i> Lovely Dinner</div>
+      <div class="active">🔥 Hot Corner</div>
+      <div>🥪 Stuffed Sandwiches</div>
+      <div>🍛 Meals & Mains</div>
+      <div>🧊 Icy Cool Drinks</div>
+      <div>🥤 Fizzy Refreshments</div>
     </div>
 
+    <!-- 🔥 Hot Corner -->
+    <h3 class="section-title">🔥 Hot Corner</h3>
     <div class="menu-grid">
-      <!-- Left Column -->
       <div class="menu-item">
-        <img src="image/item1.jpg" alt="Item">
+        <img src="image/item1.jpg" alt="Samosa">
         <div class="menu-info">
-          <h4>Chicken Tikka</h4>
-          <p>Spicy grilled chicken with herbs</p>
+          <h4>Samosa</h4>
+          <p>Spicy potato-filled pastry</p>
         </div>
-        <div class="menu-price">𓂀115</div>
+        <div class="menu-price">𓂀5</div>
       </div>
 
       <div class="menu-item">
-        <img src="image/item2.jpg" alt="Item">
+        <img src="image/item2.jpg" alt="Spring Roll">
         <div class="menu-info">
-          <h4>Veg Pizza</h4>
-          <p>Loaded with garden-fresh toppings</p>
+          <h4>Spring Roll</h4>
+          <p>Vegetable-filled crispy rolls</p>
         </div>
-        <div class="menu-price">𓂀115</div>
+        <div class="menu-price">𓂀6</div>
+      </div>
+    </div>
+
+    <!-- 🥪 Stuffed Sandwiches -->
+    <h3 class="section-title">🥪 Stuffed Sandwiches</h3>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="image/item3.jpg" alt="Chicken Sandwich">
+        <div class="menu-info">
+          <h4>Chicken Sandwich</h4>
+          <p>Grilled chicken with sauces</p>
+        </div>
+        <div class="menu-price">𓂀12</div>
       </div>
 
       <div class="menu-item">
-        <img src="image/item3.jpg" alt="Item">
+        <img src="image/item4.jpg" alt="Club Sandwich">
         <div class="menu-info">
-          <h4>Grilled Wrap</h4>
-          <p>Soft wrap with grilled fillings</p>
+          <h4>Club Sandwich</h4>
+          <p>Triple-layer chicken & egg</p>
         </div>
-        <div class="menu-price">𓂀115</div>
+        <div class="menu-price">𓂀15</div>
+      </div>
+    </div>
+
+    <!-- 🍛 Meals & Mains -->
+    <h3 class="section-title">🍛 Meals & Mains</h3>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="image/item5.jpg" alt="Chicken Fried Rice">
+        <div class="menu-info">
+          <h4>Chicken Fried Rice</h4>
+          <p>Spicy fried rice with chicken</p>
+        </div>
+        <div class="menu-price">𓂀18</div>
       </div>
 
-      <!-- Right Column -->
       <div class="menu-item">
-        <img src="image/item4.jpg" alt="Item">
+        <img src="image/item6.jpg" alt="Beef Noodles">
         <div class="menu-info">
           <h4>Beef Noodles</h4>
           <p>Stir-fried noodles with beef</p>
         </div>
-        <div class="menu-price">𓂀115</div>
-      </div>
-
-      <div class="menu-item">
-        <img src="image/item5.jpg" alt="Item">
-        <div class="menu-info">
-          <h4>BBQ Platter</h4>
-          <p>Mixed grill meats and dips</p>
-        </div>
-        <div class="menu-price">𓂀115</div>
-      </div>
-
-      <div class="menu-item">
-        <img src="image/item6.jpg" alt="Item">
-        <div class="menu-info">
-          <h4>Fish & Chips</h4>
-          <p>Crispy battered fish and fries</p>
-        </div>
-        <div class="menu-price">𓂀115</div>
+        <div class="menu-price">𓂀20</div>
       </div>
     </div>
+
+    <!-- 🧊 Icy Cool Drinks -->
+    <h3 class="section-title">🧊 Icy Cool Drinks</h3>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="image/item7.jpg" alt="Lime Juice">
+        <div class="menu-info">
+          <h4>Fresh Lime Juice</h4>
+          <p>Refreshing with mint</p>
+        </div>
+        <div class="menu-price">𓂀5</div>
+      </div>
+
+      <div class="menu-item">
+        <img src="image/item8.jpg" alt="Avil Milk">
+        <div class="menu-info">
+          <h4>Avil Milk</h4>
+          <p>Chilled milk with flattened rice</p>
+        </div>
+        <div class="menu-price">𓂀8</div>
+      </div>
+    </div>
+
+    <!-- 🥤 Fizzy Refreshments -->
+    <h3 class="section-title">🥤 Fizzy Refreshments</h3>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="image/item9.jpg" alt="Pepsi">
+        <div class="menu-info">
+          <h4>Pepsi</h4>
+          <p>Chilled soft drink</p>
+        </div>
+        <div class="menu-price">𓂀4</div>
+      </div>
+
+      <div class="menu-item">
+        <img src="image/item10.jpg" alt="Mountain Dew">
+        <div class="menu-info">
+          <h4>Mountain Dew</h4>
+          <p>Carbonated citrus soda</p>
+        </div>
+        <div class="menu-price">𓂀4</div>
+      </div>
+    </div>
+
   </section>
 
 </body>
