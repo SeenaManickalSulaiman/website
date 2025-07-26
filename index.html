@@ -224,6 +224,9 @@
       <p style="font-family: 'Great Vibes', cursive; font-style: italic; font-size: 1.8rem;">
         <em>Come with your Favorite People and Taste the Happiness in Every Bite</em>
       </p>
+      <button onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'}); document.getElementById('orderForm').style.display='block'" style="margin-top: 25px; background-color: #e63946; color: white; padding: 12px 30px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;">
+        Make an Order
+      </button>
     </div>
   </section>
 
@@ -258,11 +261,9 @@
       <button type="submit">Send Review</button>
     </form>
 
-    <!-- Make Order Button -->
-    <button onclick="document.getElementById('orderForm').style.display='block'" style="margin-top:40px; background-color:#e63946; color:white; padding:10px 25px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Make an Order</button>
-
-    <!-- Order Form -->
-    <div id="orderForm" style="display:none; margin-top:40px;">
+    <!-- Order Form Section -->
+    <div id="orderForm" style="display:none; margin-top:60px;">
+      <h2>Place Your Order</h2>
       <form onsubmit="sendWhatsAppOrder(event)">
         <label for="orderName">Your Name:</label>
         <input type="text" id="orderName" required>
@@ -292,7 +293,7 @@
       const fullMessage = `*HBaker's New Order*\n\n👤 Name: ${name}\n📞 Contact: ${contact}\n📍 Address: ${address}\n📝 Order Details:\n${message}`;
       const encodedMessage = encodeURIComponent(fullMessage);
 
-      const whatsappNumber = "971585733762"; // Replace with your WhatsApp number if needed
+      const whatsappNumber = "971585733762";
       const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
       window.open(url, "_blank");
