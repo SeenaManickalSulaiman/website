@@ -2,179 +2,162 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HBaker's - Menu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff;
-      color: #222;
-    }
-
-    header {
-      background-color: #0c0c0c;
-      color: #fff;
-      padding: 15px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffa500;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a.active,
-    nav a:hover {
-      color: #ffa500;
-    }
-
-    .btn-book {
-      background-color: #ffa500;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .menu-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .menu-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .menu-section p {
-      font-family: cursive;
-      font-size: 1.2rem;
-      color: #e69100;
-      margin-bottom: 30px;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto 40px;
-    }
-
-    .menu-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 15px;
-    }
-
-    .menu-info {
-      flex: 1;
-      text-align: left;
-    }
-
-    .menu-info h4 {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-
-    .menu-info p {
-      margin: 5px 0 0;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    .menu-price {
-      color: #ffa500;
-      font-weight: bold;
-      font-size: 1.2rem;
-      white-space: nowrap;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin: 60px 0 20px;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBaker's Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">🍴 HBaker's</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="service.html">Service</a>
-      <a href="menu.html" class="active">Menu</a>
-      <a href="#">Pages</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a href="contact.html#booking" class="btn-book">Book a Table</a>
-  </header>
+    <section class="section">
+        <h2>🔥 Hot Corner</h2>
+        <h3>☕ Tea</h3>
+        <ul>
+            <li>48. Sada Tea – 1</li>
+            <li>49. Karak Tea – 1</li>
+            <li>50. Fresh Milk – 2/4</li>
+            <li>51. Black Tea – 1</li>
+            <li>52. Black Tea (Full Option) – 1.5</li>
+            <li>53. Green Tea – 1/1.5</li>
+            <li>54. Lemon Tea – 1.5</li>
+            <li>55. Masala Tea – 2</li>
+            <li>56. Ginger Tea – 1.5</li>
+        </ul>
+        <h3>☕ Coffee</h3>
+        <ul>
+            <li>57. Black Coffee – 2/4</li>
+            <li>58. Black Coffee Lemon – 2.5</li>
+            <li>59. Milk Coffee – 3/6</li>
+            <li>60. Cold Coffee – 5</li>
+            <li>61. Chukku Kaappi – 2/4</li>
+            <li>62. Nescafe Instant Coffee – 4</li>
+        </ul>
+        <h3>🍽️ Snacks</h3>
+        <ul>
+            <li>35. Samosa (Veg) – 1</li>
+            <li>36. Samosa (Chicken) – 2</li>
+            <li>37. Spring Roll – 2</li>
+            <li>38. Chicken Roll – 2</li>
+            <li>39. Cutlet – 2</li>
+            <li>40. Pazham Pori – 1.5</li>
+            <li>41. Ney Pathiri – 1</li>
+            <li>42. Pakkoda – 2</li>
+            <li>43. Poo Cake – 2</li>
+            <li>44. Madakku – 2</li>
+            <li>45. Mutta Bajji – 1</li>
+            <li>46. Mulaku Bajji – 1</li>
+            <li>47. Potato Bajji (2pcs) – 1</li>
+        </ul>
+    </section>
 
-  <section class="menu-section">
-    <p>Food Menu</p>
-    <h2>Most Popular Items</h2>
+    <section class="section">
+        <h2>🥪 Stuffed Sandwiches</h2>
+        <h3>Burgers</h3>
+        <ul>
+            <li>Chicken Burger</li>
+            <li>Beef Burger</li>
+            <li>Double Patty Burger</li>
+            <li>Tikka Burger</li>
+            <li>Fillet Burger</li>
+        </ul>
+        <h3>Sandwiches</h3>
+        <ul>
+            <li>Club Sandwich</li>
+            <li>Chicken Sandwich</li>
+            <li>Veg Sandwich</li>
+        </ul>
+    </section>
 
-    <!-- Hot Corner -->
-    <h3 class="section-title">🔥 Hot Corner</h3>
+    <section class="section">
+        <h2>🍛 Meals & Mains</h2>
+        <h3>Bread</h3>
+        <ul>
+            <li>Parotta</li>
+            <li>Chapathi</li>
+            <li>Pathiri</li>
+        </ul>
+        <h3>Curry</h3>
+        <ul>
+            <li>Beef Curry</li>
+            <li>Chicken Curry</li>
+            <li>Veg Curry</li>
+        </ul>
+        <h3>Breakfast</h3>
+        <ul>
+            <li>Idly</li>
+            <li>Dosa</li>
+            <li>Upma</li>
+        </ul>
+    </section>
 
-    <h4 style="text-align:left; margin-left: 10%; font-size: 1.5rem;">☕ Tea</h4>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="menu-info"><h4>Sada Tea</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Karak Tea</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Fresh Milk</h4></div><div class="menu-price">𓂀2/4</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Black Tea</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Black Tea (Full Option)</h4></div><div class="menu-price">𓂀1.5</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Green Tea</h4></div><div class="menu-price">𓂀1 / 1.5</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Lemon Tea</h4></div><div class="menu-price">𓂀1.5</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Masala Tea</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Ginger Tea</h4></div><div class="menu-price">𓂀1.5</div></div>
-    </div>
+    <section class="section">
+        <h2>🧊 Icy Cool Drinks</h2>
+        <h3>Juices</h3>
+        <ul>
+            <li>Orange Juice</li>
+            <li>Mango Juice</li>
+        </ul>
+        <h3>Shakes</h3>
+        <ul>
+            <li>Vanilla Shake</li>
+            <li>Chocolate Shake</li>
+        </ul>
+        <h3>Fruit Salad</h3>
+        <ul>
+            <li>Fruit Salad Plain</li>
+            <li>Fruit Salad with Ice Cream</li>
+        </ul>
+        <h3>Faluda</h3>
+        <ul>
+            <li>Regular Faluda</li>
+            <li>Special Faluda</li>
+        </ul>
+    </section>
 
-    <h4 style="text-align:left; margin-left: 10%; font-size: 1.5rem;">☕ Coffee</h4>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="menu-info"><h4>Black Coffee</h4></div><div class="menu-price">𓂀2/4</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Black Coffee Lemon</h4></div><div class="menu-price">𓂀2.5</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Milk Coffee</h4></div><div class="menu-price">𓂀3/6</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Cold Coffee</h4></div><div class="menu-price">𓂀5</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Chukku Kaappi</h4></div><div class="menu-price">𓂀2/4</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Nescafe Instant Coffee</h4></div><div class="menu-price">𓂀4</div></div>
-    </div>
-
-    <h4 style="text-align:left; margin-left: 10%; font-size: 1.5rem;">🍽️ Snacks</h4>
-    <div class="menu-grid">
-      <div class="menu-item"><div class="menu-info"><h4>Samosa (Veg)</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Samosa (Chicken)</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Spring Roll</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Chicken Roll</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Cutlet</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Pazham Pori</h4></div><div class="menu-price">𓂀1.5</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Ney Pathiri</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Pakoda</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Poo Cake</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Madakku</h4></div><div class="menu-price">𓂀2</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Mutta Bajji</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Mulaku Bajji</h4></div><div class="menu-price">𓂀1</div></div>
-      <div class="menu-item"><div class="menu-info"><h4>Potato Bajji (2 pcs)</h4></div><div class="menu-price">𓂀1</div></div>
-    </div>
-  </section>
+    <section class="section">
+        <h2>🥤 Fizzy Refreshments</h2>
+        <h3>Mojitos</h3>
+        <ul>
+            <li>Lemon Mojito</li>
+            <li>Mint Mojito</li>
+        </ul>
+        <h3>Lime</h3>
+        <ul>
+            <li>Sweet Lime</li>
+            <li>Salt Lime</li>
+        </ul>
+        <h3>Lassi</h3>
+        <ul>
+            <li>Sweet Lassi</li>
+            <li>Salt Lassi</li>
+        </ul>
+    </section>
 </body>
+
 </html>
