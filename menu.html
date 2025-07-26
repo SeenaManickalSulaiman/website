@@ -78,7 +78,7 @@
 
         .items {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
 
@@ -134,43 +134,47 @@
         <button class="tab-button" onclick="showMenu('fizzy')"><img src="images/fizzy.png" alt="Fizzy"> Fizzy Refreshments</button>
     </div>
 
+    <!-- Hot Section -->
     <div id="hot" class="menu-section active">
         <div class="category-tabs">
-            <button onclick="toggleItems('tea')">Tea</button>
-            <button onclick="toggleItems('coffee')">Coffee</button>
-            <button onclick="toggleItems('snacks')">Snacks</button>
+            <button onclick="toggleItems('tea')"><img src="images/tea.png" alt="Tea"> Tea</button>
+            <button onclick="toggleItems('coffee')"><img src="images/coffee.png" alt="Coffee"> Coffee</button>
+            <button onclick="toggleItems('snacks')"><img src="images/snacks.png" alt="Snacks"> Snacks</button>
         </div>
         <div class="items" id="tea"></div>
         <div class="items" id="coffee" style="display:none"></div>
         <div class="items" id="snacks" style="display:none"></div>
     </div>
 
+    <!-- Sandwiches Section -->
     <div id="sandwiches" class="menu-section">
         <div class="category-tabs">
-            <button onclick="toggleItems('burgers')">Burgers</button>
-            <button onclick="toggleItems('sandwichItems')">Sandwiches</button>
+            <button onclick="toggleItems('burgers')"><img src="images/burger.png" alt="Burgers"> Burgers</button>
+            <button onclick="toggleItems('sandwichItems')"><img src="images/sandwich.png" alt="Sandwiches"> Sandwiches</button>
         </div>
         <div class="items" id="burgers"></div>
         <div class="items" id="sandwichItems" style="display:none"></div>
     </div>
 
+    <!-- Meals Section -->
     <div id="meals" class="menu-section">
         <div class="category-tabs">
-            <button onclick="toggleItems('bread')">Bread</button>
-            <button onclick="toggleItems('curry')">Curry</button>
-            <button onclick="toggleItems('breakfast')">Breakfast</button>
+            <button onclick="toggleItems('bread')"><img src="images/bread.png" alt="Bread"> Bread</button>
+            <button onclick="toggleItems('curry')"><img src="images/curry.png" alt="Curry"> Curry</button>
+            <button onclick="toggleItems('breakfast')"><img src="images/breakfast.png" alt="Breakfast"> Breakfast</button>
         </div>
         <div class="items" id="bread"></div>
         <div class="items" id="curry" style="display:none"></div>
         <div class="items" id="breakfast" style="display:none"></div>
     </div>
 
+    <!-- Icy Cool Drinks -->
     <div id="icy" class="menu-section">
         <div class="category-tabs">
-            <button onclick="toggleItems('juice')">Juice</button>
-            <button onclick="toggleItems('shake')">Shake</button>
-            <button onclick="toggleItems('fruit')">Fruit Salad</button>
-            <button onclick="toggleItems('faluda')">Faluda</button>
+            <button onclick="toggleItems('juice')"><img src="images/juice.png" alt="Juice"> Juice</button>
+            <button onclick="toggleItems('shake')"><img src="images/shake.png" alt="Shake"> Shake</button>
+            <button onclick="toggleItems('fruit')"><img src="images/fruit.png" alt="Fruit Salad"> Fruit Salad</button>
+            <button onclick="toggleItems('faluda')"><img src="images/faluda.png" alt="Faluda"> Faluda</button>
         </div>
         <div class="items" id="juice"></div>
         <div class="items" id="shake" style="display:none"></div>
@@ -178,11 +182,12 @@
         <div class="items" id="faluda" style="display:none"></div>
     </div>
 
+    <!-- Fizzy Refreshments -->
     <div id="fizzy" class="menu-section">
         <div class="category-tabs">
-            <button onclick="toggleItems('mojito')">Mojitos</button>
-            <button onclick="toggleItems('lime')">Lime</button>
-            <button onclick="toggleItems('lassi')">Lassi</button>
+            <button onclick="toggleItems('mojito')"><img src="images/mojito.png" alt="Mojitos"> Mojitos</button>
+            <button onclick="toggleItems('lime')"><img src="images/lime.png" alt="Lime"> Lime</button>
+            <button onclick="toggleItems('lassi')"><img src="images/lassi.png" alt="Lassi"> Lassi</button>
         </div>
         <div class="items" id="mojito"></div>
         <div class="items" id="lime" style="display:none"></div>
