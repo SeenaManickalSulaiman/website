@@ -22,6 +22,9 @@
             align-items: center;
             padding: 20px 50px;
             background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo-section {
@@ -150,6 +153,44 @@
             font-weight: normal;
             color: #e63946;
         }
+
+        form {
+            background-color: #1c1c1c;
+            max-width: 500px;
+            margin: 40px auto 0;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #ff4d5a;
+        }
     </style>
 </head>
 
@@ -200,6 +241,20 @@
                 <h4>- Lina S.</h4>
             </div>
         </div>
+
+        <h2 style="margin-top: 60px;">Leave Your Review</h2>
+        <form action="mailto:yourname@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Gmail ID:</label>
+            <input type="email" id="email" name="email" required pattern=".+@gmail\.com">
+
+            <label for="message">Your Review:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Review</button>
+        </form>
     </section>
 </body>
 
