@@ -38,7 +38,12 @@
             border-bottom: 3px solid transparent;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+        }
+
+        .menu-tabs button img {
+            width: 24px;
+            height: 24px;
         }
 
         .menu-tabs button.active {
@@ -82,6 +87,8 @@
             align-items: center;
             padding: 0.8rem;
             border-bottom: 1px solid #ddd;
+            background-color: #fafafa;
+            border-radius: 5px;
         }
 
         .item img {
@@ -120,14 +127,74 @@
     </header>
 
     <div class="menu-tabs">
-        <button class="tab-button active" onclick="showMenu('hot')">🔥 <img src="images/tea_icon.png" alt="Tea"> Hot Corner</button>
-        <button class="tab-button" onclick="showMenu('sandwiches')">🥪 <img src="images/sandwich_icon.png" alt="Sandwich"> Stuffed Sandwiches</button>
-        <button class="tab-button" onclick="showMenu('meals')">🍛 <img src="images/meal_icon.png" alt="Meals"> Meals & Mains</button>
-        <button class="tab-button" onclick="showMenu('icy')">🧊 <img src="images/juice_icon.png" alt="Cool Drinks"> Icy Cool Drinks</button>
-        <button class="tab-button" onclick="showMenu('fizzy')">🥤 <img src="images/fizzy_icon.png" alt="Fizz"> Fizzy Refreshments</button>
+        <button class="tab-button active" onclick="showMenu('hot')"><img src="images/tea_icon.png" alt="Tea"> Hot Corner</button>
+        <button class="tab-button" onclick="showMenu('sandwiches')"><img src="images/sandwich_icon.png" alt="Sandwich"> Stuffed Sandwiches</button>
+        <button class="tab-button" onclick="showMenu('meals')"><img src="images/meal_icon.png" alt="Meals"> Meals & Mains</button>
+        <button class="tab-button" onclick="showMenu('icy')"><img src="images/juice_icon.png" alt="Cool Drinks"> Icy Cool Drinks</button>
+        <button class="tab-button" onclick="showMenu('fizzy')"><img src="images/fizzy_icon.png" alt="Fizz"> Fizzy Refreshments</button>
     </div>
 
-    <!-- Sections like #hot, #sandwiches, etc. will contain the same structure as before but with each <img src="..."> pointing to "images/dishname.jpg" or similar -->
+    <div id="hot" class="menu-section active">
+        <div class="category-tabs">
+            <button onclick="toggleItems('tea')">Tea</button>
+            <button onclick="toggleItems('coffee')">Coffee</button>
+            <button onclick="toggleItems('snacks')">Snacks</button>
+        </div>
+        <div class="items" id="tea">
+            <div class="item">
+                <img src="images/sada_tea.jpg" alt="Sada Tea">
+                <div class="item-content">
+                    <div class="item-name">Sada Tea</div>
+                    <div class="item-desc">Strong plain tea brewed fresh</div>
+                </div>
+                <div class="item-price">𓂀1</div>
+            </div>
+            <div class="item">
+                <img src="images/karak_tea.jpg" alt="Karak Tea">
+                <div class="item-content">
+                    <div class="item-name">Karak Tea</div>
+                    <div class="item-desc">Bold and spiced milk tea</div>
+                </div>
+                <div class="item-price">𓂀1</div>
+            </div>
+        </div>
+        <div class="items" id="coffee" style="display:none">
+            <div class="item">
+                <img src="images/black_coffee.jpg" alt="Black Coffee">
+                <div class="item-content">
+                    <div class="item-name">Black Coffee</div>
+                    <div class="item-desc">Dark and rich brewed coffee</div>
+                </div>
+                <div class="item-price">𓂀2</div>
+            </div>
+            <div class="item">
+                <img src="images/milk_coffee.jpg" alt="Milk Coffee">
+                <div class="item-content">
+                    <div class="item-name">Milk Coffee</div>
+                    <div class="item-desc">Creamy coffee with milk</div>
+                </div>
+                <div class="item-price">𓂀3</div>
+            </div>
+        </div>
+        <div class="items" id="snacks" style="display:none">
+            <div class="item">
+                <img src="images/samosa.jpg" alt="Samosa">
+                <div class="item-content">
+                    <div class="item-name">Samosa</div>
+                    <div class="item-desc">Crispy pastry with spicy filling</div>
+                </div>
+                <div class="item-price">𓂀2</div>
+            </div>
+            <div class="item">
+                <img src="images/cutlet.jpg" alt="Cutlet">
+                <div class="item-content">
+                    <div class="item-name">Cutlet</div>
+                    <div class="item-desc">Golden fried snack delight</div>
+                </div>
+                <div class="item-price">𓂀2</div>
+            </div>
+        </div>
+    </div>
 
     <script>
         function showMenu(menuId) {
