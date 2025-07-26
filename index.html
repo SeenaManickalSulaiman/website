@@ -2,260 +2,302 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBaker's - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HBaker's - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #000;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
 
-        .logo-section img {
-            height: 60px;
-            margin-right: 15px;
-        }
+    .logo-section img {
+      height: 60px;
+      margin-right: 15px;
+    }
 
-        .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 0;
-        }
+    .logo-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0;
+    }
 
-        .logo-text p {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.2rem;
-            color: #ccc;
-            margin: 0;
-        }
+    .logo-text p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      color: #ccc;
+      margin: 0;
+    }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
 
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    .nav-links a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        .nav-links a:hover {
-            color: #e63946;
-        }
+    .nav-links a:hover {
+      color: #e63946;
+    }
 
-        .contact-buttons {
-            display: flex;
-            gap: 15px;
-            margin-left: 30px;
-        }
+    .contact-buttons {
+      display: flex;
+      gap: 15px;
+      margin-left: 30px;
+    }
 
-        .contact-buttons a {
-            background-color: #e63946;
-            padding: 8px 15px;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+    .contact-buttons a {
+      background-color: #e63946;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
 
-        .contact-buttons a:hover {
-            background-color: #ff4d5a;
-        }
+    .contact-buttons a:hover {
+      background-color: #ff4d5a;
+    }
 
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 90vh;
-            overflow: hidden;
-        }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+    }
 
-        .hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(60%);
-        }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
 
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
 
-        .hero-text h2 {
-            font-size: 3rem;
-            margin: 0;
-            text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            font-family: 'Playfair Display', serif;
-        }
+    .hero-text h2 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      font-family: 'Playfair Display', serif;
+    }
 
-        .testimonials {
-            background-color: #111;
-            padding: 60px 20px;
-            text-align: center;
-        }
+    .testimonials {
+      background-color: #111;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-        .testimonials h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #fff;
-        }
+    .testimonials h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #fff;
+    }
 
-        .testimonial-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
 
-        .testimonial {
-            background-color: #1c1c1c;
-            padding: 20px;
-            max-width: 300px;
-            border-radius: 10px;
-            color: #eee;
-            font-style: italic;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-        }
+    .testimonial {
+      background-color: #1c1c1c;
+      padding: 20px;
+      max-width: 300px;
+      border-radius: 10px;
+      color: #eee;
+      font-style: italic;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
 
-        .testimonial h4 {
-            margin-top: 15px;
-            font-style: normal;
-            font-weight: normal;
-            color: #e63946;
-        }
+    .testimonial h4 {
+      margin-top: 15px;
+      font-style: normal;
+      font-weight: normal;
+      color: #e63946;
+    }
 
-        form {
-            background-color: #1c1c1c;
-            max-width: 500px;
-            margin: 40px auto 0;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: left;
-        }
+    form {
+      background-color: #1c1c1c;
+      max-width: 500px;
+      margin: 40px auto 0;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: left;
+    }
 
-        form label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
 
-        form input,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 5px;
-        }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
 
-        form button {
-            background-color: #e63946;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    form button {
+      background-color: #e63946;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-        form button:hover {
-            background-color: #ff4d5a;
-        }
-    </style>
+    form button:hover {
+      background-color: #ff4d5a;
+    }
+  </style>
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="logo-section">
-            <img src="image/Logo.png" alt="HBaker's Logo">
-            <div class="logo-text">
-                <h1>HBaker's</h1>
-                <p>Your Daily Treat</p>
-            </div>
-        </div>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <div class="contact-buttons">
-                <a href="tel:+97142733762"><i class="fas fa-phone-alt"></i> Call Us</a>
-                <a href="https://wa.me/97158733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
-        </nav>
-    </header>
+  <header class="navbar">
+    <div class="logo-section">
+      <img src="image/Logo.png" alt="HBaker's Logo">
+      <div class="logo-text">
+        <h1>HBaker's</h1>
+        <p>Your Daily Treat</p>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div class="contact-buttons">
+        <a href="tel:+97142733762"><i class="fas fa-phone-alt"></i> Call Us</a>
+        <a href="https://wa.me/971585733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <img src="image/hb-home1.png" alt="Home Picture">
-        <div class="hero-text">
-            <h2>Fresh Flavors, Every Time You Dine</h2>
-            <p style="font-family: 'Great Vibes', cursive; font-style: italic; font-size: 1.8rem;"><em>Come with your Favorite People and Taste the Happiness in Every Bite</em></p>
-        </div>
-    </section>
+  <section class="hero">
+    <img src="image/hb-home1.png" alt="Home Picture">
+    <div class="hero-text">
+      <h2>Fresh Flavors, Every Time You Dine</h2>
+      <p style="font-family: 'Great Vibes', cursive; font-style: italic; font-size: 1.8rem;">
+        <em>Come with your Favorite People and Taste the Happiness in Every Bite</em>
+      </p>
+    </div>
+  </section>
 
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">
-                <p>"The best place to grab a quick bite. Love the chicken tikka wrap!"</p>
-                <h4>- Ayesha R.</h4>
-            </div>
-            <div class="testimonial">
-                <p>"Affordable prices, delicious food, and friendly staff. Highly recommended!"</p>
-                <h4>- Mohamed K.</h4>
-            </div>
-            <div class="testimonial">
-                <p>"Always fresh and flavorful. My go-to cafeteria in Deira!"</p>
-                <h4>- Lina S.</h4>
-            </div>
-        </div>
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <p>"The best place to grab a quick bite. Love the chicken tikka wrap!"</p>
+        <h4>- Ayesha R.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Affordable prices, delicious food, and friendly staff. Highly recommended!"</p>
+        <h4>- Mohamed K.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Always fresh and flavorful. My go-to cafeteria in Deira!"</p>
+        <h4>- Lina S.</h4>
+      </div>
+    </div>
 
-        <h2 style="margin-top: 60px;">Leave Your Review</h2>
-        <form action="mailto:yourname@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+    <h2 style="margin-top: 60px;">Leave Your Review</h2>
+    <form action="mailto:yourname@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
 
-            <label for="email">Your Gmail ID:</label>
-            <input type="email" id="email" name="email" required pattern=".+@gmail\.com">
+      <label for="email">Your Gmail ID:</label>
+      <input type="email" id="email" name="email" required pattern=".+@gmail\.com">
 
-            <label for="message">Your Review:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+      <label for="message">Your Review:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Send Review</button>
-        </form>
-    </section>
+      <button type="submit">Send Review</button>
+    </form>
+
+    <!-- Make Order Button -->
+    <button onclick="document.getElementById('orderForm').style.display='block'" style="margin-top:40px; background-color:#e63946; color:white; padding:10px 25px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Make an Order</button>
+
+    <!-- Order Form -->
+    <div id="orderForm" style="display:none; margin-top:40px;">
+      <form onsubmit="sendWhatsAppOrder(event)">
+        <label for="orderName">Your Name:</label>
+        <input type="text" id="orderName" required>
+
+        <label for="orderContact">Contact Number:</label>
+        <input type="text" id="orderContact" required>
+
+        <label for="orderAddress">Delivery Address (Room, Building, Location, Landmark):</label>
+        <textarea id="orderAddress" rows="2" required></textarea>
+
+        <label for="orderMessage">Order Details:</label>
+        <textarea id="orderMessage" rows="4" required></textarea>
+
+        <button type="submit">Send to WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function sendWhatsAppOrder(event) {
+      event.preventDefault();
+      const name = document.getElementById("orderName").value.trim();
+      const contact = document.getElementById("orderContact").value.trim();
+      const address = document.getElementById("orderAddress").value.trim();
+      const message = document.getElementById("orderMessage").value.trim();
+
+      const fullMessage = `*HBaker's New Order*\n\n👤 Name: ${name}\n📞 Contact: ${contact}\n📍 Address: ${address}\n📝 Order Details:\n${message}`;
+      const encodedMessage = encodeURIComponent(fullMessage);
+
+      const whatsappNumber = "971585733762"; // Replace with your WhatsApp number if needed
+      const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
 </body>
 
 </html>
