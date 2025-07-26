@@ -1,174 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HBaker's Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      margin: 0;
-      padding: 0;
-    }
-    .section {
-      padding: 40px 20px;
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-    }
-    .section h2 {
-      text-align: center;
-      color: #e63946;
-      margin-bottom: 20px;
-    }
-    .sub-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-    .sub-buttons button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      background-color: #e63946;
-      color: #fff;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .items {
-      display: none;
-      text-align: center;
-      margin-top: 20px;
-    }
-    .item {
-      padding: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBaker's Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-section {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .nav-section button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            background-color: #e63946;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .category {
+            margin-top: 20px;
+        }
+
+        .category h3 {
+            color: #e63946;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 4px solid #e63946;
+        }
+    </style>
 </head>
+
 <body>
+    <header>
+        <h1>🍽️ HBaker's Menu</h1>
+    </header>
 
-  <div class="section">
-    <h2>🔥 Hot Corner</h2>
-    <div class="sub-buttons">
-      <button onclick="toggleItems('tea')">Tea</button>
-      <button onclick="toggleItems('coffee')">Coffee</button>
-      <button onclick="toggleItems('snacks')">Snacks</button>
+    <div class="nav-section">
+        <button onclick="scrollToSection('hot-corner')">🔥 Hot Corner</button>
+        <button onclick="scrollToSection('stuffed-sandwiches')">🥪 Stuffed Sandwiches</button>
+        <button onclick="scrollToSection('meals-mains')">🍛 Meals & Mains</button>
+        <button onclick="scrollToSection('icy-drinks')">🧊 Icy Cool Drinks</button>
+        <button onclick="scrollToSection('fizzy-refreshments')">🥤 Fizzy Refreshments</button>
     </div>
-    <div id="tea" class="items">
-      <div class="item">Sada Tea - 1</div>
-      <div class="item">Karak Tea - 1</div>
-      <div class="item">Fresh Milk - 2/4</div>
-      <div class="item">Black Tea - 1</div>
-      <div class="item">Black Tea (Full Option) - 1.5</div>
-      <div class="item">Green Tea - 1/1.5</div>
-      <div class="item">Lemon Tea - 1.5</div>
-      <div class="item">Masala Tea - 2</div>
-      <div class="item">Ginger Tea - 1.5</div>
-    </div>
-    <div id="coffee" class="items">
-      <div class="item">Black Coffee - 2/4</div>
-      <div class="item">Black Coffee Lemon - 2.5</div>
-      <div class="item">Milk Coffee - 3/6</div>
-      <div class="item">Cold Coffee - 5</div>
-      <div class="item">Chukku Kaappi - 2/4</div>
-      <div class="item">Nescafe Instant Coffee - 4</div>
-    </div>
-    <div id="snacks" class="items">
-      <div class="item">Samosa (Veg) - 1</div>
-      <div class="item">Samosa (Chicken) - 2</div>
-      <div class="item">Spring Roll - 2</div>
-      <div class="item">Chicken Roll - 2</div>
-      <div class="item">Cutlet - 2</div>
-      <div class="item">Pazham Pori - 1.5</div>
-      <div class="item">Ney Pathiri - 1</div>
-      <div class="item">Pakoda - 2</div>
-      <div class="item">Poo Cake - 2</div>
-      <div class="item">Madakku - 2</div>
-      <div class="item">Mutta Bajji - 1</div>
-      <div class="item">Mulaku Bajji - 1</div>
-      <div class="item">Potato Bajji (2pcs) - 1</div>
-    </div>
-  </div>
 
-  <div class="section">
-    <h2>🥪 Stuffed Sandwiches</h2>
-    <div class="sub-buttons">
-      <button onclick="toggleItems('burgers')">Burgers</button>
-      <button onclick="toggleItems('sandwiches')">Sandwiches</button>
+    <div id="hot-corner" class="section">
+        <h2>🔥 Hot Corner</h2>
+        <div class="category">
+            <h3>Tea</h3>
+            <ul>
+                <li>Sada Tea – 𓂀1</li>
+                <li>Karak Tea – 𓂀1</li>
+                <li>Fresh Milk – 𓂀2/4</li>
+                <li>Black Tea – 𓂀1</li>
+                <li>Black Tea (Full Option) – 𓂀1.5</li>
+                <li>Green Tea – 𓂀1/1.5</li>
+                <li>Lemon Tea – 𓂀1.5</li>
+                <li>Masala Tea – 𓂀2</li>
+                <li>Ginger Tea – 𓂀1.5</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Coffee</h3>
+            <ul>
+                <li>Black Coffee – 𓂀2/4</li>
+                <li>Black Coffee Lemon – 𓂀2.5</li>
+                <li>Milk Coffee – 𓂀3/6</li>
+                <li>Cold Coffee – 𓂀5</li>
+                <li>Chukku Kaappi – 𓂀2/4</li>
+                <li>Nescafe Instant Coffee – 𓂀4</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Snacks</h3>
+            <ul>
+                <li>Samosa (Veg) – 𓂀1</li>
+                <li>Samosa (Chicken) – 𓂀2</li>
+                <li>Spring Roll – 𓂀2</li>
+                <li>Chicken Roll – 𓂀2</li>
+                <li>Cutlet – 𓂀2</li>
+                <li>Pazham Pori – 𓂀1.5</li>
+                <li>Ney Pathiri – 𓂀1</li>
+                <li>Pakoda – 𓂀2</li>
+                <li>Poo Cake – 𓂀2</li>
+                <li>Madakku – 𓂀2</li>
+                <li>Mutta Bajji – 𓂀1</li>
+                <li>Mulaku Bajji – 𓂀1</li>
+                <li>Potato Bajji (2pcs) – 𓂀1</li>
+            </ul>
+        </div>
     </div>
-    <div id="burgers" class="items">
-      <div class="item">Chicken Burger - 5</div>
-    </div>
-    <div id="sandwiches" class="items">
-      <div class="item">Club Sandwich - 4</div>
-    </div>
-  </div>
 
-  <div class="section">
-    <h2>🍛 Meals & Mains</h2>
-    <div class="sub-buttons">
-      <button onclick="toggleItems('bread')">Bread</button>
-      <button onclick="toggleItems('curry')">Curry</button>
-      <button onclick="toggleItems('breakfast')">Breakfast</button>
+    <div id="stuffed-sandwiches" class="section">
+        <h2>🥪 Stuffed Sandwiches</h2>
+        <div class="category">
+            <h3>Burgers</h3>
+            <ul>
+                <li>Chicken Burger – 𓂀5</li>
+                <li>Beef Burger – 𓂀6</li>
+                <li>Fillet Burger – 𓂀6</li>
+                <li>Tikka Burger – 𓂀6</li>
+                <li>Double Patty Burger – 𓂀7</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Sandwiches</h3>
+            <ul>
+                <li>Club Sandwich – 𓂀4</li>
+                <li>Veg Sandwich – 𓂀3</li>
+                <li>Chicken Sandwich – 𓂀4</li>
+            </ul>
+        </div>
     </div>
-    <div id="bread" class="items">
-      <div class="item">Parotta - 1</div>
-    </div>
-    <div id="curry" class="items">
-      <div class="item">Beef Curry - 4</div>
-    </div>
-    <div id="breakfast" class="items">
-      <div class="item">Idly & Sambar - 3</div>
-    </div>
-  </div>
 
-  <div class="section">
-    <h2>🧊 Icy Cool Drinks</h2>
-    <div class="sub-buttons">
-      <button onclick="toggleItems('juice')">Juice</button>
-      <button onclick="toggleItems('shake')">Shake</button>
-      <button onclick="toggleItems('salad')">Fruit Salad</button>
-      <button onclick="toggleItems('faluda')">Faluda</button>
+    <div id="meals-mains" class="section">
+        <h2>🍛 Meals & Mains</h2>
+        <div class="category">
+            <h3>Bread</h3>
+            <ul>
+                <li>Porotta – 𓂀1</li>
+                <li>Appam – 𓂀1</li>
+                <li>Chappathi – 𓂀1</li>
+                <li>Nice Pathiri – 𓂀1</li>
+                <li>Kothu Porotta – 𓂀8</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Curry</h3>
+            <ul>
+                <li>Egg Curry – 𓂀3</li>
+                <li>Egg Roast – 𓂀5</li>
+                <li>Kadala Curry – 𓂀3</li>
+                <li>Veg Kuruma – 𓂀3</li>
+                <li>Baaji – 𓂀3</li>
+                <li>Green Peas Masala – 𓂀4</li>
+                <li>Egg & Peas Fry – 𓂀6</li>
+                <li>Beef Curry – 𓂀7</li>
+                <li>Beef Fry – 𓂀8</li>
+                <li>Beef Roast – 𓂀7</li>
+                <li>Beef Masala (SPL) – 𓂀10</li>
+                <li>Beef Dry Fry – 𓂀10</li>
+                <li>Chicken Chaps – 𓂀6</li>
+                <li>Chicken Roast – 𓂀7</li>
+                <li>Chicken Fry – 𓂀7</li>
+                <li>Chicken Masala (SPL) – 𓂀10</li>
+                <li>Chicken Chukka – 𓂀8</li>
+                <li>Chilli Chicken – 𓂀10</li>
+                <li>Chilli Beef – 𓂀10</li>
+                <li>Chilli Gobi – 𓂀7</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Breakfast</h3>
+            <ul>
+                <li>Dosa Set – 𓂀4</li>
+                <li>Ghee Roast – 𓂀4</li>
+                <li>Masala Dosa – 𓂀5</li>
+                <li>Puttu Set – 𓂀3</li>
+                <li>Idiyappam Set – 𓂀3</li>
+                <li>Appam Set – 𓂀3</li>
+                <li>Uthappam – 𓂀5</li>
+                <li>Porotta Set – 𓂀4</li>
+                <li>Poori Baaji – 𓂀5</li>
+            </ul>
+        </div>
     </div>
-    <div id="juice" class="items">
-      <div class="item">Orange Juice - 6</div>
-    </div>
-    <div id="shake" class="items">
-      <div class="item">Mango Shake - 5</div>
-    </div>
-    <div id="salad" class="items">
-      <div class="item">Fruit Salad - 4</div>
-    </div>
-    <div id="faluda" class="items">
-      <div class="item">Special Faluda - 6</div>
-    </div>
-  </div>
 
-  <div class="section">
-    <h2>🥤 Fizzy Refreshments</h2>
-    <div class="sub-buttons">
-      <button onclick="toggleItems('mojitos')">Mojitos</button>
-      <button onclick="toggleItems('lime')">Lime</button>
-      <button onclick="toggleItems('lassi')">Lassi</button>
+    <div id="icy-drinks" class="section">
+        <h2>🧊 Icy Cool Drinks</h2>
+        <div class="category">
+            <h3>Juice</h3>
+            <ul>
+                <li>Orange Juice – 𓂀6</li>
+                <li>Lime Juice – 𓂀2</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Shake</h3>
+            <ul>
+                <li>Mango Shake – 𓂀5</li>
+                <li>Chocolate Shake – 𓂀5</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Fruit Salad</h3>
+            <ul>
+                <li>Fruit Salad – 𓂀4</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Faluda</h3>
+            <ul>
+                <li>Special Faluda – 𓂀6</li>
+            </ul>
+        </div>
     </div>
-    <div id="mojitos" class="items">
-      <div class="item">Mint Mojito - 4</div>
-    </div>
-    <div id="lime" class="items">
-      <div class="item">Sweet Lime - 2</div>
-    </div>
-    <div id="lassi" class="items">
-      <div class="item">Mango Lassi - 3</div>
-    </div>
-  </div>
 
-  <script>
-    function toggleItems(id) {
-      const allItems = document.querySelectorAll('.items');
-      allItems.forEach(el => el.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+    <div id="fizzy-refreshments" class="section">
+        <h2>🥤 Fizzy Refreshments</h2>
+        <div class="category">
+            <h3>Mojitos</h3>
+            <ul>
+                <li>Mint Mojito – 𓂀4</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Lime</h3>
+            <ul>
+                <li>Sweet Lime – 𓂀2</li>
+                <li>Salt Lime – 𓂀2</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Lassi</h3>
+            <ul>
+                <li>Mango Lassi – 𓂀3</li>
+                <li>Sweet Lassi – 𓂀3</li>
+                <li>Salt Lassi – 𓂀3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
+
 </html>
