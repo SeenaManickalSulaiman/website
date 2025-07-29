@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HBaker's Menu</title>
+  <title>HBaker's Full Menu</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -133,58 +133,95 @@
 <div id="hot-buttons" class="sub-buttons">
   <button onclick="showItems('tea')"><img src="images/icons/tea.png"/>Tea</button>
   <button onclick="showItems('coffee')"><img src="images/icons/coffee.png"/>Coffee</button>
+  <button onclick="showItems('snacks')"><img src="images/icons/snacks.png"/>Snacks</button>
 </div>
 
 <!-- 🍵 Hot Corner Items -->
 <div id="tea" class="items">
   <div class="item"><img src="images/items/karak-tea.png"/><div class="item-name">Karak Tea</div><div class="item-price">1</div></div>
-  <div class="item"><img src="images/items/black-tea.png"/><div class="item-name">Black Tea</div><div class="item-price">1</div></div>
+  <div class="item"><img src="images/items/sada-tea.png"/><div class="item-name">Sada Tea</div><div class="item-price">1</div></div>
 </div>
 <div id="coffee" class="items">
   <div class="item"><img src="images/items/black-coffee.png"/><div class="item-name">Black Coffee</div><div class="item-price">2</div></div>
 </div>
+<div id="snacks" class="items">
+  <div class="item"><img src="images/items/samosa.png"/><div class="item-name">Samosa (Veg)</div><div class="item-price">1</div></div>
+  <div class="item"><img src="images/items/chicken-roll.png"/><div class="item-name">Chicken Roll</div><div class="item-price">2</div></div>
+</div>
 
 <!-- 🥪 Stuffed Sandwiches Buttons -->
 <div id="stuffed-buttons" class="sub-buttons">
-  <button onclick="showItems('burger')"><img src="images/icons/burger.png"/>Burger</button>
+  <button onclick="showItems('burgers')"><img src="images/icons/burger.png"/>Burgers</button>
+  <button onclick="showItems('sandwiches')"><img src="images/icons/sandwich.png"/>Sandwiches</button>
 </div>
 
-<!-- 🍔 Burger Items -->
-<div id="burger" class="items">
+<!-- 🍔 Stuffed Sandwiches Items -->
+<div id="burgers" class="items">
   <div class="item"><img src="images/items/chicken-burger.png"/><div class="item-name">Chicken Burger</div><div class="item-price">5</div></div>
+</div>
+<div id="sandwiches" class="items">
+  <div class="item"><img src="images/items/club-sandwich.png"/><div class="item-name">Club Sandwich</div><div class="item-price">4</div></div>
 </div>
 
 <!-- 🍛 Meals & Mains Buttons -->
 <div id="meals-buttons" class="sub-buttons">
-  <button onclick="showItems('parotta')"><img src="images/icons/bread.png"/>Parotta</button>
+  <button onclick="showItems('bread')"><img src="images/icons/bread.png"/>Bread</button>
+  <button onclick="showItems('curry')"><img src="images/icons/curry.png"/>Curry</button>
+  <button onclick="showItems('breakfast')"><img src="images/icons/breakfast.png"/>Breakfast</button>
 </div>
 
-<!-- 🫓 Parotta Items -->
-<div id="parotta" class="items">
+<!-- 🍴 Meals & Mains Items -->
+<div id="bread" class="items">
   <div class="item"><img src="images/items/parotta.png"/><div class="item-name">Parotta</div><div class="item-price">1</div></div>
+</div>
+<div id="curry" class="items">
+  <div class="item"><img src="images/items/beef-curry.png"/><div class="item-name">Beef Curry</div><div class="item-price">4</div></div>
+</div>
+<div id="breakfast" class="items">
+  <div class="item"><img src="images/items/idly.png"/><div class="item-name">Idly & Sambar</div><div class="item-price">3</div></div>
 </div>
 
 <!-- 🧊 Icy Cool Drinks Buttons -->
 <div id="drinks-buttons" class="sub-buttons">
   <button onclick="showItems('juice')"><img src="images/icons/juice.png"/>Juice</button>
+  <button onclick="showItems('shake')"><img src="images/icons/shake.png"/>Shake</button>
+  <button onclick="showItems('salad')"><img src="images/icons/salad.png"/>Fruit Salad</button>
+  <button onclick="showItems('faluda')"><img src="images/icons/faluda.png"/>Faluda</button>
 </div>
 
-<!-- 🍊 Juice Items -->
+<!-- 🥤 Icy Cool Drinks Items -->
 <div id="juice" class="items">
   <div class="item"><img src="images/items/orange-juice.png"/><div class="item-name">Orange Juice</div><div class="item-price">6</div></div>
 </div>
-
-<!-- 🥤 Fizzy Refreshments Buttons -->
-<div id="refresh-buttons" class="sub-buttons">
-  <button onclick="showItems('mojito')"><img src="images/icons/mojito.png"/>Mojito</button>
+<div id="shake" class="items">
+  <div class="item"><img src="images/items/mango-shake.png"/><div class="item-name">Mango Shake</div><div class="item-price">5</div></div>
+</div>
+<div id="salad" class="items">
+  <div class="item"><img src="images/items/fruit-salad.png"/><div class="item-name">Fruit Salad</div><div class="item-price">4</div></div>
+</div>
+<div id="faluda" class="items">
+  <div class="item"><img src="images/items/faluda.png"/><div class="item-name">Special Faluda</div><div class="item-price">6</div></div>
 </div>
 
-<!-- 🍃 Mojito Items -->
-<div id="mojito" class="items">
+<!-- 💧 Fizzy Refreshments Buttons -->
+<div id="refresh-buttons" class="sub-buttons">
+  <button onclick="showItems('mojitos')"><img src="images/icons/mojito.png"/>Mojitos</button>
+  <button onclick="showItems('lime')"><img src="images/icons/lime.png"/>Lime</button>
+  <button onclick="showItems('lassi')"><img src="images/icons/lassi.png"/>Lassi</button>
+</div>
+
+<!-- 🍹 Fizzy Refreshments Items -->
+<div id="mojitos" class="items">
   <div class="item"><img src="images/items/mint-mojito.png"/><div class="item-name">Mint Mojito</div><div class="item-price">4</div></div>
 </div>
+<div id="lime" class="items">
+  <div class="item"><img src="images/items/sweet-lime.png"/><div class="item-name">Sweet Lime</div><div class="item-price">2</div></div>
+</div>
+<div id="lassi" class="items">
+  <div class="item"><img src="images/items/mango-lassi.png"/><div class="item-name">Mango Lassi</div><div class="item-price">3</div></div>
+</div>
 
-<!-- 📜 Scripts -->
+<!-- 🔁 Script -->
 <script>
   function hideAll(className) {
     document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
