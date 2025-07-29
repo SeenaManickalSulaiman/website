@@ -28,10 +28,10 @@
     }
 
     .section-nav img {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       display: block;
-      margin: 0 auto 10px;
+      margin: 0 auto 12px;
     }
 
     .sub-buttons {
@@ -46,22 +46,29 @@
       display: flex;
     }
 
-    .sub-buttons button {
-      padding: 10px 18px;
+    .sub-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+
+    .sub-button-wrapper img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 6px;
+      border-radius: 50%;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    .sub-button-wrapper button {
+      padding: 8px 16px;
       border-radius: 20px;
       border: 2px solid #e63946;
       background-color: #fff;
       color: #e63946;
-      cursor: pointer;
       font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sub-buttons img {
-      width: 20px;
-      height: 20px;
+      cursor: pointer;
     }
 
     .items {
@@ -131,9 +138,18 @@
 
 <!-- 🔘 Hot Corner Buttons -->
 <div id="hot-buttons" class="sub-buttons">
-  <button onclick="showItems('tea')"><img src="image/1.Tea.jpg"/>Tea</button>
-  <button onclick="showItems('coffee')"><img src="image/1.coffee.png"/>Coffee</button>
-  <button onclick="showItems('snacks')"><img src="image/1.Snacks.png"/>Snacks</button>
+  <div class="sub-button-wrapper">
+    <img src="image/1.Tea.jpg" alt="Tea"/>
+    <button onclick="showItems('tea')">Tea</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="image/1.coffee.png" alt="Coffee"/>
+    <button onclick="showItems('coffee')">Coffee</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="image/1.Snacks.png" alt="Snacks"/>
+    <button onclick="showItems('snacks')">Snacks</button>
+  </div>
 </div>
 
 <!-- 🍵 Hot Corner Items -->
@@ -151,8 +167,14 @@
 
 <!-- 🥪 Stuffed Sandwiches Buttons -->
 <div id="stuffed-buttons" class="sub-buttons">
-  <button onclick="showItems('burgers')"><img src="images/icons/burger.png"/>Burgers</button>
-  <button onclick="showItems('sandwiches')"><img src="images/icons/sandwich.png"/>Sandwiches</button>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/burger.png" alt="Burgers"/>
+    <button onclick="showItems('burgers')">Burgers</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/sandwich.png" alt="Sandwiches"/>
+    <button onclick="showItems('sandwiches')">Sandwiches</button>
+  </div>
 </div>
 
 <!-- 🍔 Stuffed Sandwiches Items -->
@@ -165,9 +187,18 @@
 
 <!-- 🍛 Meals & Mains Buttons -->
 <div id="meals-buttons" class="sub-buttons">
-  <button onclick="showItems('bread')"><img src="images/icons/bread.png"/>Bread</button>
-  <button onclick="showItems('curry')"><img src="images/icons/curry.png"/>Curry</button>
-  <button onclick="showItems('breakfast')"><img src="images/icons/breakfast.png"/>Breakfast</button>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/bread.png" alt="Bread"/>
+    <button onclick="showItems('bread')">Bread</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/curry.png" alt="Curry"/>
+    <button onclick="showItems('curry')">Curry</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/breakfast.png" alt="Breakfast"/>
+    <button onclick="showItems('breakfast')">Breakfast</button>
+  </div>
 </div>
 
 <!-- 🍴 Meals & Mains Items -->
@@ -183,10 +214,22 @@
 
 <!-- 🧊 Icy Cool Drinks Buttons -->
 <div id="drinks-buttons" class="sub-buttons">
-  <button onclick="showItems('juice')"><img src="images/icons/juice.png"/>Juice</button>
-  <button onclick="showItems('shake')"><img src="images/icons/shake.png"/>Shake</button>
-  <button onclick="showItems('salad')"><img src="images/icons/salad.png"/>Fruit Salad</button>
-  <button onclick="showItems('faluda')"><img src="images/icons/faluda.png"/>Faluda</button>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/juice.png" alt="Juice"/>
+    <button onclick="showItems('juice')">Juice</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/shake.png" alt="Shake"/>
+    <button onclick="showItems('shake')">Shake</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/salad.png" alt="Fruit Salad"/>
+    <button onclick="showItems('salad')">Fruit Salad</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/faluda.png" alt="Faluda"/>
+    <button onclick="showItems('faluda')">Faluda</button>
+  </div>
 </div>
 
 <!-- 🥤 Icy Cool Drinks Items -->
@@ -205,9 +248,18 @@
 
 <!-- 💧 Fizzy Refreshments Buttons -->
 <div id="refresh-buttons" class="sub-buttons">
-  <button onclick="showItems('mojitos')"><img src="images/icons/mojito.png"/>Mojitos</button>
-  <button onclick="showItems('lime')"><img src="images/icons/lime.png"/>Lime</button>
-  <button onclick="showItems('lassi')"><img src="images/icons/lassi.png"/>Lassi</button>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/mojito.png" alt="Mojitos"/>
+    <button onclick="showItems('mojitos')">Mojitos</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/lime.png" alt="Lime"/>
+    <button onclick="showItems('lime')">Lime</button>
+  </div>
+  <div class="sub-button-wrapper">
+    <img src="images/icons/lassi.png" alt="Lassi"/>
+    <button onclick="showItems('lassi')">Lassi</button>
+  </div>
 </div>
 
 <!-- 🍹 Fizzy Refreshments Items -->
