@@ -2,302 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HBaker's Full Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HBaker's Menu</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-image: url('image/menu /hot corner/background.png'); 
+      margin: 0;
+      background-image: url('image/menu%20/hot%20corner/background.png'); /* Background */
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-position: center;
-      margin: 0;
-      padding: 20px;
-  }
+    }
 
-    .section-nav {
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
       display: flex;
-      justify-content: space-around;
-      background-image: url('image/menu /hot corner/background2.png');
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .banner {
+      background-image: url('file-Un2oGoCzpQfB2YoxjDpF9a');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-    }
-
-
-    .section-nav .section-item {
+      padding: 80px 20px;
       text-align: center;
-      cursor: pointer;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
     }
 
-    .section-nav img {
-      width: 240px;
-      height: 240px;
-      display: block;
-      margin: 0 auto 12px;
-    }
-
-    .sub-buttons {
-      display: none;
+    .section-grid {
+      display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .sub-buttons.active {
-      display: flex;
-    }
-
-    .sub-button-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px;
-    }
-
-    .sub-button-wrapper img {
-      width: 240px;
-      height: 240px;
-      margin-bottom: 6px;
-      border-radius: 50%;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    }
-
-    .sub-button-wrapper button {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 2px solid #e63946;
-      background-color: #fff;
-      color: #e63946;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .items {
-      display: none;
-      flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 20px;
     }
 
-    .items.active {
-      display: flex;
-    }
-
-    .item {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      width: 220px;
+    .section-box {
+      background: linear-gradient(135deg, #fff6e5, #ffe);
+      border: 2px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 20px;
+      width: 180px;
       text-align: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+      cursor: pointer;
     }
 
-    .item img {
-      width: 120px;
-      height: 120px;
+    .section-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .section-box img {
+      height: 60px;
       margin-bottom: 10px;
-      border-radius: 6px;
     }
 
-    .item-name {
+    .section-box span {
       font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .item-price {
-      color: #e63946;
-      font-weight: bold;
+      font-size: 16px;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-<!-- 🔝 Section Navigation -->
-<div class="section-nav">
-  <div class="section-item" onclick="showSection('hot')">
-    <img src="image/1.hot corner.png" alt="Hot Corner"/>
-    <div>Hot Corner</div>
-  </div>
-  <div class="section-item" onclick="showSection('stuffed')">
-    <img src="images/sections/stuffed.png" alt="Stuffed Sandwiches"/>
-    <div>Stuffed Sandwiches</div>
-  </div>
-  <div class="section-item" onclick="showSection('meals')">
-    <img src="images/sections/meals.png" alt="Meals & Mains"/>
-    <div>Meals & Mains</div>
-  </div>
-  <div class="section-item" onclick="showSection('drinks')">
-    <img src="images/sections/drinks.png" alt="Icy Cool Drinks"/>
-    <div>Icy Cool Drinks</div>
-  </div>
-  <div class="section-item" onclick="showSection('refresh')">
-    <img src="images/sections/refresh.png" alt="Fizzy Refreshments"/>
-    <div>Fizzy Refreshments</div>
-  </div>
-</div>
+  <!-- 🔝 Top Navigation -->
+  <header>
+    <div class="logo">
+      <img src="image/logo.png" alt="HBaker's Logo">
+      <div>
+        <div style="font-size: 24px; font-weight: bold;">HBaker's</div>
+        <div style="font-size: 14px; font-style: italic;">Your Daily Treat</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-<!-- 🔘 Hot Corner Buttons -->
-<div id="hot-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="image/1.Tea.jpg" alt="Tea"/>
-    <button onclick="showItems('tea')">Tea</button>
+  <!-- 📣 Banner Heading -->
+  <div class="banner">
+    OUR MENU
   </div>
-  <div class="sub-button-wrapper">
-    <img src="image/1.coffee.png" alt="Coffee"/>
-    <button onclick="showItems('coffee')">Coffee</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/1.snacks.png" alt="Snacks"/>
-    <button onclick="showItems('snacks')">Snacks</button>
-  </div>
-</div>
 
-<!-- 🍵 Hot Corner Items -->
-<div id="tea" class="items">
-  <div class="item"><img src="image/1.1.1 karak tea.png"/><div class="item-name">Karak Tea</div><div class="item-price">1</div></div>
-  <div class="item"><img src="image/1.1.1 sada tea.png"/><div class="item-name">Sada Tea</div><div class="item-price">1</div></div>
-</div>
-<div id="coffee" class="items">
-  <div class="item"><img src="images/items/black-coffee.png"/><div class="item-name">Black Coffee</div><div class="item-price">2</div></div>
-</div>
-<div id="snacks" class="items">
-  <div class="item"><img src="images/items/samosa.png"/><div class="item-name">Samosa (Veg)</div><div class="item-price">1</div></div>
-  <div class="item"><img src="images/items/chicken-roll.png"/><div class="item-name">Chicken Roll</div><div class="item-price">2</div></div>
-</div>
-
-<!-- 🥪 Stuffed Sandwiches Buttons -->
-<div id="stuffed-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="images/icons/burger.png" alt="Burgers"/>
-    <button onclick="showItems('burgers')">Burgers</button>
+  <!-- 🧭 Section Buttons Grid -->
+  <div class="section-grid">
+    <div class="section-box">
+      <img src="image/icons/tea.png" alt="Tea">
+      <span>Tea</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/coffee.png" alt="Coffee">
+      <span>Coffee</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/snacks.png" alt="Snacks">
+      <span>Snacks</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/burger.png" alt="Burgers">
+      <span>Burgers</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/sandwich.png" alt="Sandwiches">
+      <span>Sandwiches</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/breakfast.png" alt="Breakfast">
+      <span>Breakfast</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/juice.png" alt="Juice">
+      <span>Juices</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/faluda.png" alt="Faluda">
+      <span>Faluda</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/lime.png" alt="Lime">
+      <span>Lime</span>
+    </div>
+    <div class="section-box">
+      <img src="image/icons/lassi.png" alt="Lassi">
+      <span>Lassi</span>
+    </div>
   </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/sandwich.png" alt="Sandwiches"/>
-    <button onclick="showItems('sandwiches')">Sandwiches</button>
-  </div>
-</div>
-
-<!-- 🍔 Stuffed Sandwiches Items -->
-<div id="burgers" class="items">
-  <div class="item"><img src="images/items/chicken-burger.png"/><div class="item-name">Chicken Burger</div><div class="item-price">5</div></div>
-</div>
-<div id="sandwiches" class="items">
-  <div class="item"><img src="images/items/club-sandwich.png"/><div class="item-name">Club Sandwich</div><div class="item-price">4</div></div>
-</div>
-
-<!-- 🍛 Meals & Mains Buttons -->
-<div id="meals-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="images/icons/bread.png" alt="Bread"/>
-    <button onclick="showItems('bread')">Bread</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/curry.png" alt="Curry"/>
-    <button onclick="showItems('curry')">Curry</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/breakfast.png" alt="Breakfast"/>
-    <button onclick="showItems('breakfast')">Breakfast</button>
-  </div>
-</div>
-
-<!-- 🍴 Meals & Mains Items -->
-<div id="bread" class="items">
-  <div class="item"><img src="images/items/parotta.png"/><div class="item-name">Parotta</div><div class="item-price">1</div></div>
-</div>
-<div id="curry" class="items">
-  <div class="item"><img src="images/items/beef-curry.png"/><div class="item-name">Beef Curry</div><div class="item-price">4</div></div>
-</div>
-<div id="breakfast" class="items">
-  <div class="item"><img src="images/items/idly.png"/><div class="item-name">Idly & Sambar</div><div class="item-price">3</div></div>
-</div>
-
-<!-- 🧊 Icy Cool Drinks Buttons -->
-<div id="drinks-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="images/icons/juice.png" alt="Juice"/>
-    <button onclick="showItems('juice')">Juice</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/shake.png" alt="Shake"/>
-    <button onclick="showItems('shake')">Shake</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/salad.png" alt="Fruit Salad"/>
-    <button onclick="showItems('salad')">Fruit Salad</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/faluda.png" alt="Faluda"/>
-    <button onclick="showItems('faluda')">Faluda</button>
-  </div>
-</div>
-
-<!-- 🥤 Icy Cool Drinks Items -->
-<div id="juice" class="items">
-  <div class="item"><img src="images/items/orange-juice.png"/><div class="item-name">Orange Juice</div><div class="item-price">6</div></div>
-</div>
-<div id="shake" class="items">
-  <div class="item"><img src="images/items/mango-shake.png"/><div class="item-name">Mango Shake</div><div class="item-price">5</div></div>
-</div>
-<div id="salad" class="items">
-  <div class="item"><img src="images/items/fruit-salad.png"/><div class="item-name">Fruit Salad</div><div class="item-price">4</div></div>
-</div>
-<div id="faluda" class="items">
-  <div class="item"><img src="images/items/faluda.png"/><div class="item-name">Special Faluda</div><div class="item-price">6</div></div>
-</div>
-
-<!-- 💧 Fizzy Refreshments Buttons -->
-<div id="refresh-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="images/icons/mojito.png" alt="Mojitos"/>
-    <button onclick="showItems('mojitos')">Mojitos</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/lime.png" alt="Lime"/>
-    <button onclick="showItems('lime')">Lime</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="images/icons/lassi.png" alt="Lassi"/>
-    <button onclick="showItems('lassi')">Lassi</button>
-  </div>
-</div>
-
-<!-- 🍹 Fizzy Refreshments Items -->
-<div id="mojitos" class="items">
-  <div class="item"><img src="images/items/mint-mojito.png"/><div class="item-name">Mint Mojito</div><div class="item-price">4</div></div>
-</div>
-<div id="lime" class="items">
-  <div class="item"><img src="images/items/sweet-lime.png"/><div class="item-name">Sweet Lime</div><div class="item-price">2</div></div>
-</div>
-<div id="lassi" class="items">
-  <div class="item"><img src="images/items/mango-lassi.png"/><div class="item-name">Mango Lassi</div><div class="item-price">3</div></div>
-</div>
-
-<!-- 🔁 Script -->
-<script>
-  function hideAll(className) {
-    document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
-  }
-
-  function showSection(sectionId) {
-    hideAll('sub-buttons');
-    hideAll('items');
-    document.getElementById(sectionId + '-buttons').classList.add('active');
-  }
-
-  function showItems(itemId) {
-    hideAll('items');
-    document.getElementById(itemId).classList.add('active');
-  }
-</script>
 
 </body>
 </html>
