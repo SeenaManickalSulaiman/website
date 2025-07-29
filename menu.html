@@ -99,15 +99,14 @@
       display: block;
       margin: 0 auto 12px;
     }
-    .sub-buttons, .items {
+    .sub-buttons {
       display: none;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin: 30px auto;
-      max-width: 1000px;
+      margin-bottom: 20px;
     }
-    .sub-buttons.active, .items.active {
+    .sub-buttons.active {
       display: flex;
     }
     .sub-button-wrapper {
@@ -132,6 +131,15 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .items {
+      display: none;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .items.active {
+      display: flex;
+    }
     .item {
       background-color: #fff;
       border: 1px solid #ddd;
@@ -140,14 +148,12 @@
       width: 220px;
       text-align: center;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      color: #000;
     }
     .item img {
       width: 120px;
       height: 120px;
       margin-bottom: 10px;
       border-radius: 6px;
-      object-fit: cover;
     }
     .item-name {
       font-weight: bold;
@@ -160,21 +166,21 @@
   </style>
 </head>
 <body>
-  <!-- All content remains intact here (navbar, banner, sections, etc.) -->
-
-  <script>
-    function hideAll(className) {
-      document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
-    }
-    function showSection(sectionId) {
-      hideAll('sub-buttons');
-      hideAll('items');
-      document.getElementById(sectionId + '-buttons').classList.add('active');
-    }
-    function showItems(itemId) {
-      hideAll('items');
-      document.getElementById(itemId).classList.add('active');
-    }
-  </script>
+<!-- All your HTML content here remains unchanged -->
+<!-- JavaScript -->
+<script>
+  function hideAll(className) {
+    document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
+  }
+  function showSection(sectionId) {
+    hideAll('sub-buttons');
+    hideAll('items');
+    document.getElementById(sectionId + '-buttons').classList.add('active');
+  }
+  function showItems(itemId) {
+    hideAll('items');
+    document.getElementById(itemId).classList.add('active');
+  }
+</script>
 </body>
 </html>
