@@ -2,161 +2,225 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HBaker's Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-image: url('image/menu%20/hot%20corner/background.png'); /* Background */
+      background: url('image/about1.png') no-repeat center center fixed;
       background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
     }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.85);
-      color: white;
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+    header.navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 20px 40px;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.85);
     }
-
-    header .logo {
+    .logo-section {
       display: flex;
       align-items: center;
-      gap: 10px;
     }
-
-    header img {
-      height: 50px;
+    .logo-section img {
+      height: 60px;
+      margin-right: 15px;
     }
-
-    header nav a {
-      color: white;
+    .logo-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0;
+    }
+    .logo-text p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      color: #ccc;
+      margin: 0;
+    }
+    .nav-links a {
       margin-left: 30px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-
+    .nav-links a:hover {
+      color: #e63946;
+    }
     .banner {
-      background-image: url('file-Un2oGoCzpQfB2YoxjDpF9a');
-      background-size: cover;
-      background-position: center;
-      padding: 80px 20px;
       text-align: center;
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
+      background: url('image/menu/banner.png') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px;
     }
-
-    .section-grid {
+    .banner h2 {
+      font-size: 3rem;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    .banner p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      color: #ffd700;
+      margin-top: 10px;
+    }
+    .menu-sections {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin: 40px auto;
+      max-width: 1100px;
       gap: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 40px 20px;
     }
-
-    .section-box {
-      background: linear-gradient(135deg, #fff6e5, #ffe);
-      border: 2px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 20px;
-      width: 180px;
+    .menu-section {
+      width: 30%;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
       cursor: pointer;
     }
-
-    .section-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    .menu-section img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #fff;
     }
-
-    .section-box img {
-      height: 60px;
+    .menu-section h3 {
+      margin-top: 10px;
+      font-size: 1.3rem;
+    }
+    .sub-buttons, .items {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+    .sub-buttons.active, .items.active {
+      display: flex;
+    }
+    .sub-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+    .sub-button-wrapper img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       margin-bottom: 10px;
     }
-
-    .section-box span {
+    .sub-button-wrapper button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 2px solid #e63946;
+      background-color: #fff;
+      color: #e63946;
       font-weight: bold;
-      font-size: 16px;
-      color: #333;
+      cursor: pointer;
+    }
+    .item {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .item-name {
+      font-weight: bold;
+    }
+    .item-price {
+      color: #e63946;
     }
   </style>
 </head>
 <body>
-
-  <!-- 🔝 Top Navigation -->
-  <header>
-    <div class="logo">
-      <img src="image/logo.png" alt="HBaker's Logo">
-      <div>
-        <div style="font-size: 24px; font-weight: bold;">HBaker's</div>
-        <div style="font-size: 14px; font-style: italic;">Your Daily Treat</div>
+  <header class="navbar">
+    <div class="logo-section">
+      <img src="image/Logo.png" alt="HBaker's Logo" />
+      <div class="logo-text">
+        <h1>HBaker's</h1>
+        <p>Your Daily Treat</p>
       </div>
     </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Menu</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- 📣 Banner Heading -->
-  <div class="banner">
-    OUR MENU
-  </div>
+  <section class="banner">
+    <h2>Our Menu</h2>
+    <p>Explore our delicious treats made with love</p>
+  </section>
 
-  <!-- 🧭 Section Buttons Grid -->
-  <div class="section-grid">
-    <div class="section-box">
-      <img src="image/icons/tea.png" alt="Tea">
-      <span>Tea</span>
+  <section class="menu-sections">
+    <div class="menu-section" onclick="showSection('hb')">
+      <img src="image/menu/hb_special.jpg" alt="HB Special">
+      <h3>HB Special</h3>
     </div>
-    <div class="section-box">
-      <img src="image/icons/coffee.png" alt="Coffee">
-      <span>Coffee</span>
+    <div class="menu-section" onclick="showSection('hot')">
+      <img src="image/menu/hot_corner.jpg" alt="Hot Corner">
+      <h3>Hot Corner</h3>
     </div>
-    <div class="section-box">
-      <img src="image/icons/snacks.png" alt="Snacks">
-      <span>Snacks</span>
+    <div class="menu-section" onclick="showSection('sandwiches')">
+      <img src="image/menu/sandwich.jpg" alt="Sandwiches">
+      <h3>Sandwiches</h3>
     </div>
-    <div class="section-box">
-      <img src="image/icons/burger.png" alt="Burgers">
-      <span>Burgers</span>
+    <div class="menu-section" onclick="showSection('meals')">
+      <img src="image/menu/meals.jpg" alt="Meals & Mains">
+      <h3>Meals & Mains</h3>
     </div>
-    <div class="section-box">
-      <img src="image/icons/sandwich.png" alt="Sandwiches">
-      <span>Sandwiches</span>
+    <div class="menu-section" onclick="showSection('drinks')">
+      <img src="image/menu/icy_drinks.jpg" alt="Icy Cool Drinks">
+      <h3>Icy Cool Drinks</h3>
     </div>
-    <div class="section-box">
-      <img src="image/icons/breakfast.png" alt="Breakfast">
-      <span>Breakfast</span>
+    <div class="menu-section" onclick="showSection('refresh')">
+      <img src="image/menu/fizzy.jpg" alt="Fizzy Refreshments">
+      <h3>Fizzy Refreshments</h3>
     </div>
-    <div class="section-box">
-      <img src="image/icons/juice.png" alt="Juice">
-      <span>Juices</span>
-    </div>
-    <div class="section-box">
-      <img src="image/icons/faluda.png" alt="Faluda">
-      <span>Faluda</span>
-    </div>
-    <div class="section-box">
-      <img src="image/icons/lime.png" alt="Lime">
-      <span>Lime</span>
-    </div>
-    <div class="section-box">
-      <img src="image/icons/lassi.png" alt="Lassi">
-      <span>Lassi</span>
-    </div>
-  </div>
+  </section>
 
+  <!-- Add corresponding <div id="hb-buttons" class="sub-buttons"> and <div id="hb" class="items"> below, like previous structure -->
+
+  <script>
+    function hideAll(className) {
+      document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
+    }
+
+    function showSection(sectionId) {
+      hideAll('sub-buttons');
+      hideAll('items');
+      const btns = document.getElementById(sectionId + '-buttons');
+      const items = document.getElementById(sectionId);
+      if (btns) btns.classList.add('active');
+      if (items) items.classList.add('active');
+    }
+  </script>
 </body>
 </html>
