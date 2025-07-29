@@ -79,14 +79,14 @@
     }
     .section-nav {
       display: flex;
-      justify-content: space-around;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
       background-image: url('image/menu/hot corner/background2.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
       margin-bottom: 30px;
     }
     .section-nav .section-item {
@@ -96,8 +96,24 @@
     .section-nav img {
       width: 120px;
       height: 120px;
-      display: block;
-      margin: 0 auto 12px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 10px;
+    }
+    .section-nav button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 2px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .section-nav button:hover {
+      background-color: #e63946;
+      color: #fff;
+      border-color: #e63946;
     }
     .sub-buttons, .items {
       display: none;
@@ -156,7 +172,6 @@
   </style>
 </head>
 <body>
- <body>
   <header class="navbar">
     <div class="logo-section">
       <img src="image/Logo.png" alt="HBaker's Logo" />
@@ -181,32 +196,32 @@
   <div class="section-nav">
     <div class="section-item" onclick="showSection('hot')">
       <img src="image/menu /hot corner/1.hot corner.png" alt="Hot Corner"/>
-      <div>Hot Corner</div>
+      <button>Hot Corner</button>
     </div>
     <div class="section-item" onclick="showSection('special')">
       <img src="image/menu/hb_special.png" alt="HB Special"/>
-      <div>HB Special</div>
+      <button>HB Special</button>
     </div>
     <div class="section-item" onclick="showSection('sandwiches')">
       <img src="image/menu/sandwiches.png" alt="Sandwiches"/>
-      <div>Sandwiches</div>
+      <button>Sandwiches</button>
     </div>
     <div class="section-item" onclick="showSection('meals')">
       <img src="image/menu/meals_mains.png" alt="Meals & Mains"/>
-      <div>Meals & Mains</div>
+      <button>Meals & Mains</button>
     </div>
     <div class="section-item" onclick="showSection('drinks')">
       <img src="image/menu/icy_cool_drinks.png" alt="Icy Cool Drinks"/>
-      <div>Icy Cool Drinks</div>
+      <button>Icy Cool Drinks</button>
     </div>
     <div class="section-item" onclick="showSection('fizzy')">
       <img src="image/menu/fizzy_refreshments.png" alt="Fizzy Refreshments"/>
-      <div>Fizzy Refreshments</div>
+      <button>Fizzy Refreshments</button>
     </div>
   </div>
 
   <!-- Example Sub-Section -->
-  <div id="hot-buttons" class="sub-buttons">
+  <div id="hot-buttons" class="sub-buttons active">
     <div class="sub-button-wrapper">
       <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea"/>
       <button onclick="showItems('tea')">Tea</button>
@@ -215,10 +230,9 @@
       <img src="image/menu /hot corner/1.coffee.png" alt="Coffee"/>
       <button onclick="showItems('coffee')">Coffee</button>
     </div>
-  </div>
-   <div class="sub-button-wrapper">
+    <div class="sub-button-wrapper">
       <img src="image/menu /hot corner/Kerala Snacks.png" alt="Snacks"/>
-      <button onclick="showItems('coffee')">Snacks</button>
+      <button onclick="showItems('snacks')">Snacks</button>
     </div>
   </div>
 
@@ -238,6 +252,14 @@
     </div>
   </div>
 
+  <div id="snacks" class="items">
+    <div class="item">
+      <img src="image/hot/snack_plate.png" alt="Kerala Snacks"/>
+      <div class="item-name">Kerala Mixed Snacks</div>
+      <div class="item-price">5 AED</div>
+    </div>
+  </div>
+
   <script>
     function hideAll(className) {
       document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
@@ -246,14 +268,15 @@
     function showSection(sectionId) {
       hideAll('sub-buttons');
       hideAll('items');
-      document.getElementById(sectionId + '-buttons')?.classList.add('active');
+      const section = document.getElementById(sectionId + '-buttons');
+      if (section) section.classList.add('active');
     }
 
     function showItems(itemId) {
       hideAll('items');
-      document.getElementById(itemId)?.classList.add('active');
+      const items = document.getElementById(itemId);
+      if (items) items.classList.add('active');
     }
   </script>
 </body>
 </html>
-
