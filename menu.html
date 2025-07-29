@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      background-color: #000; /* Solid black */
+      background-color: #000;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       position: relative;
@@ -77,9 +77,8 @@
       margin-top: 10px;
     }
     .section-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
       padding: 40px 20px;
       background-image: url('image/menu/hot corner/background2.png');
@@ -87,32 +86,33 @@
       background-position: center;
       border-radius: 8px;
       margin-bottom: 30px;
+      justify-items: center;
+      align-items: center;
     }
-    .section-nav .section-item {
+    .section-item {
       text-align: center;
       cursor: pointer;
     }
-    .section-nav img {
+    .section-item img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       border: 3px solid #fff;
       margin-bottom: 10px;
     }
-    .section-nav button {
-      padding: 8px 16px;
-      border-radius: 20px;
+    .section-item button {
+      padding: 10px 20px;
+      border-radius: 25px;
       border: 2px solid #fff;
-      background-color: transparent;
+      background: transparent;
       color: #fff;
       font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
-    .section-nav button:hover {
+    .section-item button:hover {
       background-color: #e63946;
-      color: #fff;
       border-color: #e63946;
+      color: #fff;
     }
     .sub-buttons, .items {
       display: none;
@@ -219,7 +219,6 @@
     </div>
   </div>
 
-  <!-- Example Sub-Section -->
   <div id="hot-buttons" class="sub-buttons active">
     <div class="sub-button-wrapper">
       <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea"/>
