@@ -102,37 +102,14 @@
       border-color: #e63946;
       color: #fff;
     }
-    .sub-buttons, .items {
+    .items {
       display: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 30px auto;
-      max-width: 1000px;
-    }
-    .sub-buttons.active, .items.active {
-      display: flex;
-    }
-    .sub-button-wrapper {
-      display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 10px;
+      text-align: center;
     }
-    .sub-button-wrapper img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    .sub-button-wrapper button {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 2px solid #e63946;
-      background-color: #fff;
-      color: #e63946;
-      font-weight: bold;
-      cursor: pointer;
+    .items.active {
+      display: flex;
     }
     .item {
       background-color: #fff;
@@ -142,6 +119,7 @@
       padding: 10px;
       width: 200px;
       text-align: center;
+      margin: 10px;
     }
     .item img {
       width: 100px;
@@ -155,6 +133,11 @@
     }
     .item-price {
       color: #e63946;
+    }
+    .item-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   </style>
 </head>
@@ -175,92 +158,74 @@
     </nav>
   </header>
 
-  <section class="banner">
-    <!-- Text and tagline removed -->
-  </section>
+  <section class="banner"></section>
 
   <div class="section-nav">
-    <div class="section-item" onclick="showSection('hot')">
-      <img src="image/menu/Hot Corner.png" alt="Hot Corner"/>
-      <button>Hot Corner</button>
+    <div class="section-item" onclick="showItems('tea')">
+      <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea" />
+      <button>Tea</button>
     </div>
-    <div class="section-item" onclick="showSection('special')">
-      <img src="image/menu/HB Specials.png" alt="HB Special"/>
-      <button>HB Special</button>
+    <div class="section-item" onclick="showItems('coffee')">
+      <img src="image/menu /hot corner/1.coffee.png" alt="Coffee" />
+      <button>Coffee</button>
     </div>
-    <div class="section-item" onclick="showSection('sandwiches')">
-      <img src="image/menu/Sandwiches.png" alt="Sandwiches"/>
-      <button>Sandwiches</button>
-    </div>
-    <div class="section-item" onclick="showSection('meals')">
-      <img src="image/menu/Meals_Mains.png" alt="Meals & Mains"/>
-      <button>Meals & Mains</button>
-    </div>
-    <div class="section-item" onclick="showSection('drinks')">
-      <img src="image/menu/Drinks.png" alt="Icy Cool Drinks"/>
-      <button>Icy Cool Drinks</button>
-    </div>
-    <div class="section-item" onclick="showSection('fizzy')">
-      <img src="image/menu/fizzy.png" alt="Fizzy Refreshments"/>
-      <button>Fizzy Refreshments</button>
+    <div class="section-item" onclick="showItems('snacks')">
+      <img src="image/menu /hot corner/Kerala Snacks.png" alt="Snacks" />
+      <button>Snacks</button>
     </div>
   </div>
 
-  <div id="hot-buttons" class="sub-buttons active">
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea"/>
-      <button onclick="showItems('tea')">Tea</button>
-    </div>
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.coffee.png" alt="Coffee"/>
-      <button onclick="showItems('coffee')">Coffee</button>
-    </div>
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/Kerala Snacks.png" alt="Snacks"/>
-      <button onclick="showItems('snacks')">Snacks</button>
-    </div>
-  </div>
-
-  <div id="tea" class="items">
-    <div class="item">
-      <img src="image/hot/karak_tea.png" alt="Karak Tea"/>
-      <div class="item-name">Karak Tea</div>
-      <div class="item-price">1 AED</div>
+  <div id="tea" class="items active">
+    <h2>Tea</h2>
+    <div class="item-group">
+      <div class="item"><img src="image/hot/tea/sada.png"><div class="item-name">Sada Tea</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/tea/karak.png"><div class="item-name">Karak Tea</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/tea/freshmilk.png"><div class="item-name">Fresh Milk</div><div class="item-price">2 / 4 AED</div></div>
+      <div class="item"><img src="image/hot/tea/blacktea.png"><div class="item-name">Black Tea</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/tea/blacktea_full.png"><div class="item-name">Black Tea (Full Option)</div><div class="item-price">1.5 AED</div></div>
+      <div class="item"><img src="image/hot/tea/greentea.png"><div class="item-name">Green Tea</div><div class="item-price">1 / 1.5 AED</div></div>
+      <div class="item"><img src="image/hot/tea/lemontea.png"><div class="item-name">Lemon Tea</div><div class="item-price">1.5 AED</div></div>
+      <div class="item"><img src="image/hot/tea/masala.png"><div class="item-name">Masala Tea</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/tea/ginger.png"><div class="item-name">Ginger Tea</div><div class="item-price">1.5 AED</div></div>
     </div>
   </div>
 
   <div id="coffee" class="items">
-    <div class="item">
-      <img src="image/hot/black_coffee.png" alt="Black Coffee"/>
-      <div class="item-name">Black Coffee</div>
-      <div class="item-price">2 AED</div>
+    <h2>Coffee</h2>
+    <div class="item-group">
+      <div class="item"><img src="image/hot/coffee/black.png"><div class="item-name">Black Coffee</div><div class="item-price">2 / 4 AED</div></div>
+      <div class="item"><img src="image/hot/coffee/lemon.png"><div class="item-name">Black Coffee Lemon</div><div class="item-price">2.5 AED</div></div>
+      <div class="item"><img src="image/hot/coffee/milk.png"><div class="item-name">Milk Coffee</div><div class="item-price">3 / 6 AED</div></div>
+      <div class="item"><img src="image/hot/coffee/cold.png"><div class="item-name">Cold Coffee</div><div class="item-price">5 AED</div></div>
+      <div class="item"><img src="image/hot/coffee/chukku.png"><div class="item-name">Chukku Kaappi</div><div class="item-price">2 / 4 AED</div></div>
+      <div class="item"><img src="image/hot/coffee/nescafe.png"><div class="item-name">Nescafe Instant Coffee</div><div class="item-price">4 AED</div></div>
     </div>
   </div>
 
   <div id="snacks" class="items">
-    <div class="item">
-      <img src="image/hot/snack_plate.png" alt="Kerala Snacks"/>
-      <div class="item-name">Kerala Mixed Snacks</div>
-      <div class="item-price">5 AED</div>
+    <h2>Snacks</h2>
+    <div class="item-group">
+      <div class="item"><img src="image/hot/snacks/samosa_veg.png"><div class="item-name">Samosa (Veg)</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/samosa_chicken.png"><div class="item-name">Samosa (Chicken)</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/spring_roll.png"><div class="item-name">Spring Roll</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/chicken_roll.png"><div class="item-name">Chicken Roll</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/cutlet.png"><div class="item-name">Cutlet</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/pazham_pori.png"><div class="item-name">Pazham Pori</div><div class="item-price">1.5 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/ney_pathiri.png"><div class="item-name">Ney Pathiri</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/pakkoda.png"><div class="item-name">Pakkoda</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/poo_cake.png"><div class="item-name">Poo Cake</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/madakku.png"><div class="item-name">Madakku</div><div class="item-price">2 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/mutta_bajji.png"><div class="item-name">Mutta Bajji</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/mulaku_bajji.png"><div class="item-name">Mulaku Bajji</div><div class="item-price">1 AED</div></div>
+      <div class="item"><img src="image/hot/snacks/potato_bajji.png"><div class="item-name">Potato Bajji (2pcs)</div><div class="item-price">1 AED</div></div>
     </div>
   </div>
 
   <script>
-    function hideAll(className) {
-      document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
-    }
-
-    function showSection(sectionId) {
-      hideAll('sub-buttons');
-      hideAll('items');
-      const section = document.getElementById(sectionId + '-buttons');
+    function showItems(id) {
+      document.querySelectorAll('.items').forEach(item => item.classList.remove('active'));
+      const section = document.getElementById(id);
       if (section) section.classList.add('active');
-    }
-
-    function showItems(itemId) {
-      hideAll('items');
-      const items = document.getElementById(itemId);
-      if (items) items.classList.add('active');
     }
   </script>
 </body>
