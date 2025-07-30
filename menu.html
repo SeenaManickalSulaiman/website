@@ -73,20 +73,27 @@
       width: 120px;
       height: 120px;
       object-fit: cover;
-      border: 2px solid #fff;
+      border-radius: 50%;
+      border: 3px solid #fff;
       margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    .section-item img:hover {
+      transform: scale(1.05);
     }
     .section-item button {
       padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      background-color: #e63946;
+      border-radius: 25px;
+      border: 2px solid #fff;
+      background-color: transparent;
       color: #fff;
       font-weight: bold;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
     .section-item button:hover {
-      background-color: #c92d3b;
+      background-color: #e63946;
+      border-color: #e63946;
+      color: #fff;
     }
     .sub-buttons {
       display: none;
