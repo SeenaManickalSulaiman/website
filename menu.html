@@ -8,27 +8,17 @@
   <style>
     body {
       margin: 0;
-      background-color: #000;
+      background: url('image/menu/j2.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: -1;
     }
     header.navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background-color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.9);
     }
     .logo-section {
       display: flex;
@@ -69,9 +59,7 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
       padding: 40px 20px;
-      background-image: url('image/menu/hot corner/background2.png');
-      background-size: cover;
-      background-position: center;
+      background: #1c1c1c;
       border-radius: 8px;
       margin-bottom: 30px;
       justify-items: center;
@@ -84,22 +72,23 @@
     .section-item img {
       width: 120px;
       height: 120px;
+      object-fit: cover;
       border-radius: 50%;
       border: 3px solid #fff;
       margin-bottom: 10px;
       transition: transform 0.3s ease;
     }
     .section-item img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     .section-item button {
       padding: 10px 20px;
       border-radius: 25px;
       border: 2px solid #fff;
-      background: transparent;
+      background-color: transparent;
       color: #fff;
       font-weight: bold;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
     .section-item button:hover {
       background-color: #e63946;
@@ -113,8 +102,8 @@
       gap: 40px;
       margin: 40px auto;
       max-width: 1000px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
+      background: #222;
+      border-radius: 12px;
       padding: 30px;
     }
     .sub-buttons.active {
@@ -125,47 +114,53 @@
       flex-direction: column;
       align-items: center;
       margin: 10px;
-      transition: transform 0.3s;
-    }
-    .sub-button-wrapper:hover {
-      transform: scale(1.05);
+      background: #333;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
     .sub-button-wrapper img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
       margin-bottom: 12px;
-      border: 2px solid #fff;
     }
     .sub-button-wrapper button {
-      padding: 10px 24px;
-      border-radius: 25px;
+      width: 140px;
+      height: 50px;
+      border-radius: 10px;
       border: none;
-      background-color: #e63946;
+      background-image: url('image/menu /hot corner/menu background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: background-color 0.3s;
+      transition: 0.3s;
     }
     .sub-button-wrapper button:hover {
-      background-color: #c92d3b;
+      filter: brightness(1.1);
     }
     .item-list {
       display: none;
       flex-direction: column;
       align-items: center;
       width: 100%;
+      background: url('image/menu /hot corner/menu background.png') no-repeat center center;
+      background-size: cover;
+      margin: 20px auto;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
     .item-list.active {
       display: flex;
     }
     .item-list h3 {
-      margin-top: 30px;
       font-size: 24px;
-      color: #e63946;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: #ff4c5b;
+      margin-bottom: 20px;
     }
     .item-list ul {
       list-style: none;
@@ -173,138 +168,18 @@
       text-align: left;
       max-width: 600px;
       font-size: 18px;
+      width: 100%;
     }
     .item-list li {
-      margin-bottom: 10px;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 12px;
+      padding: 10px;
+      background: #2b2b2b;
+      border-radius: 6px;
+      border-left: 4px solid #e63946;
     }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo-section">
-      <img src="image/Logo.png" alt="HBaker's Logo" />
-      <div class="logo-text">
-        <h1>HBaker's</h1>
-        <p>Your Daily Treat</p>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="banner"></section>
-
-  <div class="section-nav">
-    <div class="section-item" onclick="showSection('hot')">
-      <img src="image/menu/Hot Corner.png" alt="Hot Corner" />
-      <button>Hot Corner</button>
-    </div>
-    <div class="section-item" onclick="showSection('special')">
-      <img src="image/menu/HB Specials.png" alt="HB Specials" />
-      <button>HB Specials</button>
-    </div>
-    <div class="section-item" onclick="showSection('sandwiches')">
-      <img src="image/menu/Sandwiches.png" alt="Sandwiches" />
-      <button>Sandwiches</button>
-    </div>
-    <div class="section-item" onclick="showSection('meals')">
-      <img src="image/menu/Meals_Mains.png" alt="Meals & Mains" />
-      <button>Meals & Mains</button>
-    </div>
-    <div class="section-item" onclick="showSection('drinks')">
-      <img src="image/menu/Drinks.png" alt="Icy Cool Drinks" />
-      <button>Icy Cool Drinks</button>
-    </div>
-    <div class="section-item" onclick="showSection('fizzy')">
-      <img src="image/menu/fizzy.png" alt="Fizzy Refreshments" />
-      <button>Fizzy Refreshments</button>
-    </div>
-  </div>
-
-  <div id="hot-buttons" class="sub-buttons active">
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea" />
-      <button onclick="showItems('tea')">Tea</button>
-    </div>
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.coffee.png" alt="Coffee" />
-      <button onclick="showItems('coffee')">Coffee</button>
-    </div>
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/Kerala Snacks.png" alt="Snacks" />
-      <button onclick="showItems('snacks')">Snacks</button>
-    </div>
-  </div>
-
-  <div id="tea" class="item-list">
-    <h3>Tea</h3>
-    <ul>
-      <li>Sada Tea – 1 AED</li>
-      <li>Karak Tea – 1 AED</li>
-      <li>Fresh Milk – 2/4 AED</li>
-      <li>Black Tea – 1 AED</li>
-      <li>Black Tea (Full Option) – 1.5 AED</li>
-      <li>Green Tea – 1/1.5 AED</li>
-      <li>Lemon Tea – 1.5 AED</li>
-      <li>Masala Tea – 2 AED</li>
-      <li>Ginger Tea – 1.5 AED</li>
-    </ul>
-  </div>
-
-  <div id="coffee" class="item-list">
-    <h3>Coffee</h3>
-    <ul>
-      <li>Black Coffee – 2/4 AED</li>
-      <li>Black Coffee Lemon – 2.5 AED</li>
-      <li>Milk Coffee – 3/6 AED</li>
-      <li>Cold Coffee – 5 AED</li>
-      <li>Chukku Kaappi – 2/4 AED</li>
-      <li>Nescafe Instant Coffee – 4 AED</li>
-    </ul>
-  </div>
-
-  <div id="snacks" class="item-list">
-    <h3>Snacks</h3>
-    <ul>
-      <li>Samosa (Veg) – 1 AED</li>
-      <li>Samosa (Chicken) – 2 AED</li>
-      <li>Spring Roll – 2 AED</li>
-      <li>Chicken Roll – 2 AED</li>
-      <li>Cutlet – 2 AED</li>
-      <li>Pazham Pori – 1.5 AED</li>
-      <li>Ney Pathiri – 1 AED</li>
-      <li>Pakkoda – 2 AED</li>
-      <li>Poo Cake – 2 AED</li>
-      <li>Madakku – 2 AED</li>
-      <li>Mutta Bajji – 1 AED</li>
-      <li>Mulaku Bajji – 1 AED</li>
-      <li>Potato Bajji (2pcs) – 1 AED</li>
-    </ul>
-  </div>
-
-  <script>
-    function hideAll(className) {
-      document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
-    }
-
-    function showSection(sectionId) {
-      hideAll('sub-buttons');
-      hideAll('item-list');
-      const section = document.getElementById(sectionId + '-buttons');
-      if (section) section.classList.add('active');
-    }
-
-    function showItems(itemId) {
-      hideAll('item-list');
-      const items = document.getElementById(itemId);
-      if (items) items.classList.add('active');
-    }
-  </script>
+  <!-- Your content goes here -->
 </body>
 </html>
