@@ -8,18 +8,27 @@
   <style>
     body {
       margin: 0;
-      background: url('image/menu/j2.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #000;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: linear-gradient(to bottom right, #1f1f1f, #2c2c2c);
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
     }
     header.navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.85);
     }
     .logo-section {
       display: flex;
@@ -60,7 +69,9 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
       padding: 40px 20px;
-      background: #1c1c1c;
+      background-image: url('image/menu/hot corner/background2.png');
+      background-size: cover;
+      background-position: center;
       border-radius: 8px;
       margin-bottom: 30px;
       justify-items: center;
@@ -73,23 +84,22 @@
     .section-item img {
       width: 120px;
       height: 120px;
-      object-fit: cover;
       border-radius: 50%;
       border: 3px solid #fff;
       margin-bottom: 10px;
       transition: transform 0.3s ease;
     }
     .section-item img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
     .section-item button {
       padding: 10px 20px;
       border-radius: 25px;
       border: 2px solid #fff;
-      background-color: transparent;
+      background: transparent;
       color: #fff;
       font-weight: bold;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
     }
     .section-item button:hover {
       background-color: #e63946;
@@ -103,8 +113,8 @@
       gap: 40px;
       margin: 40px auto;
       max-width: 1000px;
-      background: #222;
-      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
       padding: 30px;
     }
     .sub-buttons.active {
@@ -115,53 +125,47 @@
       flex-direction: column;
       align-items: center;
       margin: 10px;
-      background: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .sub-button-wrapper:hover {
+      transform: scale(1.05);
     }
     .sub-button-wrapper img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       margin-bottom: 12px;
+      border: 2px solid #fff;
     }
     .sub-button-wrapper button {
-      width: 140px;
-      height: 50px;
-      border-radius: 10px;
+      padding: 10px 24px;
+      border-radius: 25px;
       border: none;
-      background-image: url('image/menu/backgrounds/menu-bg.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-color: #e63946;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
     }
     .sub-button-wrapper button:hover {
-      filter: brightness(1.1);
+      background-color: #c92d3b;
     }
     .item-list {
       display: none;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      background: url('image/menu/backgrounds/menu-bg.png') no-repeat center center;
-      background-size: cover;
-      margin: 20px auto;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
     .item-list.active {
       display: flex;
     }
     .item-list h3 {
+      margin-top: 30px;
       font-size: 24px;
-      color: #ff4c5b;
-      margin-bottom: 20px;
+      color: #e63946;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .item-list ul {
       list-style: none;
@@ -169,20 +173,14 @@
       text-align: left;
       max-width: 600px;
       font-size: 18px;
-      width: 100%;
     }
     .item-list li {
-      margin-bottom: 12px;
-      padding: 10px;
-      background: #2b2b2b;
-      border-radius: 6px;
-      border-left: 4px solid #e63946;
+      margin-bottom: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
 </head>
-
-
-  
 <body>
   <header class="navbar">
     <div class="logo-section">
@@ -294,12 +292,14 @@
     function hideAll(className) {
       document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
     }
+
     function showSection(sectionId) {
       hideAll('sub-buttons');
       hideAll('item-list');
       const section = document.getElementById(sectionId + '-buttons');
       if (section) section.classList.add('active');
     }
+
     function showItems(itemId) {
       hideAll('item-list');
       const items = document.getElementById(itemId);
