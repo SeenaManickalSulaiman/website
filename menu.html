@@ -223,14 +223,14 @@
 
   <section class="banner"></section>
 
+  <div class="section-item" onclick="showSection('special')">
+      <img src="image/menu/HB Specials.png" alt="HB Specials" />
+      <button>HB Specials</button>
+    </div>
   <div class="section-nav">
     <div class="section-item" onclick="showSection('hot')">
       <img src="image/menu/Hot Corner.png" alt="Hot Corner" />
       <button>Hot Corner</button>
-    </div>
-    <div class="section-item" onclick="showSection('special')">
-      <img src="image/menu/HB Specials.png" alt="HB Specials" />
-      <button>HB Specials</button>
     </div>
     <div class="section-item" onclick="showSection('sandwiches')">
       <img src="image/menu/Sandwiches.png" alt="Sandwiches" />
@@ -283,34 +283,34 @@
   <div id="coffee" class="item-list">
     <h3>Coffee</h3>
     <ul>
-      <li>Black Coffee – 2/4 AED</li>
-      <li>Black Coffee Lemon – 2.5 AED</li>
-      <li>Milk Coffee – 3/6 AED</li>
-      <li>Cold Coffee – 5 AED</li>
-      <li>Chukku Kaappi – 2/4 AED</li>
-      <li>Nescafe Instant Coffee – 4 AED</li>
+      <li><span>Black Coffee</span><span class="price">2/4 AED</span></li>
+      <li><span>Black Coffee Lemon</span><span class="price">2.5 AED</span></li>
+      <li><span>Milk Coffee</span><span class="price">3/6 AED</span></li>
+      <li><span>Cold Coffee</span><span class="price">5 AED</span></li>
+      <li><span>Chukku Kaappi</span><span class="price">2/4 AED</span></li>
+      <li><span>Nescafe Instant Coffee</span><span class="price">4 AED</span></li>
     </ul>
   </div>
 
   <div id="snacks" class="item-list">
     <h3>Snacks</h3>
     <ul>
-      <li>Samosa (Veg) – 1 AED</li>
-      <li>Samosa (Chicken) – 2 AED</li>
-      <li>Spring Roll – 2 AED</li>
-      <li>Chicken Roll – 2 AED</li>
-      <li>Cutlet – 2 AED</li>
-      <li>Pazham Pori – 1.5 AED</li>
-      <li>Ney Pathiri – 1 AED</li>
-      <li>Pakkoda – 2 AED</li>
-      <li>Poo Cake – 2 AED</li>
-      <li>Madakku – 2 AED</li>
-      <li>Mutta Bajji – 1 AED</li>
-      <li>Mulaku Bajji – 1 AED</li>
-      <li>Potato Bajji (2pcs) – 1 AED</li>
+      <li><span>Samosa (Veg)</span><span class="price">1 AED</span></li>
+      <li><span>Samosa (Chicken)</span><span class="price">2 AED</span></li>
+      <li><span>Spring Roll</span><span class="price">2 AED</span></li>
+      <li><span>Chicken Roll</span><span class="price">2 AED</span></li>
+      <li><span>Cutlet</span><span class="price">2 AED</span></li>
+      <li><span>Pazham Pori</span><span class="price">1.5 AED</span></li>
+      <li><span>Ney Pathiri</span><span class="price">1 AED</span></li>
+      <li><span>Pakkoda</span><span class="price">2 AED</span></li>
+      <li><span>Poo Cake</span><span class="price">2 AED</span></li>
+      <li><span>Madakku</span><span class="price">2 AED</span></li>
+      <li><span>Mutta Bajji</span><span class="price">1 AED</span></li>
+      <li><span>Mulaku Bajji</span><span class="price">1 AED</span></li>
+      <li><span>Potato Bajji (2pcs)</span><span class="price">1 AED</span></li>
     </ul>
   </div>
-
+  
   <script>
     function hideAll(className) {
       document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
