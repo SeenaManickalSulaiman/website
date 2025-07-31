@@ -70,8 +70,8 @@
       cursor: pointer;
     }
     .section-item img {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
       border-radius: 50%;
       border: 3px solid #fff;
@@ -120,30 +120,35 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
     .sub-button-wrapper img {
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
       margin-bottom: 12px;
     }
     .sub-button-wrapper button {
-      padding: 10px 20px;
-      border-radius: 6px;
+      width: 140px;
+      height: 50px;
+      border-radius: 10px;
       border: none;
-      background-color: #e63946;
+      background-image: url('image/menu/backgrounds/menu-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
     }
     .sub-button-wrapper button:hover {
-      background-color: #b82836;
+      filter: brightness(1.1);
     }
     .item-list {
       display: none;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      background: #1a1a1a;
+      background: url('image/menu/backgrounds/menu-bg.png') no-repeat center center;
+      background-size: cover;
       margin: 20px auto;
       border-radius: 12px;
       padding: 30px;
@@ -174,6 +179,9 @@
     }
   </style>
 </head>
+
+
+  
 <body>
   <header class="navbar">
     <div class="logo-section">
