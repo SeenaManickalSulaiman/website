@@ -167,12 +167,21 @@
       font-size: 18px;
       width: 100%;
     }
+    
     .item-list li {
-      margin-bottom: 12px;
-      padding: 10px;
-      background: #2b2b2b;
-      border-radius: 6px;
-      border-left: 4px solid #e63946;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #2b2b2b;
+    border-radius: 6px;
+    border-left: 4px solid #e63946;
+    }
+
+    .item-list .price {
+    font-weight: bold;
+    color: #ffc107; /* Optional: golden/yellow shade for prices */
     }
   </style>
 </head>
@@ -240,15 +249,15 @@
   <div id="tea" class="item-list">
     <h3>Tea</h3>
     <ul>
-      <li>Sada Tea – 1 AED</li>
-      <li>Karak Tea – 1 AED</li>
-      <li>Fresh Milk – 2/4 AED</li>
-      <li>Black Tea – 1 AED</li>
-      <li>Black Tea (Full Option) – 1.5 AED</li>
-      <li>Green Tea – 1/1.5 AED</li>
-      <li>Lemon Tea – 1.5 AED</li>
-      <li>Masala Tea – 2 AED</li>
-      <li>Ginger Tea – 1.5 AED</li>
+      <li><span>Sada Tea</span><span class="price">1 AED</span></li>
+      <li><span>Karak Tea</span><span class="price">1 AED</span></li>
+      <li><span>Fresh Milk</span><span class="price">2/4 AED</span></li>
+      <li><span>Black Tea</span><span class="price">1 AED</span></li>
+      <li><span>Black Tea (Full Option)</span><span class="price">1.5 AED</span></li>
+      <li><span>Green Tea</span><span class="price">1/1.5 AED</span></li>
+      <li><span>Lemon Tea</span><span class="price">1.5 AED</span></li>
+      <li><span>Masala Tea</span><span class="price">2 AED</span></li>
+      <li><span>Ginger Tea</span><span class="price">1.5 AED</span></li>
     </ul>
   </div>
 
