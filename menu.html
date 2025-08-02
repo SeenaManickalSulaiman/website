@@ -626,7 +626,7 @@
 
 
 <!-- Replace your old cart UI in the HTML body with this updated section -->
-<div id="cart-box" onclick="toggleCartModal()">
+<div id="cart-box" onclick="toggleCartModal()" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
   <img src="image/cart-icon.png" alt="Cart" style="width: 40px; height: 40px; cursor: pointer;">
   <span id="cart-count" style="color: #ffc107; font-weight: bold; position: absolute; top: -10px; left: 30px;">0</span>
 </div>
@@ -669,117 +669,18 @@
       if (items) items.classList.add('active');
     }
   
-    const cart = {};
-
-    function addToCart(item, price) {
-      if (cart[item]) {
-        cart[item].qty += 1;
-      } else {
-        cart[item] = { price, qty: 1 };
-      }
-      updateCartUI();
-      updateItemButton(item, price);
-    }
-
-    function removeFromCart(item) {
-      if (cart[item]) {
-        cart[item].qty--;
-        if (cart[item].qty <= 0) delete cart[item];
-        updateCartUI();
-        updateItemButton(item, cart[item]?.price || 0);
-      }
-    }
-
-    function updateCartUI() {
-      const cartDiv = document.getElementById('cart-items');
-      cartDiv.innerHTML = '';
-      let total = 0;
-      for (const item in cart) {
-        const wrapper = document.createElement('div');
-        const subtotal = cart[item].price * cart[item].qty;
-        total += subtotal;
-
-        wrapper.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span><strong>${item}</strong></span>
-            <div class="quantity-controls">
-              <button onclick="removeFromCart('${item}')">${cart[item].qty === 1 ? '🗑️' : '−'}</button>
-              <span class="qty">${cart[item].qty}</span>
-              <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
-            </div>
-          </div>
-        `;
-        cartDiv.appendChild(wrapper);
-      }
-      document.getElementById('cart-total').innerText = `Total: ${total} AED`;
-    }
-
-    function sendOrderToWhatsApp() {
-      if (Object.keys(cart).length === 0) {
-        alert('Your cart is empty!');
-        return;
-      }
-      let msg = `HBaker's Order:%0A`;
-      for (const item in cart) {
-        msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
-      }
-      msg += `%0ATotal: ${Object.values(cart).reduce((sum, i) => sum + i.price * i.qty, 0)} AED`;
-      window.open(`https://wa.me/971585733762?text=${msg}`, '_blank');
-    }
-
-    function updateItemButton(item, price) {
-      document.querySelectorAll('.item-list ul li').forEach(li => {
-        const name = li.children[0].innerText.trim();
-        if (name === item) {
-          const existing = li.querySelector('.quantity-controls, .add-to-cart-btn');
-          if (existing) existing.remove();
-
-          if (!cart[item]) {
-            const btn = document.createElement('button');
-            btn.className = 'add-to-cart-btn';
-            btn.innerText = 'Add to Cart';
-            btn.onclick = () => addToCart(item, price);
-            li.appendChild(btn);
-          } else {
-            const container = document.createElement('div');
-            container.className = 'quantity-controls';
-
-            const btnRemove = document.createElement('button');
-            btnRemove.innerText = cart[item].qty === 1 ? '🗑️' : '−';
-            btnRemove.onclick = () => removeFromCart(item);
-
-            const qtySpan = document.createElement('span');
-            qtySpan.className = 'qty';
-            qtySpan.innerText = cart[item].qty;
-
-            const btnAdd = document.createElement('button');
-            btnAdd.innerText = '+';
-            btnAdd.onclick = () => addToCart(item, price);
-
-            container.appendChild(btnRemove);
-            container.appendChild(qtySpan);
-            container.appendChild(btnAdd);
-            li.appendChild(container);
-          }
-        }
-      });
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.item-list ul li').forEach(li => {
-        const name = li.children[0].innerText.trim();
-        const priceText = li.children[1].innerText.replace('AED', '').trim();
-        const price = parseFloat(priceText.split('/').pop());
-
-        const btn = document.createElement('button');
-        btn.className = 'add-to-cart-btn';
-        btn.innerText = 'Add to Cart';
-        btn.onclick = () => addToCart(name, price);
-        li.appendChild(btn);
-      });
-    });
-
-  
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   function toggleCartModal() {
     const modal = document.getElementById('cart-modal');
     modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
