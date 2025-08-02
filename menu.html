@@ -1,98 +1,217 @@
-<script>
-  const cart = {};
-
-  function addToCart(item, price) {
-    if (cart[item]) {
-      cart[item].qty += 1;
-    } else {
-      cart[item] = { price: price, qty: 1 };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HBaker's Menu with Cart</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
     }
-    updateCartUI();
-  }
+    .item-list ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: auto;
+    }
+    .item-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      padding: 10px;
+      border-bottom: 1px solid #444;
+      margin-bottom: 5px;
+    }
+    .item-list .price {
+      font-weight: bold;
+      color: #ffc107;
+    }
+    .item-list button {
+      margin-left: 10px;
+      background: #e74c3c;
+      border: none;
+      padding: 5px 10px;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-  function removeFromCart(item) {
-    if (cart[item]) {
-      cart[item].qty -= 1;
-      if (cart[item].qty <= 0) delete cart[item];
+    #cart-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      color: #000;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000080;
+      z-index: 999;
+      width: 280px;
+      font-size: 14px;
+    }
+    #cart-items {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #cart-items div {
+      margin-bottom: 5px;
+    }
+    #cart-items button {
+      margin-left: 5px;
+      background: #e74c3c;
+      border: none;
+      padding: 3px 6px;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #send-whatsapp {
+      width: 100%;
+      background: #25d366;
+      border: none;
+      padding: 10px;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Example Menu -->
+  <div class="item-list">
+    <h3 style="text-align:center;">Hot Corner - Tea</h3>
+    <ul>
+      <li><span>Karak Tea</span><span class="price">1 AED</span></li>
+      <li><span>Black Tea</span><span class="price">1.5 AED</span></li>
+      <li><span>Ginger Tea</span><span class="price">2 AED</span></li>
+    </ul>
+  </div>
+
+  <div class="item-list">
+    <h3 style="text-align:center;">Sandwiches - Burgers</h3>
+    <ul>
+      <li><span>Chicken Burger</span><span class="price">4 AED</span></li>
+      <li><span>Beef Burger</span><span class="price">5 AED</span></li>
+      <li><span>Zinger Burger</span><span class="price">6 AED</span></li>
+    </ul>
+  </div>
+
+  <div class="item-list">
+    <h3 style="text-align:center;">Meals & Mains - Breakfast</h3>
+    <ul>
+      <li><span>Parotta & Curry</span><span class="price">3 AED</span></li>
+      <li><span>Chapathi & Curry</span><span class="price">2 AED</span></li>
+      <li><span>Poori Set</span><span class="price">4 AED</span></li>
+    </ul>
+  </div>
+
+  <div class="item-list">
+    <h3 style="text-align:center;">Icy Cool Drinks - Juice</h3>
+    <ul>
+      <li><span>Orange Juice</span><span class="price">6 AED</span></li>
+      <li><span>Mango Juice</span><span class="price">6 AED</span></li>
+      <li><span>Avocado Juice</span><span class="price">8 AED</span></li>
+    </ul>
+  </div>
+
+  <div class="item-list">
+    <h3 style="text-align:center;">Fizzy Refreshments - Mojitos</h3>
+    <ul>
+      <li><span>Lime Mojito</span><span class="price">4 AED</span></li>
+      <li><span>Blue Mojito</span><span class="price">5 AED</span></li>
+      <li><span>Mint Mojito</span><span class="price">4 AED</span></li>
+    </ul>
+  </div>
+
+  <!-- Floating Cart -->
+  <div id="cart-box">
+    <h4>Your Cart</h4>
+    <div id="cart-items"></div>
+    <div id="cart-total">Total: 0 AED</div>
+    <button id="send-whatsapp" onclick="sendOrderToWhatsApp()">Make Order</button>
+  </div>
+
+  <script>
+    const cart = {};
+
+    function addToCart(item, price) {
+      if (cart[item]) {
+        cart[item].qty += 1;
+      } else {
+        cart[item] = { price, qty: 1 };
+      }
       updateCartUI();
     }
-  }
 
-  function updateCartUI() {
-    const cartDiv = document.getElementById('cart-items');
-    cartDiv.innerHTML = '';
-    let total = 0;
-    for (let item in cart) {
-      const line = document.createElement('div');
-      const subtotal = cart[item].price * cart[item].qty;
-      total += subtotal;
-      line.innerHTML = `
-        <span><strong>${item}</strong> (x${cart[item].qty}) - ${subtotal} AED</span>
-        <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
-        <button onclick="removeFromCart('${item}')">-</button>
-      `;
-      cartDiv.appendChild(line);
+    function removeFromCart(item) {
+      if (cart[item]) {
+        cart[item].qty--;
+        if (cart[item].qty <= 0) delete cart[item];
+        updateCartUI();
+      }
     }
-    document.getElementById('cart-total').innerText = `Total: ${total} AED`;
-  }
 
-  function sendOrderToWhatsApp() {
-    if (Object.keys(cart).length === 0) {
-      alert('Cart is empty!');
-      return;
+    function updateCartUI() {
+      const cartDiv = document.getElementById('cart-items');
+      cartDiv.innerHTML = '';
+      let total = 0;
+      for (const item in cart) {
+        const line = document.createElement('div');
+        const subtotal = cart[item].price * cart[item].qty;
+        total += subtotal;
+        line.innerHTML = `
+          <span><strong>${item}</strong> x${cart[item].qty} = ${subtotal} AED</span>
+          <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
+          <button onclick="removeFromCart('${item}')">-</button>
+        `;
+        cartDiv.appendChild(line);
+      }
+      document.getElementById('cart-total').innerText = `Total: ${total} AED`;
     }
-    let msg = 'HBaker\'s Order:%0A';
-    for (let item in cart) {
-      msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
+
+    function sendOrderToWhatsApp() {
+      if (Object.keys(cart).length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      let msg = `HBaker's Order:%0A`;
+      for (const item in cart) {
+        msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
+      }
+      msg += `%0ATotal: ${Object.values(cart).reduce((sum, i) => sum + i.price * i.qty, 0)} AED`;
+      window.open(`https://wa.me/971585733762?text=${msg}`, '_blank');
     }
-    const total = Object.values(cart).reduce((sum, i) => sum + i.qty * i.price, 0);
-    msg += `%0ATotal: ${total} AED`;
-    const phone = '971585733762'; // Replace with your WhatsApp number
-    window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
-  }
-</script>
 
-<style>
-  #cart-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.95);
-    color: #000;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    z-index: 999;
-  }
-  #cart-items div {
-    margin-bottom: 5px;
-  }
-  #cart-items button {
-    margin-left: 5px;
-    background: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 3px 6px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  #send-whatsapp {
-    margin-top: 10px;
-    background: #25D366;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    width: 100%;
-    cursor: pointer;
-  }
-</style>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.item-list ul li').forEach(li => {
+        const name = li.children[0].innerText.trim();
+        const priceText = li.children[1].innerText.replace('AED', '').trim();
+        const price = parseFloat(priceText.split('/').pop());
 
-<div id="cart-box">
-  <h4>Cart</h4>
-  <div id="cart-items"></div>
-  <div id="cart-total">Total: 0 AED</div>
-  <button id="send-whatsapp" onclick="sendOrderToWhatsApp()">Make Order</button>
-</div>
+        const btnAdd = document.createElement('button');
+        btnAdd.innerText = '+';
+        btnAdd.onclick = () => addToCart(name, price);
+
+        const btnRemove = document.createElement('button');
+        btnRemove.innerText = '-';
+        btnRemove.onclick = () => removeFromCart(name);
+
+        btnAdd.style.marginLeft = '10px';
+        btnRemove.style.marginLeft = '5px';
+
+        li.appendChild(btnAdd);
+        li.appendChild(btnRemove);
+      });
+    });
+  </script>
+
+</body>
+</html>
