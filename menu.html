@@ -695,43 +695,7 @@
       }
     }
 
-    function updateCartUI() {
-      const cartDiv = document.getElementById('cart-items');
-      cartDiv.innerHTML = '';
-      let total = 0;
-      for (const item in cart) {
-        const wrapper = document.createElement('div');
-        const subtotal = cart[item].price * cart[item].qty;
-        total += subtotal;
-
-        wrapper.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span><strong>${item}</strong></span>
-            <div class="quantity-controls">
-              <button onclick="removeFromCart('${item}')">${cart[item].qty === 1 ? '🗑️' : '−'}</button>
-              <span class="qty">${cart[item].qty}</span>
-              <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
-            </div>
-          </div>
-        `;
-        cartDiv.appendChild(wrapper);
-      }
-      document.getElementById('cart-total').innerText = `Total: ${total} AED`;
-    }
-
-    function sendOrderToWhatsApp() {
-      if (Object.keys(cart).length === 0) {
-        alert('Your cart is empty!');
-        return;
-      }
-      let msg = 'My Order:%0A`;
-      for (const item in cart) {
-        msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
-      }
-      msg += `%0ATotal: ${Object.values(cart).reduce((sum, i) => sum + i.price * i.qty, 0)} AED`;
-      window.open(`https://wa.me/971585733762?text=${msg}`, '_blank');
-    }
-
+   
     function updateItemButton(item, price) {
       document.querySelectorAll('.item-list ul li').forEach(li => {
         const name = li.children[0].innerText.trim();
