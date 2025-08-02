@@ -627,7 +627,7 @@
 
 <!-- Replace your old cart UI in the HTML body with this updated section -->
 <div id="cart-box" onclick="toggleCartModal()">
-  <img src="image/menu/cart items.png" alt="Cart" style="width: 40px; height: 40px; cursor: pointer;">
+  <img src="image/menu/cart items.png" alt="Cart" style="width: 60px; height: 60px; cursor: pointer;">
   <span id="cart-count" style="color: #ffc107; font-weight: bold; position: absolute; top: -10px; left: 30px;">0</span>
 </div>
 
@@ -837,6 +837,14 @@
 
     /*window.open(`https://wa.me/971585733762?text=${msg}`, '_blank'); */
     window.open(`https://web.whatsapp.com/send?phone=971585733762&text=${msg}`, '_blank');
+
+     // ✅ Show thank you message
+    setTimeout(() => {
+      alert("✅ Thank you! Your order has been sent successfully.");
+    }, 500);
+
+    // ✅ Close the cart modal
+    document.getElementById('cart-modal').style.display = 'none';
 
   }
 
