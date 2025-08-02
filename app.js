@@ -51,38 +51,6 @@ function removeFromCart(item) {
   }
 }
 
-function updateCartCount() {
-  const count = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
-  document.getElementById('cart-count').innerText = count;
-}
-
-function updateCartUI() {
-  const cartDiv = document.getElementById('cart-items');
-  cartDiv.innerHTML = '';
-  let total = 0;
-  for (const item in cart) {
-    const subtotal = cart[item].price * cart[item].qty;
-    total += subtotal;
-    cartDiv.innerHTML += `
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span>${item}</span>
-        <div class="quantity-controls">
-          <button onclick="removeFromCart('${item}')">${cart[item].qty === 1 ? '🗑️' : '-'}</button>
-          <span class="qty">${cart[item].qty}</span>
-          <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
-        </div>
-      </div>
-    `;
-  }
-  document.getElementById('cart-total').innerText = `Total: ${total.toFixed(2)} AED`;
-  updateCartCount();
-}
-
-function toggleCartModal() {
-  const modal = document.getElementById('cart-modal');
-  modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
-}
-
 function updateItemButton(item, price) {
   document.querySelectorAll('.item-list ul li').forEach(li => {
     const name = li.children[0].innerText.trim();
@@ -121,6 +89,38 @@ function updateItemButton(item, price) {
   });
 }
 
+function updateCartCount() {
+  const count = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById('cart-count').innerText = count;
+}
+
+function updateCartUI() {
+  const cartDiv = document.getElementById('cart-items');
+  cartDiv.innerHTML = '';
+  let total = 0;
+  for (const item in cart) {
+    const subtotal = cart[item].price * cart[item].qty;
+    total += subtotal;
+    cartDiv.innerHTML += `
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span>${item}</span>
+        <div class="quantity-controls">
+          <button onclick="removeFromCart('${item}')">${cart[item].qty === 1 ? '🗑️' : '-'}</button>
+          <span class="qty">${cart[item].qty}</span>
+          <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
+        </div>
+      </div>
+    `;
+  }
+  document.getElementById('cart-total').innerText = `Total: ${total.toFixed(2)} AED`;
+  updateCartCount();
+}
+
+function toggleCartModal() {
+  const modal = document.getElementById('cart-modal');
+  modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+}
+
 function sendOrderToWhatsApp() {
   const name = document.getElementById('customer-name').value;
   const phone = document.getElementById('customer-phone').value;
@@ -146,4 +146,3 @@ function sendOrderToWhatsApp() {
 
   document.getElementById('cart-modal').style.display = 'none';
 }
-
