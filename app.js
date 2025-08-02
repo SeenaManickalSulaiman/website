@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector('.navbar');
   const cartBox = document.getElementById('cart-box');
   const cartModal = document.getElementById('cart-modal');
-  const cartBackBtn = document.getElementById('cart-back-btn'); // You must add this ID in your HTML for the back button.
+  const cartBackBtn = document.getElementById('cart-back-btn');
 
   // Toggle navigation menu on small screens
   if (menuBtn && navbar) {
@@ -31,5 +31,23 @@ document.addEventListener("DOMContentLoaded", function () {
     cartBackBtn.onclick = () => {
       cartModal.style.display = 'none';
     };
+  }
+
+  // Ensure section and item toggling still works
+  function hideAll(className) {
+    document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
+  }
+
+  window.showSection = function (sectionId) {
+    hideAll('sub-buttons');
+    hideAll('item-list');
+    const section = document.getElementById(sectionId + '-buttons');
+    if (section) section.classList.add('active');
+  }
+
+  window.showItems = function (itemId) {
+    hideAll('item-list');
+    const items = document.getElementById(itemId);
+    if (items) items.classList.add('active');
   }
 });
