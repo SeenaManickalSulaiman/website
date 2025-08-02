@@ -327,30 +327,36 @@
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo-section">
-      <img src="image/Logo.png" alt="HBaker's Logo" />
-      <div class="logo-text">
-        <h1>HBaker's</h1>
-        <p>Your Daily Treat</p>
-      </div>
+  
+  <header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: rgba(0, 0, 0, 0.9);">
+  <!-- Left: Logo -->
+  <div class="logo-section" style="display: flex; align-items: center;">
+    <img src="image/Logo.png" alt="HBaker's Logo" style="height: 60px; margin-right: 15px;" />
+    <div class="logo-text">
+      <h1 style="margin: 0; color: white;">HBaker's</h1>
+      <p style="margin: 0; font-style: italic; color: white;">Your Daily Treat</p>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  </div>
 
-    
+  <!-- Center: Nav links -->
+  <nav class="nav-links" style="display: flex; gap: 30px;">
+    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+    <a href="menu.html" style="color: white; text-decoration: none;">Menu</a>
+    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+    <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
+  </nav>
 
-    <!-- 🛒 Cart Icon -->
-    <div class="cart-icon" onclick="toggleCartModal()" style="display: flex; align-items: center; position: relative; cursor: pointer;">
-      <img src="image/menu/cart.png" alt="Cart" style="width: 200px; height: 200px;">
-      <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background-color: #ffc107; color: black; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
-    </div>
-    
-  </header>
+  <!-- Right: Cart Icon -->
+  <div class="cart-icon" onclick="toggleCartModal()" style="position: relative; margin-left: 30px; cursor: pointer;">
+    <img src="image/menu/cart.png" alt="Cart" style="width: 55px; height: 55px;" />
+    <span id="cart-count" style="position: absolute; top: -8px; right: -10px; background-color: #ffc107; color: black; border-radius: 50%; padding: 2px 6px; font-size: 14px; font-weight: bold;">0</span>
+  </div>
+</header>
+
+
+
+  
+  
   <section class="banner"></section>
 
   <div class="section-nav">
