@@ -1,580 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HBaker's Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-    }
-    header.navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-    .logo-section {
-      display: flex;
-      align-items: center;
-    }
-    .logo-section img {
-      height: 60px;
-      margin-right: 15px;
-    }
-    .logo-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin: 0;
-    }
-    .logo-text p {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.2rem;
-      color: #ccc;
-      margin: 0;
-    }
-    .nav-links a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover {
-      color: #e63946;
-    }
-    .banner {
-      background: url('image/menu/Menu Banner.png') no-repeat center center;
-      background-size: cover;
-      padding: 150px 20px;
-    }
-    .section-nav {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      padding: 40px 20px;
-      /* background: #1c1c1c; */
-      background-color: rgba(0, 0, 0, 0.6); /* Optional: slight dark tint */
-      backdrop-filter: blur(4px);          /* Optional: make text stand out */
-      border-radius: 8px;
-      margin-bottom: 30px;
-      justify-items: center;
-      align-items: center;
-    }
-    .section-item {
-      text-align: center;
-      cursor: pointer;
-    }
-    .section-item img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-    .section-item img:hover {
-      transform: scale(1.05);
-    }
-    .section-item button {
-      padding: 10px 20px;
-      border-radius: 25px;
-      border: 2px solid #fff;
-      background-color: transparent;
-      color: #fff;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .section-item button:hover {
-      background-color: #e63946;
-      border-color: #e63946;
-      color: #fff;
-    }
-    .sub-buttons {
-      display: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin: 40px auto;
-      max-width: 1000px;
-      /* background: #222; */
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      border-radius: 12px;
-      padding: 30px;
-    }
-    .sub-buttons.active {
-      display: flex;
-    }
-    .sub-button-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px;
-      background: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-    .sub-button-wrapper img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 12px;
-    }
-    .sub-button-wrapper button {
-    width: 140px;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    background-color: #e74c3c; /* Vibrant red */
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    }
-    .sub-button-wrapper button:hover {
-      filter: brightness(1.1);
-    }
-    .item-list {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      /* background: url('image/menu/blueberry.png') no-repeat center center; */
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      background-size: cover; 
-      margin: 20px auto;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    }
-    .item-list.active {
-      display: flex;
-    }
-    .item-list h3 {
-      font-size: 24px;
-      color: #ff4c5b;
-      margin-bottom: 20px;
-    }
-    .item-list ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 600px;
-      font-size: 18px;
-      width: 100%;
-    }
-    
-    .item-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    padding: 10px;
-    background: #2b2b2b;
-    border-radius: 6px;
-    border-left: 4px solid #e63946;
-    }
+<script>
+  const cart = {};
 
-    .item-list .price {
-    font-weight: bold;
-    color: #ffc107; 
+  function addToCart(item, price) {
+    if (cart[item]) {
+      cart[item].qty += 1;
+    } else {
+      cart[item] = { price: price, qty: 1 };
     }
-    body::before {
-    content: '';
+    updateCartUI();
+  }
+
+  function removeFromCart(item) {
+    if (cart[item]) {
+      cart[item].qty -= 1;
+      if (cart[item].qty <= 0) delete cart[item];
+      updateCartUI();
+    }
+  }
+
+  function updateCartUI() {
+    const cartDiv = document.getElementById('cart-items');
+    cartDiv.innerHTML = '';
+    let total = 0;
+    for (let item in cart) {
+      const line = document.createElement('div');
+      const subtotal = cart[item].price * cart[item].qty;
+      total += subtotal;
+      line.innerHTML = `
+        <span><strong>${item}</strong> (x${cart[item].qty}) - ${subtotal} AED</span>
+        <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
+        <button onclick="removeFromCart('${item}')">-</button>
+      `;
+      cartDiv.appendChild(line);
+    }
+    document.getElementById('cart-total').innerText = `Total: ${total} AED`;
+  }
+
+  function sendOrderToWhatsApp() {
+    if (Object.keys(cart).length === 0) {
+      alert('Cart is empty!');
+      return;
+    }
+    let msg = 'HBaker\'s Order:%0A';
+    for (let item in cart) {
+      msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
+    }
+    const total = Object.values(cart).reduce((sum, i) => sum + i.qty * i.price, 0);
+    msg += `%0ATotal: ${total} AED`;
+    const phone = '971585733762'; // Replace with your WhatsApp number
+    window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+  }
+</script>
+
+<style>
+  #cart-box {
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.95);
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+  #cart-items div {
+    margin-bottom: 5px;
+  }
+  #cart-items button {
+    margin-left: 5px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  #send-whatsapp {
+    margin-top: 10px;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
     width: 100%;
-    height: 100%;
-    background: url('image/menu/coffee BG.png') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 1;
-    z-index: -1;
-    }
+    cursor: pointer;
+  }
+</style>
 
-  </style>
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo-section">
-      <img src="image/Logo.png" alt="HBaker's Logo" />
-      <div class="logo-text">
-        <h1>HBaker's</h1>
-        <p>Your Daily Treat</p>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <section class="banner"></section>
-
-  <div class="section-nav">
-    <div class="section-item" onclick="showSection('special')">
-      <img src="image/menu/HB Specials Logo.png" alt="HB Specials" />
-      <button>HB Specials</button>
-    </div>
-    <div class="section-item" onclick="showSection('hot')">
-      <img src="image/menu/Hot Corner.png" alt="Hot Corner" />
-      <button>Hot Corner</button>
-    </div>
-    <div class="section-item" onclick="showSection('sandwiches')">
-      <img src="image/menu/Sandwiches.png" alt="Sandwiches" />
-      <button>Sandwiches</button>
-    </div>
-    <div class="section-item" onclick="showSection('meals')">
-      <img src="image/menu/Meals_Mains.png" alt="Meals & Mains" />
-      <button>Meals & Mains</button>
-    </div>
-    <div class="section-item" onclick="showSection('drinks')">
-      <img src="image/menu/Drinks.png" alt="Icy Cool Drinks" />
-      <button>Icy Cool Drinks</button>
-    </div>
-    <div class="section-item" onclick="showSection('fizzy')">
-      <img src="image/menu/fizzy.png" alt="Fizzy Refreshments" />
-      <button>Fizzy Refreshments</button>
-    </div>
-  </div>
-
-  
-  <div id="hot-buttons" class="sub-buttons active">
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea" />
-      <button onclick="showItems('tea')">Tea</button>
-    </div>
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.coffee.png" alt="Coffee" />
-      <button onclick="showItems('coffee')">Coffee</button>
-    </div>
-    <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/Kerala Snacks.png" alt="Snacks" />
-      <button onclick="showItems('snacks')">Snacks</button>
-    </div>
-  </div>
-
-  <div id="tea" class="item-list">
-    <h3>Tea</h3>
-    <ul>
-      <li><span>Sada Tea</span><span class="price">1 AED</span></li>
-      <li><span>Karak Tea</span><span class="price">1 AED</span></li>
-      <li><span>Fresh Milk</span><span class="price">2/4 AED</span></li>
-      <li><span>Black Tea</span><span class="price">1 AED</span></li>
-      <li><span>Black Tea (Full Option)</span><span class="price">1.5 AED</span></li>
-      <li><span>Green Tea</span><span class="price">1/1.5 AED</span></li>
-      <li><span>Lemon Tea</span><span class="price">1.5 AED</span></li>
-      <li><span>Masala Tea</span><span class="price">2 AED</span></li>
-      <li><span>Ginger Tea</span><span class="price">1.5 AED</span></li>
-    </ul>
-  </div>
-
-  <div id="coffee" class="item-list">
-    <h3>Coffee</h3>
-    <ul>
-      <li><span>Black Coffee</span><span class="price">2/4 AED</span></li>
-      <li><span>Black Coffee Lemon</span><span class="price">2.5 AED</span></li>
-      <li><span>Milk Coffee</span><span class="price">3/6 AED</span></li>
-      <li><span>Cold Coffee</span><span class="price">5 AED</span></li>
-      <li><span>Chukku Kaappi</span><span class="price">2/4 AED</span></li>
-      <li><span>Nescafe Instant Coffee</span><span class="price">4 AED</span></li>
-    </ul>
-  </div>
-
-  <div id="snacks" class="item-list">
-    <h3>Snacks</h3>
-    <ul>
-      <li><span>Samosa (Veg)</span><span class="price">1 AED</span></li>
-      <li><span>Samosa (Chicken)</span><span class="price">2 AED</span></li>
-      <li><span>Spring Roll</span><span class="price">2 AED</span></li>
-      <li><span>Chicken Roll</span><span class="price">2 AED</span></li>
-      <li><span>Cutlet</span><span class="price">2 AED</span></li>
-      <li><span>Pazham Pori</span><span class="price">1.5 AED</span></li>
-      <li><span>Ney Pathiri</span><span class="price">1 AED</span></li>
-      <li><span>Pakkoda</span><span class="price">2 AED</span></li>
-      <li><span>Poo Cake</span><span class="price">2 AED</span></li>
-      <li><span>Madakku</span><span class="price">2 AED</span></li>
-      <li><span>Mutta Bajji</span><span class="price">1 AED</span></li>
-      <li><span>Mulaku Bajji</span><span class="price">1 AED</span></li>
-      <li><span>Potato Bajji (2pcs)</span><span class="price">1 AED</span></li>
-    </ul>
-  </div>
-
-<div id="sandwiches-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/3.1 sandwich.png" alt="Sandwiches" />
-    <button onclick="showItems('sandwiches-list')">Sandwiches</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/3.2 Burger.png" alt="Burgers" />
-    <button onclick="showItems('burgers-list')">Burgers</button>
-  </div>
+<div id="cart-box">
+  <h4>Cart</h4>
+  <div id="cart-items"></div>
+  <div id="cart-total">Total: 0 AED</div>
+  <button id="send-whatsapp" onclick="sendOrderToWhatsApp()">Make Order</button>
 </div>
-
-<div id="sandwiches-list" class="item-list">
-  <h3>Sandwiches</h3>
-  <ul>
-    <li><span>Porotta - Egg</span><span class="price">3 AED</span></li>
-    <li><span>Porotta - Chicken</span><span class="price">5 AED</span></li>
-    <li><span>Porotta - Beef</span><span class="price">5 AED</span></li>
-    <li><span>Porotta - Nuggets</span><span class="price">8 AED</span></li>
-    <li><span>Porotta - Chicken Popcorn</span><span class="price">8 AED</span></li>
-    <li><span>Porotta - Sausage</span><span class="price">8 AED</span></li>
-    <li><span>Bread Sandwich - Egg</span><span class="price">3 AED</span></li>
-    <li><span>Bread Sandwich - Chicken</span><span class="price">5 AED</span></li>
-    <li><span>Bread Sandwich - Beef</span><span class="price">5 AED</span></li>
-    <li><span>Bread Sandwich - Popcorn</span><span class="price">8 AED</span></li>
-    <li><span>Bread Sandwich - Sausage</span><span class="price">7 AED</span></li>
-    <li><span>Club Sandwich</span><span class="price">13 AED</span></li>
-  </ul>
-</div>
-
-<div id="burgers-list" class="item-list">
-  <h3>Burgers</h3>
-  <ul>
-    <li><span>Chicken Burger - Normal</span><span class="price">7 AED</span></li>
-    <li><span>Chicken Burger - Double</span><span class="price">12 AED</span></li>
-    <li><span>Fillet Burger - Chicken</span><span class="price">10 AED</span></li>
-    <li><span>Chicken Popcorn Burger</span><span class="price">12 AED</span></li>
-    <li><span>Nuggets Burger</span><span class="price">11 AED</span></li>
-    <li><span>Beef Burger - Normal</span><span class="price">8 AED</span></li>
-    <li><span>Beef Burger - Double</span><span class="price">13 AED</span></li>
-    <li><span>Tikka Burger</span><span class="price">12 AED</span></li>
-    <li><span>Fish Fillet Burger</span><span class="price">11 AED</span></li>
-    <li><span>H.Baker Special Mixed Burger</span><span class="price">15 AED</span></li>
-  </ul>
-</div>
-
-  
-<div id="meals-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/4.1 Breakfast.png" alt="Breakfast" />
-    <button onclick="showItems('breakfast-list')">Breakfast</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/4.2 Breads.png" alt="Breads" />
-    <button onclick="showItems('breads-list')">Breads</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/4.3 Curry.png" alt="Curry" />
-    <button onclick="showItems('curry-list')">Curry</button>
-  </div>
-</div>
-
-<div id="breakfast-list" class="item-list">
-  <h3>Breakfast</h3>
-  <ul>
-    <li><span>Dosa Set</span><span class="price">4 AED</span></li>
-    <li><span>Ghee Roast</span><span class="price">4 AED</span></li>
-    <li><span>Masala Dosa</span><span class="price">5 AED</span></li>
-    <li><span>Puttu Set</span><span class="price">3 AED</span></li>
-    <li><span>Idiyappam Set</span><span class="price">3 AED</span></li>
-    <li><span>Appam Set</span><span class="price">3 AED</span></li>
-    <li><span>Uthappam</span><span class="price">5 AED</span></li>
-    <li><span>Porotta Set</span><span class="price">4 AED</span></li>
-    <li><span>Poori Baaji</span><span class="price">5 AED</span></li>
-  </ul>
-</div>
-
-<div id="breads-list" class="item-list">
-  <h3>Breads</h3>
-  <ul>
-    <li><span>Porotta</span><span class="price">1 AED</span></li>
-    <li><span>Appam</span><span class="price">1 AED</span></li>
-    <li><span>Chappathi</span><span class="price">1 AED</span></li>
-    <li><span>Nice Pathiri</span><span class="price">1 AED</span></li>
-    <li><span>Kothu Porotta</span><span class="price">8 AED</span></li>
-  </ul>
-</div>
-
-<div id="curry-list" class="item-list">
-  <h3>Curry</h3>
-  <ul>
-    <li><span>Egg Curry</span><span class="price">3 AED</span></li>
-    <li><span>Egg Roast</span><span class="price">5 AED</span></li>
-    <li><span>Kadala Curry</span><span class="price">3 AED</span></li>
-    <li><span>Veg Kuruma</span><span class="price">3 AED</span></li>
-    <li><span>Baaji</span><span class="price">3 AED</span></li>
-    <li><span>Green Peas Masala</span><span class="price">4 AED</span></li>
-    <li><span>Egg & Peas Fry</span><span class="price">6 AED</span></li>
-    <li><span>Beef Curry</span><span class="price">7 AED</span></li>
-    <li><span>Beef Fry</span><span class="price">8 AED</span></li>
-    <li><span>Beef Roast</span><span class="price">7 AED</span></li>
-    <li><span>Beef Masala (SPL)</span><span class="price">10 AED</span></li>
-    <li><span>Beef Dry Fry</span><span class="price">10 AED</span></li>
-    <li><span>Chicken Chaps</span><span class="price">6 AED</span></li>
-    <li><span>Chicken Roast</span><span class="price">7 AED</span></li>
-    <li><span>Chicken Fry</span><span class="price">7 AED</span></li>
-    <li><span>Chicken Masala (SPL)</span><span class="price">10 AED</span></li>
-    <li><span>Chicken Chukka</span><span class="price">8 AED</span></li>
-    <li><span>Chilli Chicken</span><span class="price">10 AED</span></li>
-    <li><span>Chilli Beef</span><span class="price">10 AED</span></li>
-    <li><span>Chilli Gobi</span><span class="price">7 AED</span></li>
-  </ul>
-</div>
-
-<div id="drinks-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.1 Juice.png" alt="Juice" />
-    <button onclick="showItems('juice-list')">Juice</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.2 shakes.png" alt="Shake" />
-    <button onclick="showItems('shake-list')">Shake</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.3 Fruit salad.png" alt="Fruit Salad" />
-    <button onclick="showItems('fruit-salad-list')">Fruit Salad</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.4 Faluda.png" alt="Faluda" />
-    <button onclick="showItems('faluda-list')">Faluda</button>
-  </div>
-</div>
-
-<div id="juice-list" class="item-list">
-  <h3>Juices</h3>
-  <ul>
-    <li><span>Avocado</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Watermelon</span><span class="price">3/6/8 AED</span></li>
-    <li><span>Banana</span><span class="price">3/6/8 AED</span></li>
-    <li><span>Kiwi</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Pineapple</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Orange</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Grape</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Strawberry</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Chickoo</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Mango</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Apple</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Pomegranate</span><span class="price">5/8/10 AED</span></li>
-    <li><span>Shamam</span><span class="price">5/8/10 AED</span></li>
-  </ul>
-</div>
-
-<div id="shake-list" class="item-list">
-  <h3>Shakes</h3>
-  <ul>
-    <li><span>Milk Shake</span><span class="price">6/8/12 AED</span></li>
-    <li><span>Mango Shake</span><span class="price">6/8/12 AED</span></li>
-    <li><span>Strawberry Shake</span><span class="price">6/8/12 AED</span></li>
-    <li><span>Chicku Shake</span><span class="price">6/8/12 AED</span></li>
-    <li><span>Papaya Shake</span><span class="price">6/8/12 AED</span></li>
-    <li><span>Tender Coconut Shake</span><span class="price">6/8/12 AED</span></li>
-    <li><span>H.Baker Special Shake</span><span class="price">10/12/14 AED</span></li>
-  </ul>
-</div>
-
-<div id="fruit-salad-list" class="item-list">
-  <h3>Fruit Salad</h3>
-  <ul>
-    <li><span>Fruit Salad - Normal</span><span class="price">8/10/12 AED</span></li>
-    <li><span>Fruit Salad with Ice Cream</span><span class="price">11/13/15 AED</span></li>
-    <li><span>Fruit Salad with Mixed Ice Cream</span><span class="price">12/14/16 AED</span></li>
-  </ul>
-</div>
-
-<div id="faluda-list" class="item-list">
-  <h3>Faluda</h3>
-  <ul>
-    <li><span>Vanilla Faluda</span><span class="price">6/8/10 AED</span></li>
-    <li><span>Strawberry Faluda</span><span class="price">8/11/14 AED</span></li>
-    <li><span>Pista Faluda</span><span class="price">8/11/14 AED</span></li>
-    <li><span>Butterscotch Faluda</span><span class="price">8/11/14 AED</span></li>
-    <li><span>Mango Faluda</span><span class="price">8/11/14 AED</span></li>
-    <li><span>Chocolate Faluda</span><span class="price">8/11/14 AED</span></li>
-    <li><span>Tender Coconut Faluda</span><span class="price">8/11/14 AED</span></li>
-    <li><span>Chatti Faluda</span><span class="price">8/11/14 AED</span></li>
-  </ul>
-</div>
-
-<div id="fizzy-buttons" class="sub-buttons">
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/6.1 Mojitos.png" alt="Mojitos" />
-    <button onclick="showItems('mojitos-list')">Mojitos</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/6.2 Lessi.png" alt="Lassi" />
-    <button onclick="showItems('lassi-list')">Lassi</button>
-  </div>
-  <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/6.3 Lime Specials.png" alt="Lime Specials" />
-    <button onclick="showItems('lime-list')">Lime Specials</button>
-  </div>
-</div>
-
-<div id="mojitos-list" class="item-list">
-  <h3>Mojitos</h3>
-  <ul>
-    <li><span>Blueberry</span><span class="price">6/9 AED</span></li>
-    <li><span>Blackberry</span><span class="price">6/9 AED</span></li>
-    <li><span>Green Apple</span><span class="price">6/9 AED</span></li>
-    <li><span>Strawberry</span><span class="price">6/9 AED</span></li>
-    <li><span>Watermelon</span><span class="price">6/9 AED</span></li>
-    <li><span>Passionfruit</span><span class="price">6/9 AED</span></li>
-    <li><span>Redbull Mojito</span><span class="price">10/16 AED</span></li>
-  </ul>
-</div>
-
-<div id="lassi-list" class="item-list">
-  <h3>Lassi</h3>
-  <ul>
-    <li><span>Sweet Lassi</span><span class="price">5 AED</span></li>
-    <li><span>Orange Lassi</span><span class="price">6 AED</span></li>
-    <li><span>Mango Lassi</span><span class="price">6/9 AED</span></li>
-    <li><span>Badam Lassi</span><span class="price">6/9 AED</span></li>
-    <li><span>Pista</span><span class="price">6/9 AED</span></li>
-    <li><span>Dry Fruit</span><span class="price">6/9 AED</span></li>
-    <li><span>Vanilla</span><span class="price">6/9 AED</span></li>
-    <li><span>Butterscotch</span><span class="price">6/9 AED</span></li>
-    <li><span>Chocolate</span><span class="price">6/9 AED</span></li>
-  </ul>
-</div>
-
-<div id="lime-list" class="item-list">
-  <h3>Lime Specials</h3>
-  <ul>
-    <li><span>Fresh Lime</span><span class="price">4 AED</span></li>
-    <li><span>Mint Lime</span><span class="price">5 AED</span></li>
-    <li><span>Pine Lime</span><span class="price">5 AED</span></li>
-    <li><span>Grape Lime</span><span class="price">5 AED</span></li>
-    <li><span>Orange Lime</span><span class="price">5 AED</span></li>
-    <li><span>Fresh Lime Soda</span><span class="price">4 AED</span></li>
-  </ul>
-</div>
-
-
-
-
-  
-  <script>
-    function hideAll(className) {
-      document.querySelectorAll('.' + className).forEach(el => el.classList.remove('active'));
-    }
-
-    function showSection(sectionId) {
-      hideAll('sub-buttons');
-      hideAll('item-list');
-      const section = document.getElementById(sectionId + '-buttons');
-      if (section) section.classList.add('active');
-    }
-
-    function showItems(itemId) {
-      hideAll('item-list');
-      const items = document.getElementById(itemId);
-      if (items) items.classList.add('active');
-    }
-  </script>
-</body>
-</html>
-
