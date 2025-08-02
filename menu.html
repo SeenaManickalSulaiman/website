@@ -725,7 +725,7 @@
         alert('Your cart is empty!');
         return;
       }
-      let msg = `HBaker's Order:%0A`;
+      let msg = 'My Order:%0A`;
       for (const item in cart) {
         msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
       }
@@ -828,7 +828,7 @@
       return;
     }
 
-    let msg = `HBaker's Order:%0A`;
+    let msg = `My Order:%0A`;
     for (const item in cart) {
       msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
     }
