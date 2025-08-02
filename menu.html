@@ -624,15 +624,30 @@
   </ul>
 </div>
 
-<!-- Floating Cart -->
-  <div id="cart-box">
-    <h4>Your Cart</h4>
-    <div id="cart-items"></div>
-    <div id="cart-total">Total: 0 AED</div>
-    <button id="send-whatsapp" onclick="sendOrderToWhatsApp()">Make Order</button>
+
+<!-- Replace your old cart UI in the HTML body with this updated section -->
+<div id="cart-box" onclick="toggleCartModal()">
+  <img src="image/cart-icon.png" alt="Cart" style="width: 40px; height: 40px; cursor: pointer;">
+  <span id="cart-count" style="color: #ffc107; font-weight: bold; position: absolute; top: -10px; left: 30px;">0</span>
+</div>
+
+<div id="cart-modal" style="display: none; position: fixed; bottom: 20px; right: 20px; width: 350px; background: #fff; color: #000; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.5); z-index: 999;">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <div style="margin-top: 10px;">
+    <label><strong>Your Name:</strong><br>
+      <input type="text" id="customer-name" style="width: 100%; margin-bottom: 10px;">
+    </label>
+    <label><strong>Contact Number:</strong><br>
+      <input type="text" id="customer-phone" style="width: 100%; margin-bottom: 10px;">
+    </label>
+    <label><strong>Delivery Address:</strong><br>
+      <textarea id="customer-address" style="width: 100%; height: 60px; margin-bottom: 10px;"></textarea>
+    </label>
   </div>
-
-
+  <div id="cart-total" style="margin-bottom: 10px; font-weight: bold;">Total: 0 AED</div>
+  <button id="send-whatsapp" onclick="sendOrderToWhatsApp()" style="background: #25d366; border: none; padding: 10px; color: #fff; font-weight: bold; width: 100%; border-radius: 5px;">Send to WhatsApp</button>
+</div>
 
 
   
@@ -763,6 +778,61 @@
         li.appendChild(btn);
       });
     });
+
+  
+  function toggleCartModal() {
+    const modal = document.getElementById('cart-modal');
+    modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function updateCartCount() {
+    const count = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('cart-count').innerText = count;
+  }
+
+  function updateCartUI() {
+    const cartDiv = document.getElementById('cart-items');
+    cartDiv.innerHTML = '';
+    let total = 0;
+    for (const item in cart) {
+      const subtotal = cart[item].price * cart[item].qty;
+      total += subtotal;
+      cartDiv.innerHTML += `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span>${item}</span>
+          <div class="quantity-controls">
+            <button onclick="removeFromCart('${item}')">${cart[item].qty === 1 ? '🗑️' : '-'}</button>
+            <span class="qty">${cart[item].qty}</span>
+            <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
+          </div>
+        </div>
+      `;
+    }
+    document.getElementById('cart-total').innerText = `Total: ${total.toFixed(2)} AED`;
+    updateCartCount();
+  }
+
+  function sendOrderToWhatsApp() {
+    const name = document.getElementById('customer-name').value;
+    const phone = document.getElementById('customer-phone').value;
+    const address = document.getElementById('customer-address').value;
+
+    if (!name || !phone || !address) {
+      alert('Please fill out all the fields.');
+      return;
+    }
+
+    let msg = `HBaker's Order:%0A`;
+    for (const item in cart) {
+      msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
+    }
+    msg += `%0ATotal: ${Object.values(cart).reduce((sum, i) => sum + i.price * i.qty, 0)} AED`;
+    msg += `%0A%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
+
+    window.open(`https://wa.me/971585733762?text=${msg}`, '_blank');
+  }
+
+
   </script>
 </body>
 </html>
