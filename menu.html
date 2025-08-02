@@ -31,16 +31,28 @@
       font-weight: bold;
       color: #ffc107;
     }
-    .item-list button {
-      margin-left: 10px;
-      background: #e74c3c;
-      border: none;
-      padding: 5px 10px;
-      color: #fff;
-      border-radius: 4px;
-      cursor: pointer;
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      border: 2px solid #fdd835;
+      border-radius: 20px;
+      padding: 3px 10px;
+      background: #fff;
+      color: #000;
     }
-
+    .quantity-controls button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      margin: 0 5px;
+      cursor: pointer;
+      color: #000;
+    }
+    .quantity-controls .qty {
+      min-width: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
     #cart-box {
       position: fixed;
       bottom: 20px;
@@ -61,15 +73,6 @@
     }
     #cart-items div {
       margin-bottom: 5px;
-    }
-    #cart-items button {
-      margin-left: 5px;
-      background: #e74c3c;
-      border: none;
-      padding: 3px 6px;
-      color: #fff;
-      border-radius: 4px;
-      cursor: pointer;
     }
     #send-whatsapp {
       width: 100%;
@@ -164,15 +167,21 @@
       cartDiv.innerHTML = '';
       let total = 0;
       for (const item in cart) {
-        const line = document.createElement('div');
+        const wrapper = document.createElement('div');
         const subtotal = cart[item].price * cart[item].qty;
         total += subtotal;
-        line.innerHTML = `
-          <span><strong>${item}</strong> x${cart[item].qty} = ${subtotal} AED</span>
-          <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
-          <button onclick="removeFromCart('${item}')">-</button>
+
+        wrapper.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span><strong>${item}</strong></span>
+            <div class="quantity-controls">
+              <button onclick="removeFromCart('${item}')">${cart[item].qty === 1 ? '🗑️' : '−'}</button>
+              <span class="qty">${cart[item].qty}</span>
+              <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
+            </div>
+          </div>
         `;
-        cartDiv.appendChild(line);
+        cartDiv.appendChild(wrapper);
       }
       document.getElementById('cart-total').innerText = `Total: ${total} AED`;
     }
@@ -196,19 +205,26 @@
         const priceText = li.children[1].innerText.replace('AED', '').trim();
         const price = parseFloat(priceText.split('/').pop());
 
+        const container = document.createElement('div');
+        container.className = 'quantity-controls';
+
+        const btnRemove = document.createElement('button');
+        btnRemove.innerText = '🗑️';
+        btnRemove.onclick = () => removeFromCart(name);
+
+        const qtySpan = document.createElement('span');
+        qtySpan.className = 'qty';
+        qtySpan.innerText = '0';
+
         const btnAdd = document.createElement('button');
         btnAdd.innerText = '+';
         btnAdd.onclick = () => addToCart(name, price);
 
-        const btnRemove = document.createElement('button');
-        btnRemove.innerText = '-';
-        btnRemove.onclick = () => removeFromCart(name);
+        container.appendChild(btnRemove);
+        container.appendChild(qtySpan);
+        container.appendChild(btnAdd);
 
-        btnAdd.style.marginLeft = '10px';
-        btnRemove.style.marginLeft = '5px';
-
-        li.appendChild(btnAdd);
-        li.appendChild(btnRemove);
+        li.appendChild(container);
       });
     });
   </script>
