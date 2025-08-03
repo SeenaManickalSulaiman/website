@@ -323,54 +323,7 @@
   border-radius: 50%;
 }
 
-.menu-items {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
 
-.menu-card {
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  width: 200px;
-  padding: 15px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.menu-card:hover {
-  transform: scale(1.05);
-}
-
-.menu-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.menu-card h3 {
-  color: #fff;
-  margin: 10px 0 5px;
-}
-
-.menu-card p {
-  color: #ffc107;
-  margin: 0 0 10px;
-  font-weight: bold;
-}
-
-.menu-card button {
-  background-color: #ffc107;
-  color: #000;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
 
     
   </style>
@@ -436,30 +389,29 @@
   </div>
 
       <!-- HB Specials Items Section -->
-<div id="special-buttons" class="menu-items" style="display: none; padding: 30px; background-color: #111;">
-  <div class="menu-card">
-    <img src="image/menu/items/pazhampori-beef.png" alt="Pazhampori Beef">
-    <h3>Pazhampori Beef</h3>
-    <p>𓂀 8</p>
-    <button onclick="addToCart('Pazhampori Beef', 8)">Add to Cart</button>
+
+<div id="special-buttons" class="sub-buttons active">
+    <div class="sub-button-wrapper">
+      <img src="image/menu/items/pazhampori-beef.png" alt="Pazhampori Beef" />
+      <h3>Pazhampori Beef</h3>
+      <p>𓂀 8</p>
+      <button onclick="addToCart('Pazhampori Beef', 8)">Add to Cart</button>
+    </div>
+  
+    <div class="sub-button-wrapper">
+      <img src="image/menu/items/mix-burger-meal.png" alt="Mix Burger Meal" />
+      <h3>Mix Burger Meal</h3>
+      <p>𓂀 15</p>
+      <button onclick="addToCart('Mix Burger Meal', 15)">Add to Cart</button>
+    </div>
+  
+    <div class="sub-button-wrapper">
+      <img src="image/menu/items/masala-chai.png" alt="Special Masala Chai">
+      <h3>Special Masala Chai</h3>
+      <p>𓂀 2.5</p>
+      <button onclick="addToCart('Special Masala Chai', 2.5)">Add to Cart</button>   
+    </div>
   </div>
-
-  <div class="menu-card">
-    <img src="image/menu/items/mix-burger-meal.png" alt="Mix Burger Meal">
-    <h3>Mix Burger Meal</h3>
-    <p>𓂀 15</p>
-    <button onclick="addToCart('Mix Burger Meal', 15)">Add to Cart</button>
-  </div>
-
-  <div class="menu-card">
-    <img src="image/menu/items/masala-chai.png" alt="Special Masala Chai">
-    <h3>Special Masala Chai</h3>
-    <p>𓂀 2.5</p>
-    <button onclick="addToCart('Special Masala Chai', 2.5)">Add to Cart</button>
-  </div>
-</div>
-
-
 
 
 
