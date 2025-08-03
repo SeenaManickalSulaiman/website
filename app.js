@@ -20,6 +20,7 @@ function hideAll(className) {
 function showSection(sectionId) {
   hideAll('sub-buttons');
   hideAll('item-list');
+  hideAll('menu-items'); // Make sure this is added if not
   const section = document.getElementById(sectionId + '-buttons');
   if (section) section.classList.add('active');
 }
