@@ -348,7 +348,7 @@
 
   <!-- Right: Cart Icon -->
   <div class="cart-icon" onclick="toggleCartModal()" style="position: relative; margin-left: 30px; cursor: pointer;">
-    <img src="image/menu/Cart2.png" alt="Cart" style="width: 55px; height: 55px;" />
+    <img src="image/menu/Cart2.png" alt="Cart" style="width: 40px; height: 40px;" />
     <span id="cart-count" style="position: absolute; top: -8px; right: -10px; background-color: #ffc107; color: black; border-radius: 50%; padding: 2px 6px; font-size: 14px; font-weight: bold;">0</span>
   </div>
 </header>
@@ -386,35 +386,27 @@
     </div>
   </div>
 
-   <!-- HB Specials Section -->
-<section id="special" style="display: none; padding: 40px 0; background-color: #121212;">
-  <h2 style="text-align: center; color: #fff; font-size: 2em; margin-bottom: 30px;">HB Specials</h2>
-
-  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-
-    <!-- Pazhampori Beef -->
-    <div style="background-color: #1e1e1e; border-radius: 12px; width: 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.4); padding: 20px;">
-      <img src="https://your-url.com/pazhampori_beef.jpg" alt="Pazhampori Beef" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
-      <h3 style="color: #fff; margin-top: 15px;">Pazhampori Beef</h3>
-      <p style="color: #ccc; font-size: 1.1em;">𓂀 8</p>
-    </div>
-
-    <!-- Mix Burger Meal -->
-    <div style="background-color: #1e1e1e; border-radius: 12px; width: 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.4); padding: 20px;">
-      <img src="https://your-url.com/mix_burger_meal.jpg" alt="Mix Burger Meal" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
-      <h3 style="color: #fff; margin-top: 15px;">Mix Burger Meal</h3>
-      <p style="color: #ccc; font-size: 1.1em;">𓂀 15</p>
-    </div>
-
-    <!-- Special Masala Chai -->
-    <div style="background-color: #1e1e1e; border-radius: 12px; width: 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.4); padding: 20px;">
-      <img src="https://your-url.com/masala_chai.jpg" alt="Special Masala Chai" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
-      <h3 style="color: #fff; margin-top: 15px;">Special Masala Chai</h3>
-      <p style="color: #ccc; font-size: 1.1em;">𓂀 2.5</p>
-    </div>
-
+     <!-- HB Specials Section -->
+<div id="special" class="menu-items" style="display:none; padding: 20px; text-align: center; background-color: #111;">
+  <div class="menu-card">
+    <img src="image/menu/pazhampori-beef.png" alt="Pazhampori Beef" />
+    <h3>Pazhampori Beef</h3>
+    <p>𓂀 8</p>
   </div>
-</section>
+
+  <div class="menu-card">
+    <img src="image/menu/Mix Burger.png" alt="Mix Burger Meal" />
+    <h3>Mix Burger Meal</h3>
+    <p>𓂀 15</p>
+  </div>
+
+  <div class="menu-card">
+    <img src="image/menu/Masala Chai.png" alt="Special Masala Chai" />
+    <h3>Special Masala Chai</h3>
+    <p>𓂀 2.5</p>
+  </div>
+</div>
+
 
 
 
