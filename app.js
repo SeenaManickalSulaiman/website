@@ -121,7 +121,7 @@ function toggleCartModal() {
   modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
 }
 
-function sendOrderToWhatsApp() {
+/*function sendOrderToWhatsApp() {
   const name = document.getElementById('customer-name').value;
   const phone = document.getElementById('customer-phone').value;
   const address = document.getElementById('customer-address').value;
@@ -145,4 +145,37 @@ function sendOrderToWhatsApp() {
   }, 500);
 
   document.getElementById('cart-modal').style.display = 'none';
+} */
+
+function sendOrderToWhatsApp() {
+  const name = document.getElementById('customer-name').value;
+  const phone = document.getElementById('customer-phone').value;
+  const address = document.getElementById('customer-address').value;
+
+  if (!name || !phone || !address) {
+    alert('Please fill out all the fields.');
+    return;
+  }
+
+  let msg = `My Order:%0A`;
+  for (const item in cart) {
+    msg += `${item} x${cart[item].qty} = ${cart[item].price * cart[item].qty} AED%0A`;
+  }
+  msg += `%0ATotal: ${Object.values(cart).reduce((sum, i) => sum + i.price * i.qty, 0)} AED`;
+  msg += `%0A%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
+
+  // Detect device type
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const baseUrl = isMobile 
+    ? `https://wa.me/971585733762?text=${msg}` 
+    : `https://web.whatsapp.com/send?phone=971585733762&text=${msg}`;
+
+  window.open(baseUrl, '_blank');
+
+  setTimeout(() => {
+    alert("✅ Thank you! Your order has been sent successfully.");
+  }, 500);
+
+  document.getElementById('cart-modal').style.display = 'none';
 }
+
