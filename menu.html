@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HBaker's Menu</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />  
   <style>
     body {
       margin: 0;
@@ -301,6 +302,29 @@
   color: #ffc107;
 }
 
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.contact-buttons a {
+  background-color: #e63946;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.contact-buttons a:hover {
+  background-color: #ff4d5a;
+}
+
+
+    
 .cart-icon {
   position: relative;
   cursor: pointer;
@@ -339,14 +363,18 @@
       <p style="margin: 0; font-style: italic; color: white;">Your Daily Treat</p>
     </div>
   </div>
-
-  <!-- Center: Nav links -->
-  <nav class="nav-links" style="display: flex; gap: 30px;">
-    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
-    <a href="menu.html" style="color: white; text-decoration: none;">Menu</a>
-    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-    <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
-  </nav>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div class="contact-buttons">
+        <a href="tel:+97142733762"><i class="fas fa-phone-alt"></i> Call Us</a>
+        <a href="https://wa.me/971585733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </nav>
 
   <!-- Right: Cart Icon -->
   <div class="cart-icon" onclick="toggleCartModal()" style="position: relative; margin-left: 30px; cursor: pointer;">
