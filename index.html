@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,21 +123,8 @@
       margin: 0;
     }
 
-    .bottom-tagline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .bottom-tagline p {
-      font-family: 'Great Vibes', cursive;
-      font-style: italic;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .bottom-tagline button {
+    .hero-text a button {
+      margin-top: 20px;
       background-color: #e63946;
       color: white;
       padding: 12px 30px;
@@ -147,8 +135,15 @@
       cursor: pointer;
     }
 
-    .bottom-tagline button:hover {
+    .hero-text a button:hover {
       background-color: #ff4d5a;
+    }
+
+    .hero-text p {
+      font-family: 'Great Vibes', cursive;
+      font-style: italic;
+      font-size: 1.8rem;
+      margin: 0;
     }
 
     .testimonials {
@@ -187,49 +182,10 @@
       font-weight: normal;
       color: #e63946;
     }
-
-    form {
-      background-color: #1c1c1c;
-      max-width: 500px;
-      margin: 40px auto 0;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: left;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    form button {
-      background-color: #e63946;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background-color: #ff4d5a;
-    }
   </style>
 </head>
-<body>
 
-  <!-- Navbar -->
+<body>
   <header class="navbar">
     <div class="logo-section">
       <img src="image/Logo.png" alt="HBaker's Logo">
@@ -252,21 +208,22 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <img src="image/Home HBaker's.png" alt="Home Picture">
     <div class="hero-text">
       <h2>Fresh Flavors, Every Time You Dine</h2>
-      <div class="bottom-tagline">
-        <p><em>Come with your Favorite People and Taste the Happiness in Every Bite</em></p>
-        <button onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'}); document.getElementById('orderForm').style.display='block'">
-          Make an Order
-        </button>
-      </div>
+
+      <!-- Button BEFORE tagline -->
+      <a href="menu.html">
+        <button>Make an Order</button>
+      </a>
+
+      <p>
+        <em>Come with your Favorite People and Taste the Happiness in Every Bite</em>
+      </p>
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
     <div class="testimonial-container">
@@ -283,45 +240,7 @@
         <h4>- Lina S.</h4>
       </div>
     </div>
-
-    <!-- Order Form Section -->
-    <div id="orderForm" style="display:none; margin-top:60px;">
-      <h2>Place Your Order</h2>
-      <form onsubmit="sendWhatsAppOrder(event)">
-        <label for="orderName">Your Name:</label>
-        <input type="text" id="orderName" required>
-
-        <label for="orderContact">Contact Number:</label>
-        <input type="text" id="orderContact" required>
-
-        <label for="orderAddress">Delivery Address (Room, Building, Location, Landmark):</label>
-        <textarea id="orderAddress" rows="2" required></textarea>
-
-        <label for="orderMessage">Order Details:</label>
-        <textarea id="orderMessage" rows="4" required></textarea>
-
-        <button type="submit">Send to WhatsApp</button>
-      </form>
-    </div>
   </section>
-
-  <!-- Script -->
-  <script>
-    function sendWhatsAppOrder(event) {
-      event.preventDefault();
-      const name = document.getElementById("orderName").value.trim();
-      const contact = document.getElementById("orderContact").value.trim();
-      const address = document.getElementById("orderAddress").value.trim();
-      const message = document.getElementById("orderMessage").value.trim();
-
-      const fullMessage = `*HBaker's New Order*\n\n👤 Name: ${name}\n📞 Contact: ${contact}\n📍 Address: ${address}\n📝 Order Details:\n${message}`;
-      const encodedMessage = encodeURIComponent(fullMessage);
-
-      const whatsappNumber = "971585733762";
-      const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-      window.open(url, "_blank");
-    }
-  </script>
 </body>
+
 </html>
