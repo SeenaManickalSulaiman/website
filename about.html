@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - HBaker's</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
 
@@ -17,7 +18,7 @@
       position: relative;
     }
 
-    /* Optional dark overlay for readability */
+    /* Optional dark overlay */
     body::before {
       content: '';
       position: fixed;
@@ -35,6 +36,9 @@
       align-items: center;
       padding: 20px 50px;
       background-color: rgba(0, 0, 0, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo-section {
@@ -60,17 +64,33 @@
       margin: 0;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
     .nav-links a {
-      margin-left: 30px;
       text-decoration: none;
       color: #fff;
-      font-weight: 500;
-      font-size: 1.1rem; /* <-- Increase this value as needed */
-      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
 
     .nav-links a:hover {
-      color: #e63946;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .green-button {
+      background-color: #25D366;
+      color: white !important;
+    }
+
+    .green-button:hover {
+      background-color: #1ebe5d;
     }
 
     .about-container {
@@ -103,19 +123,6 @@
       text-align: center;
       margin-top: 40px;
     }
-    .green-button {
-      background-color: #25D366 !important; /* WhatsApp green */
-      color: white !important;
-      padding: 8px 15px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .green-button:hover {
-      background-color: #1ebe5d !important;
-    }   
   </style>
 </head>
 
@@ -133,12 +140,10 @@
       <a href="menu.html">Menu</a>
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact</a>
-      <div class="contact-buttons">
-        <a href="tel:+97142733762" class="green-button"><i class="fas fa-phone-alt"></i> Call Us</a>
-        <a href="https://wa.me/971585733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." class="green-button" target="_blank">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-      </div>
+      <a href="tel:+97142733762" class="green-button"><i class="fas fa-phone-alt"></i> Call Us</a>
+      <a href="https://wa.me/971585733762?text=Hi%20HBaker's,%20I'd%20like%20to%20place%20an%20order." class="green-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
     </nav>
   </header>
 
