@@ -217,18 +217,25 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="image/Home HBaker's.png" alt="Home Picture">
-    <div class="hero-text">
-      <h2>Fresh Flavors, Every Time You Dine</h2>
-      <p style="font-family: 'Great Vibes', cursive; font-style: italic; font-size: 1.8rem;">
-        <em>Come with your Favorite People and Taste the Happiness in Every Bite</em>
-      </p>
-      <button onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'}); document.getElementById('orderForm').style.display='block'" style="margin-top: 25px; background-color: #e63946; color: white; padding: 12px 30px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;">
-        Make an Order
-      </button>
-    </div>
-  </section>
+  
+<section class="hero">
+  <div class="hero-heading">
+    <h2>Fresh Flavors, Every Time You Dine</h2>
+  </div>
+
+  <img src="image/Home HBaker's.png" alt="Home Picture" class="hero-img">
+
+  <div class="hero-tagline">
+    <p>
+      <em>Come with your Favorite People and Taste the Happiness in Every Bite</em>
+    </p>
+    <button onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'}); document.getElementById('orderForm').style.display='block'">
+      Make an Order
+    </button>
+  </div>  
+</section>
+
+  
 
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
