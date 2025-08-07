@@ -109,11 +109,12 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 60px 20px 40px;
+      padding: 60px 20px;
       text-align: center;
       color: white;
+      gap: 20px;
     }
 
     .hero-text h2 {
@@ -132,22 +133,26 @@
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 20px;
     }
 
     .hero-text a button:hover {
       background-color: #ff4d5a;
     }
 
-    .hero-text p {
+    .tagline-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 10px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .tagline-box p {
       font-family: 'Great Vibes', cursive;
       font-style: italic;
       font-size: 1.8rem;
-      margin-bottom: 0;
-      padding: 10px 20px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-      max-width: 90%;
+      color: #fff;
+      margin: 0;
     }
 
     .testimonials {
@@ -186,26 +191,6 @@
       font-weight: normal;
       color: #e63946;
     }
-
-.tagline-box {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 15px 25px;
-  border-radius: 10px;
-  margin-top: auto;
-  margin-bottom: 20px;
-  max-width: 90%;
-}
-
-.tagline-box p {
-  font-family: 'Great Vibes', cursive;
-  font-style: italic;
-  font-size: 1.8rem;
-  color: #fff;
-  margin: 0;
-  text-align: center;
-}
-
-    
   </style>
 </head>
 
@@ -232,27 +217,20 @@
     </nav>
   </header>
 
-  
+  <section class="hero">
+    <img src="image/Home HBaker's.png" alt="Home Picture">
+    <div class="hero-text">
+      <h2>Fresh Flavors, Every Time You Dine</h2>
 
+      <a href="menu.html">
+        <button>Make an Order</button>
+      </a>
 
-
-
-<section class="hero">
-  <img src="image/Home HBaker's.png" alt="Home Picture">
-  <div class="hero-text">
-    <h2>Fresh Flavors, Every Time You Dine</h2>
-
-    <a href="menu.html">
-      <button>Make an Order</button>
-    </a>
-
-    <!-- Updated Tagline Styling -->
-    <div class="tagline-box">
-      <p><em>Come with your Favorite People and Taste the Happiness in Every Bite</em></p>
+      <div class="tagline-box">
+        <p><em>Come with your Favorite People and Taste the Happiness in Every Bite</em></p>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
