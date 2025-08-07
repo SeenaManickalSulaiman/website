@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -101,45 +100,56 @@
       filter: brightness(60%);
     }
 
-   /* .hero-text {
+    .hero-text {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 20px;
       text-align: center;
       color: white;
-    } */
+    }
 
-.hero-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 20px;
-  text-align: center;
-  color: white;
-}
+    .hero-text h2 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      margin: 0;
+    }
 
+    .bottom-tagline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
 
-.hero-text h2 {
-  font-size: 3rem;
-  font-family: 'Playfair Display', serif;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  margin: 0;
-}
+    .bottom-tagline p {
+      font-family: 'Great Vibes', cursive;
+      font-style: italic;
+      font-size: 1.8rem;
+      margin: 0;
+    }
 
-.hero-text p {
-  font-family: 'Great Vibes', cursive;
-  font-style: italic;
-  font-size: 1.8rem;
-  margin: 0;
-}
+    .bottom-tagline button {
+      background-color: #e63946;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
+    .bottom-tagline button:hover {
+      background-color: #ff4d5a;
+    }
 
     .testimonials {
       background-color: #111;
@@ -217,8 +227,9 @@
     }
   </style>
 </head>
-
 <body>
+
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo-section">
       <img src="image/Logo.png" alt="HBaker's Logo">
@@ -241,17 +252,21 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <img src="image/Home HBaker's.png" alt="Home Picture">
     <div class="hero-text">
       <h2>Fresh Flavors, Every Time You Dine</h2>
-      <p style="font-family: 'Great Vibes', cursive; font-style: italic; font-size: 1.8rem;">
-        <em>Come with your Favorite People and Taste the Happiness in Every Bite</em>
-      </p>
+      <div class="bottom-tagline">
+        <p><em>Come with your Favorite People and Taste the Happiness in Every Bite</em></p>
+        <button onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'}); document.getElementById('orderForm').style.display='block'">
+          Make an Order
+        </button>
+      </div>
     </div>
   </section>
-  
 
+  <!-- Testimonials -->
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
     <div class="testimonial-container">
@@ -290,6 +305,7 @@
     </div>
   </section>
 
+  <!-- Script -->
   <script>
     function sendWhatsAppOrder(event) {
       event.preventDefault();
@@ -308,5 +324,4 @@
     }
   </script>
 </body>
-
 </html>
