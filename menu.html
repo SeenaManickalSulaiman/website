@@ -52,7 +52,7 @@
       color: #e63946;
     }
     .banner {
-      background: url('image/Banner 5.png') no-repeat center center;
+      background: url('image/Banner5.png') no-repeat center center;
       background-size: cover;
       padding: 120px 20px;
     }
@@ -207,7 +207,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('image/menu/coffee BG.png') no-repeat center center fixed;
+    background: url('image/menu/coffeeBG.png') no-repeat center center fixed;
     background-size: cover;
     opacity: 1;
     z-index: -1;
@@ -323,9 +323,7 @@
 .contact-buttons a:hover {
   background-color: #ff4d5a;
 }
-
-
-    
+ 
 .cart-icon {
   position: relative;
   cursor: pointer;
@@ -364,11 +362,7 @@
 
 .green-button:hover {
   background-color: #1ebe5d;
-}
-
-
-
-    
+}    
   </style>
 </head>
 <body>
@@ -411,9 +405,6 @@
   </a>
 </nav>
 
-
-  
-
   <!-- Right: Cart Icon -->
   <div class="cart-icon" onclick="toggleCartModal()" style="position: relative; margin-left: 30px; cursor: pointer;">
     <img src="image/menu/Cart2.png" alt="Cart" style="width: 40px; height: 40px;" />
@@ -426,11 +417,11 @@
 
   <div class="section-nav">
     <div class="section-item" onclick="showSection('special')">
-      <img src="image/menu/HB Specials Logo.png" alt="HB Specials" />
+      <img src="image/menu/HB_Specials_Logo.png" alt="HB Specials" />
       <button>HB Specials</button>
     </div>
     <div class="section-item" onclick="showSection('hot')">
-      <img src="image/menu/Hot Corner.png" alt="Hot Corner" />
+      <img src="image/menu/HotCorner.png" alt="Hot Corner" />
       <button>Hot Corner</button>
     </div>
     <div class="section-item" onclick="showSection('sandwiches')">
@@ -438,11 +429,11 @@
       <button>Sandwiches</button>
     </div>
     <div class="section-item" onclick="showSection('meals')">
-      <img src="image/menu/Meals_Mains.png" alt="Meals & Mains" />
+      <img src="image/menu/meals.png" alt="Meals & Mains" />
       <button>Meals & Mains</button>
     </div>
     <div class="section-item" onclick="showSection('drinks')">
-      <img src="image/menu/Drinks.png" alt="Icy Cool Drinks" />
+      <img src="image/menu/drinks.png" alt="Icy Cool Drinks" />
       <button>Icy Cool Drinks</button>
     </div>
     <div class="section-item" onclick="showSection('fizzy')">
@@ -462,14 +453,14 @@
     </div>
   
     <div class="sub-button-wrapper">
-      <img src="image/menu/Mix Burger.png" alt="Mix Burger Meal" />
+      <img src="image/menu/mixburger.png" alt="Mix Burger Meal" />
       <h3>Mix Burger Meal</h3>
       <p>AED 15</p>
       <button onclick="addToCart('Mix Burger Meal', 15)">Add to Cart</button>
     </div>
   
     <div class="sub-button-wrapper">
-      <img src="image/menu/Masala Chai.png" alt="Special Masala Chai">
+      <img src="image/menu/masalachai.png" alt="Special Masala Chai">
       <h3>Special Masala Chai</h3>
       <p> AED 2.5</p>
       <button onclick="addToCart('Special Masala Chai', 2.5)">Add to Cart</button>   
@@ -479,15 +470,15 @@
   
   <div id="hot-buttons" class="sub-buttons active">
     <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.Tea.jpg" alt="Tea" />
+      <img src="image/menu/Tea.jpg" alt="Tea" />
       <button onclick="showItems('tea')">Tea</button>
     </div>
     <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/1.coffee.png" alt="Coffee" />
+      <img src="image/menu/coffee.png" alt="Coffee" />
       <button onclick="showItems('coffee')">Coffee</button>
     </div>
     <div class="sub-button-wrapper">
-      <img src="image/menu /hot corner/Kerala Snacks.png" alt="Snacks" />
+      <img src="image/menu/keralasnacks.png" alt="Snacks" />
       <button onclick="showItems('snacks')">Snacks</button>
     </div>
   </div>
@@ -545,11 +536,11 @@
 
 <div id="sandwiches-buttons" class="sub-buttons">
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/3.1 sandwich.png" alt="Sandwiches" />
+    <img src="image/menu/sandwich.png" alt="Sandwiches" />
     <button onclick="showItems('sandwiches-list')">Sandwiches</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/3.2 Burger.png" alt="Burgers" />
+    <img src="image/menu/burger.png" alt="Burgers" />
     <button onclick="showItems('burgers-list')">Burgers</button>
   </div>
 </div>
@@ -591,15 +582,15 @@
   
 <div id="meals-buttons" class="sub-buttons">
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/4.1 Breakfast.png" alt="Breakfast" />
+    <img src="image/menu/breakfast.png" alt="Breakfast" />
     <button onclick="showItems('breakfast-list')">Breakfast</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/4.2 Breads.png" alt="Breads" />
+    <img src="image/menu/breads.png" alt="Breads" />
     <button onclick="showItems('breads-list')">Breads</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/4.3 Curry.png" alt="Curry" />
+    <img src="image/menu/curry.png" alt="Curry" />
     <button onclick="showItems('curry-list')">Curry</button>
   </div>
 </div>
@@ -658,19 +649,19 @@
 
 <div id="drinks-buttons" class="sub-buttons">
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.1 Juice.png" alt="Juice" />
+    <img src="image/menu/juice.png" alt="Juice" />
     <button onclick="showItems('juice-list')">Juice</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.2 shakes.png" alt="Shake" />
+    <img src="image/menu/shakes.png" alt="Shake" />
     <button onclick="showItems('shake-list')">Shake</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.3 Fruit salad.png" alt="Fruit Salad" />
+    <img src="image/menu/fruitsalad.png" alt="Fruit Salad" />
     <button onclick="showItems('fruit-salad-list')">Fruit Salad</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/5.4 Faluda.png" alt="Faluda" />
+    <img src="image/menu/faluda.png" alt="Faluda" />
     <button onclick="showItems('faluda-list')">Faluda</button>
   </div>
 </div>
@@ -794,15 +785,15 @@
 
 <div id="fizzy-buttons" class="sub-buttons">
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/6.1 Mojitos.png" alt="Mojitos" />
+    <img src="image/menu/mojitos.png" alt="Mojitos" />
     <button onclick="showItems('mojitos-list')">Mojitos</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/6.2 Lessi.png" alt="Lassi" />
+    <img src="image/menu/lessi.png" alt="Lassi" />
     <button onclick="showItems('lassi-list')">Lassi</button>
   </div>
   <div class="sub-button-wrapper">
-    <img src="image/menu/sandwiches/6.3 Lime Specials.png" alt="Lime Specials" />
+    <img src="image/menu/limespecials.png" alt="Lime Specials" />
     <button onclick="showItems('lime-list')">Lime Specials</button>
   </div>
 </div>
